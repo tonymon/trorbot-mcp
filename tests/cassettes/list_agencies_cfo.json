@@ -1,0 +1,1402 @@
+[
+ {
+  "params": {
+   "fields": "agency_nm,record_fiscal_year,cfo_agency_indicator",
+   "sort": "agency_nm",
+   "filter": "agency_bureau_indicator:eq:Agency,cfo_agency_indicator:eq:CFO",
+   "page[size]": "200",
+   "page[number]": "1"
+  },
+  "response": {
+   "data": [
+    {
+     "agency_nm": "Agency for International Development",
+     "record_fiscal_year": "2018",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Agency for International Development",
+     "record_fiscal_year": "2020",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Agency for International Development",
+     "record_fiscal_year": "2017",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Agency for International Development",
+     "record_fiscal_year": "2016",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Agency for International Development",
+     "record_fiscal_year": "2021",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Agency for International Development",
+     "record_fiscal_year": "2022",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Agency for International Development",
+     "record_fiscal_year": "2019",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Agency for International Development",
+     "record_fiscal_year": "2023",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Agency for International Development",
+     "record_fiscal_year": "2024",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Agency for International Development",
+     "record_fiscal_year": "2026",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Agency for International Development",
+     "record_fiscal_year": "2025",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of Agriculture",
+     "record_fiscal_year": "2018",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of Agriculture",
+     "record_fiscal_year": "2020",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of Agriculture",
+     "record_fiscal_year": "2017",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of Agriculture",
+     "record_fiscal_year": "2016",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of Agriculture",
+     "record_fiscal_year": "2021",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of Agriculture",
+     "record_fiscal_year": "2019",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of Agriculture",
+     "record_fiscal_year": "2022",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of Agriculture",
+     "record_fiscal_year": "2023",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of Agriculture",
+     "record_fiscal_year": "2024",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of Agriculture",
+     "record_fiscal_year": "2025",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of Agriculture",
+     "record_fiscal_year": "2026",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of Commerce",
+     "record_fiscal_year": "2019",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of Commerce",
+     "record_fiscal_year": "2018",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of Commerce",
+     "record_fiscal_year": "2017",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of Commerce",
+     "record_fiscal_year": "2016",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of Commerce",
+     "record_fiscal_year": "2021",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of Commerce",
+     "record_fiscal_year": "2020",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of Commerce",
+     "record_fiscal_year": "2022",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of Commerce",
+     "record_fiscal_year": "2023",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of Commerce",
+     "record_fiscal_year": "2024",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of Commerce",
+     "record_fiscal_year": "2025",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of Commerce",
+     "record_fiscal_year": "2026",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of Defense",
+     "record_fiscal_year": "2018",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of Defense",
+     "record_fiscal_year": "2017",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of Defense",
+     "record_fiscal_year": "2020",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of Defense",
+     "record_fiscal_year": "2016",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of Defense",
+     "record_fiscal_year": "2021",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of Defense",
+     "record_fiscal_year": "2019",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of Defense",
+     "record_fiscal_year": "2022",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of Defense",
+     "record_fiscal_year": "2023",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of Defense",
+     "record_fiscal_year": "2024",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of Defense",
+     "record_fiscal_year": "2025",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of Defense",
+     "record_fiscal_year": "2026",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of Education",
+     "record_fiscal_year": "2019",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of Education",
+     "record_fiscal_year": "2020",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of Education",
+     "record_fiscal_year": "2018",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of Education",
+     "record_fiscal_year": "2017",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of Education",
+     "record_fiscal_year": "2016",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of Education",
+     "record_fiscal_year": "2021",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of Education",
+     "record_fiscal_year": "2022",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of Education",
+     "record_fiscal_year": "2023",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of Education",
+     "record_fiscal_year": "2024",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of Education",
+     "record_fiscal_year": "2025",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of Education",
+     "record_fiscal_year": "2026",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of Energy",
+     "record_fiscal_year": "2017",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of Energy",
+     "record_fiscal_year": "2018",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of Energy",
+     "record_fiscal_year": "2016",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of Energy",
+     "record_fiscal_year": "2020",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of Energy",
+     "record_fiscal_year": "2021",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of Energy",
+     "record_fiscal_year": "2022",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of Energy",
+     "record_fiscal_year": "2019",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of Energy",
+     "record_fiscal_year": "2023",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of Energy",
+     "record_fiscal_year": "2024",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of Energy",
+     "record_fiscal_year": "2025",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of Energy",
+     "record_fiscal_year": "2026",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of Health & Human Services",
+     "record_fiscal_year": "2018",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of Health & Human Services",
+     "record_fiscal_year": "2020",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of Health & Human Services",
+     "record_fiscal_year": "2017",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of Health & Human Services",
+     "record_fiscal_year": "2016",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of Health & Human Services",
+     "record_fiscal_year": "2021",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of Health & Human Services",
+     "record_fiscal_year": "2022",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of Health & Human Services",
+     "record_fiscal_year": "2019",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of Health & Human Services",
+     "record_fiscal_year": "2023",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of Health & Human Services",
+     "record_fiscal_year": "2024",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of Health & Human Services",
+     "record_fiscal_year": "2025",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of Health & Human Services",
+     "record_fiscal_year": "2026",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of Homeland Security",
+     "record_fiscal_year": "2020",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of Homeland Security",
+     "record_fiscal_year": "2018",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of Homeland Security",
+     "record_fiscal_year": "2017",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of Homeland Security",
+     "record_fiscal_year": "2016",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of Homeland Security",
+     "record_fiscal_year": "2021",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of Homeland Security",
+     "record_fiscal_year": "2022",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of Homeland Security",
+     "record_fiscal_year": "2019",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of Homeland Security",
+     "record_fiscal_year": "2023",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of Homeland Security",
+     "record_fiscal_year": "2024",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of Homeland Security",
+     "record_fiscal_year": "2025",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of Homeland Security",
+     "record_fiscal_year": "2026",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of Housing and Urban Development",
+     "record_fiscal_year": "2018",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of Housing and Urban Development",
+     "record_fiscal_year": "2020",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of Housing and Urban Development",
+     "record_fiscal_year": "2017",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of Housing and Urban Development",
+     "record_fiscal_year": "2016",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of Housing and Urban Development",
+     "record_fiscal_year": "2021",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of Housing and Urban Development",
+     "record_fiscal_year": "2019",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of Housing and Urban Development",
+     "record_fiscal_year": "2022",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of Housing and Urban Development",
+     "record_fiscal_year": "2023",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of Housing and Urban Development",
+     "record_fiscal_year": "2024",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of Housing and Urban Development",
+     "record_fiscal_year": "2025",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of Housing and Urban Development",
+     "record_fiscal_year": "2026",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of Justice",
+     "record_fiscal_year": "2018",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of Justice",
+     "record_fiscal_year": "2020",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of Justice",
+     "record_fiscal_year": "2017",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of Justice",
+     "record_fiscal_year": "2019",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of Justice",
+     "record_fiscal_year": "2016",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of Justice",
+     "record_fiscal_year": "2021",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of Justice",
+     "record_fiscal_year": "2022",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of Justice",
+     "record_fiscal_year": "2023",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of Justice",
+     "record_fiscal_year": "2024",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of Justice",
+     "record_fiscal_year": "2025",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of Justice",
+     "record_fiscal_year": "2026",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of Labor",
+     "record_fiscal_year": "2017",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of Labor",
+     "record_fiscal_year": "2020",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of Labor",
+     "record_fiscal_year": "2018",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of Labor",
+     "record_fiscal_year": "2019",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of Labor",
+     "record_fiscal_year": "2016",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of Labor",
+     "record_fiscal_year": "2021",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of Labor",
+     "record_fiscal_year": "2022",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of Labor",
+     "record_fiscal_year": "2023",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of Labor",
+     "record_fiscal_year": "2024",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of Labor",
+     "record_fiscal_year": "2026",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of Labor",
+     "record_fiscal_year": "2025",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of State",
+     "record_fiscal_year": "2018",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of State",
+     "record_fiscal_year": "2017",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of State",
+     "record_fiscal_year": "2016",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of State",
+     "record_fiscal_year": "2021",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of State",
+     "record_fiscal_year": "2019",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of State",
+     "record_fiscal_year": "2020",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of State",
+     "record_fiscal_year": "2022",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of State",
+     "record_fiscal_year": "2023",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of State",
+     "record_fiscal_year": "2024",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of State",
+     "record_fiscal_year": "2025",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of State",
+     "record_fiscal_year": "2026",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of Transportation",
+     "record_fiscal_year": "2020",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of Transportation",
+     "record_fiscal_year": "2018",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of Transportation",
+     "record_fiscal_year": "2016",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of Transportation",
+     "record_fiscal_year": "2017",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of Transportation",
+     "record_fiscal_year": "2021",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of Transportation",
+     "record_fiscal_year": "2019",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of Transportation",
+     "record_fiscal_year": "2022",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of Transportation",
+     "record_fiscal_year": "2023",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of Transportation",
+     "record_fiscal_year": "2024",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of Transportation",
+     "record_fiscal_year": "2026",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of Transportation",
+     "record_fiscal_year": "2025",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of Veterans Affairs",
+     "record_fiscal_year": "2017",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of Veterans Affairs",
+     "record_fiscal_year": "2018",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of Veterans Affairs",
+     "record_fiscal_year": "2020",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of Veterans Affairs",
+     "record_fiscal_year": "2016",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of Veterans Affairs",
+     "record_fiscal_year": "2019",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of Veterans Affairs",
+     "record_fiscal_year": "2021",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of Veterans Affairs",
+     "record_fiscal_year": "2022",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of Veterans Affairs",
+     "record_fiscal_year": "2023",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of Veterans Affairs",
+     "record_fiscal_year": "2024",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of Veterans Affairs",
+     "record_fiscal_year": "2025",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of Veterans Affairs",
+     "record_fiscal_year": "2026",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of the Interior",
+     "record_fiscal_year": "2018",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of the Interior",
+     "record_fiscal_year": "2017",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of the Interior",
+     "record_fiscal_year": "2016",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of the Interior",
+     "record_fiscal_year": "2021",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of the Interior",
+     "record_fiscal_year": "2019",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of the Interior",
+     "record_fiscal_year": "2022",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of the Interior",
+     "record_fiscal_year": "2023",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of the Interior",
+     "record_fiscal_year": "2024",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of the Interior",
+     "record_fiscal_year": "2020",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of the Interior",
+     "record_fiscal_year": "2025",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of the Interior",
+     "record_fiscal_year": "2026",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of the Treasury",
+     "record_fiscal_year": "2017",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of the Treasury",
+     "record_fiscal_year": "2018",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of the Treasury",
+     "record_fiscal_year": "2020",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of the Treasury",
+     "record_fiscal_year": "2019",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of the Treasury",
+     "record_fiscal_year": "2016",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of the Treasury",
+     "record_fiscal_year": "2021",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of the Treasury",
+     "record_fiscal_year": "2022",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of the Treasury",
+     "record_fiscal_year": "2023",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of the Treasury",
+     "record_fiscal_year": "2024",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of the Treasury",
+     "record_fiscal_year": "2025",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Department of the Treasury",
+     "record_fiscal_year": "2026",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Environmental Protection Agency",
+     "record_fiscal_year": "2018",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Environmental Protection Agency",
+     "record_fiscal_year": "2016",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Environmental Protection Agency",
+     "record_fiscal_year": "2017",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Environmental Protection Agency",
+     "record_fiscal_year": "2020",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Environmental Protection Agency",
+     "record_fiscal_year": "2021",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Environmental Protection Agency",
+     "record_fiscal_year": "2022",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Environmental Protection Agency",
+     "record_fiscal_year": "2019",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Environmental Protection Agency",
+     "record_fiscal_year": "2023",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Environmental Protection Agency",
+     "record_fiscal_year": "2024",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Environmental Protection Agency",
+     "record_fiscal_year": "2025",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Environmental Protection Agency",
+     "record_fiscal_year": "2026",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "General Services Administration",
+     "record_fiscal_year": "2020",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "General Services Administration",
+     "record_fiscal_year": "2019",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "General Services Administration",
+     "record_fiscal_year": "2018",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "General Services Administration",
+     "record_fiscal_year": "2016",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "General Services Administration",
+     "record_fiscal_year": "2017",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "General Services Administration",
+     "record_fiscal_year": "2021",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "General Services Administration",
+     "record_fiscal_year": "2022",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "General Services Administration",
+     "record_fiscal_year": "2023",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "General Services Administration",
+     "record_fiscal_year": "2024",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "General Services Administration",
+     "record_fiscal_year": "2025",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "General Services Administration",
+     "record_fiscal_year": "2026",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "National Aeronautics and Space Administration",
+     "record_fiscal_year": "2016",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "National Aeronautics and Space Administration",
+     "record_fiscal_year": "2017",
+     "cfo_agency_indicator": "CFO"
+    }
+   ],
+   "meta": {
+    "count": 200,
+    "labels": {
+     "agency_nm": "Agency Name",
+     "record_fiscal_year": "Fiscal Year",
+     "cfo_agency_indicator": "CFO Agency Indicator"
+    },
+    "dataTypes": {
+     "agency_nm": "STRING",
+     "record_fiscal_year": "YEAR",
+     "cfo_agency_indicator": "STRING"
+    },
+    "dataFormats": {
+     "agency_nm": "String",
+     "record_fiscal_year": "YYYY",
+     "cfo_agency_indicator": "String"
+    },
+    "total-count": 264,
+    "total-pages": 2
+   },
+   "links": {
+    "self": "&page%5Bnumber%5D=1&page%5Bsize%5D=200",
+    "first": "&page%5Bnumber%5D=1&page%5Bsize%5D=200",
+    "prev": null,
+    "next": "&page%5Bnumber%5D=2&page%5Bsize%5D=200",
+    "last": "&page%5Bnumber%5D=2&page%5Bsize%5D=200"
+   }
+  }
+ },
+ {
+  "params": {
+   "fields": "agency_nm,record_fiscal_year,cfo_agency_indicator",
+   "sort": "agency_nm",
+   "filter": "agency_bureau_indicator:eq:Agency,cfo_agency_indicator:eq:CFO",
+   "page[size]": "200",
+   "page[number]": "2"
+  },
+  "response": {
+   "data": [
+    {
+     "agency_nm": "National Aeronautics and Space Administration",
+     "record_fiscal_year": "2018",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "National Aeronautics and Space Administration",
+     "record_fiscal_year": "2020",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "National Aeronautics and Space Administration",
+     "record_fiscal_year": "2021",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "National Aeronautics and Space Administration",
+     "record_fiscal_year": "2022",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "National Aeronautics and Space Administration",
+     "record_fiscal_year": "2019",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "National Aeronautics and Space Administration",
+     "record_fiscal_year": "2023",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "National Aeronautics and Space Administration",
+     "record_fiscal_year": "2024",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "National Aeronautics and Space Administration",
+     "record_fiscal_year": "2025",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "National Aeronautics and Space Administration",
+     "record_fiscal_year": "2026",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "National Science Foundation",
+     "record_fiscal_year": "2017",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "National Science Foundation",
+     "record_fiscal_year": "2016",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "National Science Foundation",
+     "record_fiscal_year": "2018",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "National Science Foundation",
+     "record_fiscal_year": "2020",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "National Science Foundation",
+     "record_fiscal_year": "2019",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "National Science Foundation",
+     "record_fiscal_year": "2021",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "National Science Foundation",
+     "record_fiscal_year": "2022",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "National Science Foundation",
+     "record_fiscal_year": "2023",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "National Science Foundation",
+     "record_fiscal_year": "2024",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "National Science Foundation",
+     "record_fiscal_year": "2025",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "National Science Foundation",
+     "record_fiscal_year": "2026",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Nuclear Regulatory Commission",
+     "record_fiscal_year": "2020",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Nuclear Regulatory Commission",
+     "record_fiscal_year": "2017",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Nuclear Regulatory Commission",
+     "record_fiscal_year": "2016",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Nuclear Regulatory Commission",
+     "record_fiscal_year": "2018",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Nuclear Regulatory Commission",
+     "record_fiscal_year": "2021",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Nuclear Regulatory Commission",
+     "record_fiscal_year": "2022",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Nuclear Regulatory Commission",
+     "record_fiscal_year": "2019",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Nuclear Regulatory Commission",
+     "record_fiscal_year": "2023",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Nuclear Regulatory Commission",
+     "record_fiscal_year": "2024",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Nuclear Regulatory Commission",
+     "record_fiscal_year": "2025",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Nuclear Regulatory Commission",
+     "record_fiscal_year": "2026",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Office of Personnel Management",
+     "record_fiscal_year": "2018",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Office of Personnel Management",
+     "record_fiscal_year": "2017",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Office of Personnel Management",
+     "record_fiscal_year": "2020",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Office of Personnel Management",
+     "record_fiscal_year": "2016",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Office of Personnel Management",
+     "record_fiscal_year": "2021",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Office of Personnel Management",
+     "record_fiscal_year": "2022",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Office of Personnel Management",
+     "record_fiscal_year": "2019",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Office of Personnel Management",
+     "record_fiscal_year": "2023",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Office of Personnel Management",
+     "record_fiscal_year": "2024",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Office of Personnel Management",
+     "record_fiscal_year": "2025",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Office of Personnel Management",
+     "record_fiscal_year": "2026",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Small Business Administration",
+     "record_fiscal_year": "2018",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Small Business Administration",
+     "record_fiscal_year": "2019",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Small Business Administration",
+     "record_fiscal_year": "2017",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Small Business Administration",
+     "record_fiscal_year": "2016",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Small Business Administration",
+     "record_fiscal_year": "2021",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Small Business Administration",
+     "record_fiscal_year": "2022",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Small Business Administration",
+     "record_fiscal_year": "2023",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Small Business Administration",
+     "record_fiscal_year": "2020",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Small Business Administration",
+     "record_fiscal_year": "2024",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Small Business Administration",
+     "record_fiscal_year": "2025",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Small Business Administration",
+     "record_fiscal_year": "2026",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Social Security Administration",
+     "record_fiscal_year": "2019",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Social Security Administration",
+     "record_fiscal_year": "2018",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Social Security Administration",
+     "record_fiscal_year": "2017",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Social Security Administration",
+     "record_fiscal_year": "2016",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Social Security Administration",
+     "record_fiscal_year": "2020",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Social Security Administration",
+     "record_fiscal_year": "2021",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Social Security Administration",
+     "record_fiscal_year": "2022",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Social Security Administration",
+     "record_fiscal_year": "2023",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Social Security Administration",
+     "record_fiscal_year": "2024",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Social Security Administration",
+     "record_fiscal_year": "2025",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "agency_nm": "Social Security Administration",
+     "record_fiscal_year": "2026",
+     "cfo_agency_indicator": "CFO"
+    }
+   ],
+   "meta": {
+    "count": 64,
+    "labels": {
+     "agency_nm": "Agency Name",
+     "record_fiscal_year": "Fiscal Year",
+     "cfo_agency_indicator": "CFO Agency Indicator"
+    },
+    "dataTypes": {
+     "agency_nm": "STRING",
+     "record_fiscal_year": "YEAR",
+     "cfo_agency_indicator": "STRING"
+    },
+    "dataFormats": {
+     "agency_nm": "String",
+     "record_fiscal_year": "YYYY",
+     "cfo_agency_indicator": "String"
+    },
+    "total-count": 264,
+    "total-pages": 2
+   },
+   "links": {
+    "self": "&page%5Bnumber%5D=2&page%5Bsize%5D=200",
+    "first": "&page%5Bnumber%5D=1&page%5Bsize%5D=200",
+    "prev": "&page%5Bnumber%5D=1&page%5Bsize%5D=200",
+    "next": null,
+    "last": "&page%5Bnumber%5D=2&page%5Bsize%5D=200"
+   }
+  }
+ }
+]

@@ -1,0 +1,3989 @@
+[
+ {
+  "params": {
+   "fields": "agency_nm,record_fiscal_year,record_fiscal_quarter,compliance_rate_amt,total_eligible_debt_amt,eligible_debt_referred_amt",
+   "sort": "agency_nm,record_fiscal_year,record_fiscal_quarter",
+   "filter": "record_fiscal_year:gte:2021,record_fiscal_year:lte:2025,agency_bureau_indicator:eq:Agency,cfo_agency_indicator:eq:CFO",
+   "page[size]": "200",
+   "page[number]": "1"
+  },
+  "response": {
+   "data": [
+    {
+     "agency_nm": "Agency for International Development",
+     "record_fiscal_year": "2021",
+     "record_fiscal_quarter": "1",
+     "compliance_rate_amt": "95.3570246525137",
+     "total_eligible_debt_amt": "36102647",
+     "eligible_debt_referred_amt": "34426410"
+    },
+    {
+     "agency_nm": "Agency for International Development",
+     "record_fiscal_year": "2021",
+     "record_fiscal_quarter": "2",
+     "compliance_rate_amt": "100.0",
+     "total_eligible_debt_amt": "33726267",
+     "eligible_debt_referred_amt": "33726267"
+    },
+    {
+     "agency_nm": "Agency for International Development",
+     "record_fiscal_year": "2021",
+     "record_fiscal_quarter": "3",
+     "compliance_rate_amt": "100.0",
+     "total_eligible_debt_amt": "37221816",
+     "eligible_debt_referred_amt": "37221816"
+    },
+    {
+     "agency_nm": "Agency for International Development",
+     "record_fiscal_year": "2021",
+     "record_fiscal_quarter": "4",
+     "compliance_rate_amt": "100.0",
+     "total_eligible_debt_amt": "38171581",
+     "eligible_debt_referred_amt": "38171581"
+    },
+    {
+     "agency_nm": "Agency for International Development",
+     "record_fiscal_year": "2022",
+     "record_fiscal_quarter": "1",
+     "compliance_rate_amt": "100.0",
+     "total_eligible_debt_amt": "39929663",
+     "eligible_debt_referred_amt": "39929663"
+    },
+    {
+     "agency_nm": "Agency for International Development",
+     "record_fiscal_year": "2022",
+     "record_fiscal_quarter": "2",
+     "compliance_rate_amt": "100.0",
+     "total_eligible_debt_amt": "38827209",
+     "eligible_debt_referred_amt": "38827209"
+    },
+    {
+     "agency_nm": "Agency for International Development",
+     "record_fiscal_year": "2022",
+     "record_fiscal_quarter": "3",
+     "compliance_rate_amt": "100.0",
+     "total_eligible_debt_amt": "38018886",
+     "eligible_debt_referred_amt": "38018886"
+    },
+    {
+     "agency_nm": "Agency for International Development",
+     "record_fiscal_year": "2022",
+     "record_fiscal_quarter": "4",
+     "compliance_rate_amt": "99.99894484769322",
+     "total_eligible_debt_amt": "25778269",
+     "eligible_debt_referred_amt": "25777997"
+    },
+    {
+     "agency_nm": "Agency for International Development",
+     "record_fiscal_year": "2023",
+     "record_fiscal_quarter": "1",
+     "compliance_rate_amt": "99.99892710223764",
+     "total_eligible_debt_amt": "25351903",
+     "eligible_debt_referred_amt": "25351631"
+    },
+    {
+     "agency_nm": "Agency for International Development",
+     "record_fiscal_year": "2023",
+     "record_fiscal_quarter": "2",
+     "compliance_rate_amt": "99.99894676970202",
+     "total_eligible_debt_amt": "25825311",
+     "eligible_debt_referred_amt": "25825039"
+    },
+    {
+     "agency_nm": "Agency for International Development",
+     "record_fiscal_year": "2023",
+     "record_fiscal_quarter": "3",
+     "compliance_rate_amt": "99.99894904425621",
+     "total_eligible_debt_amt": "25881204",
+     "eligible_debt_referred_amt": "25880932"
+    },
+    {
+     "agency_nm": "Agency for International Development",
+     "record_fiscal_year": "2023",
+     "record_fiscal_quarter": "4",
+     "compliance_rate_amt": "99.99903918022434",
+     "total_eligible_debt_amt": "28413237",
+     "eligible_debt_referred_amt": "28412964"
+    },
+    {
+     "agency_nm": "Agency for International Development",
+     "record_fiscal_year": "2024",
+     "record_fiscal_quarter": "1",
+     "compliance_rate_amt": "99.99903918022434",
+     "total_eligible_debt_amt": "28413237",
+     "eligible_debt_referred_amt": "28412964"
+    },
+    {
+     "agency_nm": "Agency for International Development",
+     "record_fiscal_year": "2024",
+     "record_fiscal_quarter": "2",
+     "compliance_rate_amt": "99.99904299775885",
+     "total_eligible_debt_amt": "28422086",
+     "eligible_debt_referred_amt": "28421814"
+    },
+    {
+     "agency_nm": "Agency for International Development",
+     "record_fiscal_year": "2024",
+     "record_fiscal_quarter": "3",
+     "compliance_rate_amt": "99.99903452298256",
+     "total_eligible_debt_amt": "28276178",
+     "eligible_debt_referred_amt": "28275905"
+    },
+    {
+     "agency_nm": "Agency for International Development",
+     "record_fiscal_year": "2024",
+     "record_fiscal_quarter": "4",
+     "compliance_rate_amt": "99.99901784503616",
+     "total_eligible_debt_amt": "27796021",
+     "eligible_debt_referred_amt": "27795748"
+    },
+    {
+     "agency_nm": "Agency for International Development",
+     "record_fiscal_year": "2025",
+     "record_fiscal_quarter": "1",
+     "compliance_rate_amt": "99.99901273028247",
+     "total_eligible_debt_amt": "27652018",
+     "eligible_debt_referred_amt": "27651745"
+    },
+    {
+     "agency_nm": "Agency for International Development",
+     "record_fiscal_year": "2025",
+     "record_fiscal_quarter": "2",
+     "compliance_rate_amt": "99.89146020603738",
+     "total_eligible_debt_amt": "27891153",
+     "eligible_debt_referred_amt": "27860880"
+    },
+    {
+     "agency_nm": "Agency for International Development",
+     "record_fiscal_year": "2025",
+     "record_fiscal_quarter": "3",
+     "compliance_rate_amt": "0.0",
+     "total_eligible_debt_amt": "0",
+     "eligible_debt_referred_amt": "0"
+    },
+    {
+     "agency_nm": "Agency for International Development",
+     "record_fiscal_year": "2025",
+     "record_fiscal_quarter": "4",
+     "compliance_rate_amt": "100.0",
+     "total_eligible_debt_amt": "27521147",
+     "eligible_debt_referred_amt": "27521147"
+    },
+    {
+     "agency_nm": "Department of Agriculture",
+     "record_fiscal_year": "2021",
+     "record_fiscal_quarter": "1",
+     "compliance_rate_amt": "98.73569543162255",
+     "total_eligible_debt_amt": "1625098929",
+     "eligible_debt_referred_amt": "1604552729"
+    },
+    {
+     "agency_nm": "Department of Agriculture",
+     "record_fiscal_year": "2021",
+     "record_fiscal_quarter": "2",
+     "compliance_rate_amt": "98.96199286772324",
+     "total_eligible_debt_amt": "1728326371",
+     "eligible_debt_referred_amt": "1710386220"
+    },
+    {
+     "agency_nm": "Department of Agriculture",
+     "record_fiscal_year": "2021",
+     "record_fiscal_quarter": "3",
+     "compliance_rate_amt": "98.84540153751642",
+     "total_eligible_debt_amt": "1579407525",
+     "eligible_debt_referred_amt": "1561171710"
+    },
+    {
+     "agency_nm": "Department of Agriculture",
+     "record_fiscal_year": "2021",
+     "record_fiscal_quarter": "4",
+     "compliance_rate_amt": "99.02021058732002",
+     "total_eligible_debt_amt": "1761824406",
+     "eligible_debt_referred_amt": "1744562237"
+    },
+    {
+     "agency_nm": "Department of Agriculture",
+     "record_fiscal_year": "2022",
+     "record_fiscal_quarter": "1",
+     "compliance_rate_amt": "98.74151368696083",
+     "total_eligible_debt_amt": "1780700574",
+     "eligible_debt_referred_amt": "1758290701"
+    },
+    {
+     "agency_nm": "Department of Agriculture",
+     "record_fiscal_year": "2022",
+     "record_fiscal_quarter": "2",
+     "compliance_rate_amt": "98.74888447138713",
+     "total_eligible_debt_amt": "1802339471",
+     "eligible_debt_referred_amt": "1779790122"
+    },
+    {
+     "agency_nm": "Department of Agriculture",
+     "record_fiscal_year": "2022",
+     "record_fiscal_quarter": "3",
+     "compliance_rate_amt": "99.24070494341962",
+     "total_eligible_debt_amt": "1860023831",
+     "eligible_debt_referred_amt": "1845900762"
+    },
+    {
+     "agency_nm": "Department of Agriculture",
+     "record_fiscal_year": "2022",
+     "record_fiscal_quarter": "4",
+     "compliance_rate_amt": "99.30329225580469",
+     "total_eligible_debt_amt": "1892900877",
+     "eligible_debt_referred_amt": "1879712890"
+    },
+    {
+     "agency_nm": "Department of Agriculture",
+     "record_fiscal_year": "2023",
+     "record_fiscal_quarter": "1",
+     "compliance_rate_amt": "99.18498132042393",
+     "total_eligible_debt_amt": "1540202245",
+     "eligible_debt_referred_amt": "1527649309"
+    },
+    {
+     "agency_nm": "Department of Agriculture",
+     "record_fiscal_year": "2023",
+     "record_fiscal_quarter": "2",
+     "compliance_rate_amt": "98.75460606106076",
+     "total_eligible_debt_amt": "1468979929",
+     "eligible_debt_referred_amt": "1450685342"
+    },
+    {
+     "agency_nm": "Department of Agriculture",
+     "record_fiscal_year": "2023",
+     "record_fiscal_quarter": "3",
+     "compliance_rate_amt": "98.46565145752976",
+     "total_eligible_debt_amt": "1329884406",
+     "eligible_debt_referred_amt": "1309479344"
+    },
+    {
+     "agency_nm": "Department of Agriculture",
+     "record_fiscal_year": "2023",
+     "record_fiscal_quarter": "4",
+     "compliance_rate_amt": "98.87202161929903",
+     "total_eligible_debt_amt": "1127039686",
+     "eligible_debt_referred_amt": "1114326922"
+    },
+    {
+     "agency_nm": "Department of Agriculture",
+     "record_fiscal_year": "2024",
+     "record_fiscal_quarter": "1",
+     "compliance_rate_amt": "98.82894667097558",
+     "total_eligible_debt_amt": "1309817548",
+     "eligible_debt_referred_amt": "1294478886"
+    },
+    {
+     "agency_nm": "Department of Agriculture",
+     "record_fiscal_year": "2024",
+     "record_fiscal_quarter": "2",
+     "compliance_rate_amt": "99.22007544849797",
+     "total_eligible_debt_amt": "1122868742",
+     "eligible_debt_referred_amt": "1114111213"
+    },
+    {
+     "agency_nm": "Department of Agriculture",
+     "record_fiscal_year": "2024",
+     "record_fiscal_quarter": "3",
+     "compliance_rate_amt": "99.09564563734594",
+     "total_eligible_debt_amt": "1146699505",
+     "eligible_debt_referred_amt": "1136329278"
+    },
+    {
+     "agency_nm": "Department of Agriculture",
+     "record_fiscal_year": "2024",
+     "record_fiscal_quarter": "4",
+     "compliance_rate_amt": "98.55951284639501",
+     "total_eligible_debt_amt": "1138947540",
+     "eligible_debt_referred_amt": "1122541147"
+    },
+    {
+     "agency_nm": "Department of Agriculture",
+     "record_fiscal_year": "2025",
+     "record_fiscal_quarter": "1",
+     "compliance_rate_amt": "98.02197338581368",
+     "total_eligible_debt_amt": "1186041069",
+     "eligible_debt_referred_amt": "1162580861"
+    },
+    {
+     "agency_nm": "Department of Agriculture",
+     "record_fiscal_year": "2025",
+     "record_fiscal_quarter": "2",
+     "compliance_rate_amt": "92.49726011889865",
+     "total_eligible_debt_amt": "1236829218",
+     "eligible_debt_referred_amt": "1144033139"
+    },
+    {
+     "agency_nm": "Department of Agriculture",
+     "record_fiscal_year": "2025",
+     "record_fiscal_quarter": "3",
+     "compliance_rate_amt": "98.47847132731168",
+     "total_eligible_debt_amt": "1201439140",
+     "eligible_debt_referred_amt": "1183158899"
+    },
+    {
+     "agency_nm": "Department of Agriculture",
+     "record_fiscal_year": "2025",
+     "record_fiscal_quarter": "4",
+     "compliance_rate_amt": "98.00230687288004",
+     "total_eligible_debt_amt": "1202102649",
+     "eligible_debt_referred_amt": "1178088327"
+    },
+    {
+     "agency_nm": "Department of Commerce",
+     "record_fiscal_year": "2021",
+     "record_fiscal_quarter": "1",
+     "compliance_rate_amt": "99.99063477969285",
+     "total_eligible_debt_amt": "29246509",
+     "eligible_debt_referred_amt": "29243770"
+    },
+    {
+     "agency_nm": "Department of Commerce",
+     "record_fiscal_year": "2021",
+     "record_fiscal_quarter": "2",
+     "compliance_rate_amt": "100.0",
+     "total_eligible_debt_amt": "29360503",
+     "eligible_debt_referred_amt": "29360503"
+    },
+    {
+     "agency_nm": "Department of Commerce",
+     "record_fiscal_year": "2021",
+     "record_fiscal_quarter": "3",
+     "compliance_rate_amt": "100.0",
+     "total_eligible_debt_amt": "61849348",
+     "eligible_debt_referred_amt": "61849348"
+    },
+    {
+     "agency_nm": "Department of Commerce",
+     "record_fiscal_year": "2021",
+     "record_fiscal_quarter": "4",
+     "compliance_rate_amt": "100.0",
+     "total_eligible_debt_amt": "56849485",
+     "eligible_debt_referred_amt": "56849485"
+    },
+    {
+     "agency_nm": "Department of Commerce",
+     "record_fiscal_year": "2022",
+     "record_fiscal_quarter": "1",
+     "compliance_rate_amt": "100.0",
+     "total_eligible_debt_amt": "57799410",
+     "eligible_debt_referred_amt": "57799410"
+    },
+    {
+     "agency_nm": "Department of Commerce",
+     "record_fiscal_year": "2022",
+     "record_fiscal_quarter": "2",
+     "compliance_rate_amt": "100.0",
+     "total_eligible_debt_amt": "60792935",
+     "eligible_debt_referred_amt": "60792935"
+    },
+    {
+     "agency_nm": "Department of Commerce",
+     "record_fiscal_year": "2022",
+     "record_fiscal_quarter": "3",
+     "compliance_rate_amt": "100.0",
+     "total_eligible_debt_amt": "61105615",
+     "eligible_debt_referred_amt": "61105615"
+    },
+    {
+     "agency_nm": "Department of Commerce",
+     "record_fiscal_year": "2022",
+     "record_fiscal_quarter": "4",
+     "compliance_rate_amt": "100.0",
+     "total_eligible_debt_amt": "60527147",
+     "eligible_debt_referred_amt": "60527147"
+    },
+    {
+     "agency_nm": "Department of Commerce",
+     "record_fiscal_year": "2023",
+     "record_fiscal_quarter": "1",
+     "compliance_rate_amt": "100.0",
+     "total_eligible_debt_amt": "60359754",
+     "eligible_debt_referred_amt": "60359754"
+    },
+    {
+     "agency_nm": "Department of Commerce",
+     "record_fiscal_year": "2023",
+     "record_fiscal_quarter": "2",
+     "compliance_rate_amt": "100.0",
+     "total_eligible_debt_amt": "59687094",
+     "eligible_debt_referred_amt": "59687094"
+    },
+    {
+     "agency_nm": "Department of Commerce",
+     "record_fiscal_year": "2023",
+     "record_fiscal_quarter": "3",
+     "compliance_rate_amt": "100.0",
+     "total_eligible_debt_amt": "59859537",
+     "eligible_debt_referred_amt": "59859537"
+    },
+    {
+     "agency_nm": "Department of Commerce",
+     "record_fiscal_year": "2023",
+     "record_fiscal_quarter": "4",
+     "compliance_rate_amt": "100.0",
+     "total_eligible_debt_amt": "76772661",
+     "eligible_debt_referred_amt": "76772661"
+    },
+    {
+     "agency_nm": "Department of Commerce",
+     "record_fiscal_year": "2024",
+     "record_fiscal_quarter": "1",
+     "compliance_rate_amt": "100.0",
+     "total_eligible_debt_amt": "59036810",
+     "eligible_debt_referred_amt": "59036810"
+    },
+    {
+     "agency_nm": "Department of Commerce",
+     "record_fiscal_year": "2024",
+     "record_fiscal_quarter": "2",
+     "compliance_rate_amt": "100.0",
+     "total_eligible_debt_amt": "59048584",
+     "eligible_debt_referred_amt": "59048584"
+    },
+    {
+     "agency_nm": "Department of Commerce",
+     "record_fiscal_year": "2024",
+     "record_fiscal_quarter": "3",
+     "compliance_rate_amt": "100.0",
+     "total_eligible_debt_amt": "58831267",
+     "eligible_debt_referred_amt": "58831267"
+    },
+    {
+     "agency_nm": "Department of Commerce",
+     "record_fiscal_year": "2024",
+     "record_fiscal_quarter": "4",
+     "compliance_rate_amt": "100.0",
+     "total_eligible_debt_amt": "57125241",
+     "eligible_debt_referred_amt": "57125241"
+    },
+    {
+     "agency_nm": "Department of Commerce",
+     "record_fiscal_year": "2025",
+     "record_fiscal_quarter": "1",
+     "compliance_rate_amt": "100.0",
+     "total_eligible_debt_amt": "56136437",
+     "eligible_debt_referred_amt": "56136437"
+    },
+    {
+     "agency_nm": "Department of Commerce",
+     "record_fiscal_year": "2025",
+     "record_fiscal_quarter": "2",
+     "compliance_rate_amt": "100.0",
+     "total_eligible_debt_amt": "57933742",
+     "eligible_debt_referred_amt": "57933742"
+    },
+    {
+     "agency_nm": "Department of Commerce",
+     "record_fiscal_year": "2025",
+     "record_fiscal_quarter": "3",
+     "compliance_rate_amt": "100.0",
+     "total_eligible_debt_amt": "58286752",
+     "eligible_debt_referred_amt": "58286752"
+    },
+    {
+     "agency_nm": "Department of Commerce",
+     "record_fiscal_year": "2025",
+     "record_fiscal_quarter": "4",
+     "compliance_rate_amt": "99.93664186627765",
+     "total_eligible_debt_amt": "61715833",
+     "eligible_debt_referred_amt": "61676731"
+    },
+    {
+     "agency_nm": "Department of Defense",
+     "record_fiscal_year": "2021",
+     "record_fiscal_quarter": "1",
+     "compliance_rate_amt": "45.154931137347866",
+     "total_eligible_debt_amt": "2353137731",
+     "eligible_debt_referred_amt": "1062557722"
+    },
+    {
+     "agency_nm": "Department of Defense",
+     "record_fiscal_year": "2021",
+     "record_fiscal_quarter": "2",
+     "compliance_rate_amt": "43.407653185524715",
+     "total_eligible_debt_amt": "2417517456",
+     "eligible_debt_referred_amt": "1049387593"
+    },
+    {
+     "agency_nm": "Department of Defense",
+     "record_fiscal_year": "2021",
+     "record_fiscal_quarter": "3",
+     "compliance_rate_amt": "95.28056570996883",
+     "total_eligible_debt_amt": "2387889757",
+     "eligible_debt_referred_amt": "2275194869"
+    },
+    {
+     "agency_nm": "Department of Defense",
+     "record_fiscal_year": "2021",
+     "record_fiscal_quarter": "4",
+     "compliance_rate_amt": "38.7685414820526",
+     "total_eligible_debt_amt": "2610627409",
+     "eligible_debt_referred_amt": "1012102170"
+    },
+    {
+     "agency_nm": "Department of Defense",
+     "record_fiscal_year": "2022",
+     "record_fiscal_quarter": "1",
+     "compliance_rate_amt": "34.5676328440524",
+     "total_eligible_debt_amt": "2940707585",
+     "eligible_debt_referred_amt": "1016533001"
+    },
+    {
+     "agency_nm": "Department of Defense",
+     "record_fiscal_year": "2022",
+     "record_fiscal_quarter": "2",
+     "compliance_rate_amt": "34.86689722308553",
+     "total_eligible_debt_amt": "2946184438",
+     "eligible_debt_referred_amt": "1027243100"
+    },
+    {
+     "agency_nm": "Department of Defense",
+     "record_fiscal_year": "2022",
+     "record_fiscal_quarter": "3",
+     "compliance_rate_amt": "36.17002164226635",
+     "total_eligible_debt_amt": "2950044555",
+     "eligible_debt_referred_amt": "1067031754"
+    },
+    {
+     "agency_nm": "Department of Defense",
+     "record_fiscal_year": "2022",
+     "record_fiscal_quarter": "4",
+     "compliance_rate_amt": "34.809477754616964",
+     "total_eligible_debt_amt": "3106492834",
+     "eligible_debt_referred_amt": "1081353932"
+    },
+    {
+     "agency_nm": "Department of Defense",
+     "record_fiscal_year": "2023",
+     "record_fiscal_quarter": "1",
+     "compliance_rate_amt": "39.183889455344016",
+     "total_eligible_debt_amt": "3257830863",
+     "eligible_debt_referred_amt": "1276544844"
+    },
+    {
+     "agency_nm": "Department of Defense",
+     "record_fiscal_year": "2023",
+     "record_fiscal_quarter": "2",
+     "compliance_rate_amt": "33.81031330342711",
+     "total_eligible_debt_amt": "3204347553",
+     "eligible_debt_referred_amt": "1083399947"
+    },
+    {
+     "agency_nm": "Department of Defense",
+     "record_fiscal_year": "2023",
+     "record_fiscal_quarter": "3",
+     "compliance_rate_amt": "33.50882024365026",
+     "total_eligible_debt_amt": "3211484923",
+     "eligible_debt_referred_amt": "1076130710"
+    },
+    {
+     "agency_nm": "Department of Defense",
+     "record_fiscal_year": "2023",
+     "record_fiscal_quarter": "4",
+     "compliance_rate_amt": "33.32431875779446",
+     "total_eligible_debt_amt": "3315855883",
+     "eligible_debt_referred_amt": "1104986384"
+    },
+    {
+     "agency_nm": "Department of Defense",
+     "record_fiscal_year": "2024",
+     "record_fiscal_quarter": "1",
+     "compliance_rate_amt": "37.1057175011619",
+     "total_eligible_debt_amt": "2948774967",
+     "eligible_debt_referred_amt": "1094164109"
+    },
+    {
+     "agency_nm": "Department of Defense",
+     "record_fiscal_year": "2024",
+     "record_fiscal_quarter": "2",
+     "compliance_rate_amt": "36.60638979042152",
+     "total_eligible_debt_amt": "2971421400",
+     "eligible_debt_referred_amt": "1087730100"
+    },
+    {
+     "agency_nm": "Department of Defense",
+     "record_fiscal_year": "2024",
+     "record_fiscal_quarter": "3",
+     "compliance_rate_amt": "36.03974447708058",
+     "total_eligible_debt_amt": "2970422073",
+     "eligible_debt_referred_amt": "1070532525"
+    },
+    {
+     "agency_nm": "Department of Defense",
+     "record_fiscal_year": "2024",
+     "record_fiscal_quarter": "4",
+     "compliance_rate_amt": "19.353737252126095",
+     "total_eligible_debt_amt": "3049135706",
+     "eligible_debt_referred_amt": "590121713"
+    },
+    {
+     "agency_nm": "Department of Defense",
+     "record_fiscal_year": "2025",
+     "record_fiscal_quarter": "1",
+     "compliance_rate_amt": "31.481297256491345",
+     "total_eligible_debt_amt": "3545905710",
+     "eligible_debt_referred_amt": "1116297117"
+    },
+    {
+     "agency_nm": "Department of Defense",
+     "record_fiscal_year": "2025",
+     "record_fiscal_quarter": "2",
+     "compliance_rate_amt": "20.909893756147447",
+     "total_eligible_debt_amt": "2423359788",
+     "eligible_debt_referred_amt": "506721957"
+    },
+    {
+     "agency_nm": "Department of Defense",
+     "record_fiscal_year": "2025",
+     "record_fiscal_quarter": "3",
+     "compliance_rate_amt": "15.9316369035374",
+     "total_eligible_debt_amt": "3251680095",
+     "eligible_debt_referred_amt": "518045866"
+    },
+    {
+     "agency_nm": "Department of Defense",
+     "record_fiscal_year": "2025",
+     "record_fiscal_quarter": "4",
+     "compliance_rate_amt": "21.42829634589375",
+     "total_eligible_debt_amt": "2458092153",
+     "eligible_debt_referred_amt": "526727271"
+    },
+    {
+     "agency_nm": "Department of Education",
+     "record_fiscal_year": "2021",
+     "record_fiscal_quarter": "1",
+     "compliance_rate_amt": "99.96207506543595",
+     "total_eligible_debt_amt": "136760468004",
+     "eligible_debt_referred_amt": "136708601686"
+    },
+    {
+     "agency_nm": "Department of Education",
+     "record_fiscal_year": "2021",
+     "record_fiscal_quarter": "2",
+     "compliance_rate_amt": "99.90100702258074",
+     "total_eligible_debt_amt": "135536173876",
+     "eligible_debt_referred_amt": "135402002582"
+    },
+    {
+     "agency_nm": "Department of Education",
+     "record_fiscal_year": "2021",
+     "record_fiscal_quarter": "3",
+     "compliance_rate_amt": "99.95063202763082",
+     "total_eligible_debt_amt": "133200811871",
+     "eligible_debt_referred_amt": "133135053331"
+    },
+    {
+     "agency_nm": "Department of Education",
+     "record_fiscal_year": "2021",
+     "record_fiscal_quarter": "4",
+     "compliance_rate_amt": "99.75245524349468",
+     "total_eligible_debt_amt": "131395478778",
+     "eligible_debt_referred_amt": "131070216160"
+    },
+    {
+     "agency_nm": "Department of Education",
+     "record_fiscal_year": "2022",
+     "record_fiscal_quarter": "1",
+     "compliance_rate_amt": "99.93897207864646",
+     "total_eligible_debt_amt": "130677439492",
+     "eligible_debt_referred_amt": "130597689767"
+    },
+    {
+     "agency_nm": "Department of Education",
+     "record_fiscal_year": "2022",
+     "record_fiscal_quarter": "2",
+     "compliance_rate_amt": "99.91985186899507",
+     "total_eligible_debt_amt": "127103691281",
+     "eligible_debt_referred_amt": "127001820048"
+    },
+    {
+     "agency_nm": "Department of Education",
+     "record_fiscal_year": "2022",
+     "record_fiscal_quarter": "3",
+     "compliance_rate_amt": "99.92446769888893",
+     "total_eligible_debt_amt": "125898953959",
+     "eligible_debt_referred_amt": "125803859582"
+    },
+    {
+     "agency_nm": "Department of Education",
+     "record_fiscal_year": "2022",
+     "record_fiscal_quarter": "4",
+     "compliance_rate_amt": "99.9645431073069",
+     "total_eligible_debt_amt": "127350691418",
+     "eligible_debt_referred_amt": "127305536820"
+    },
+    {
+     "agency_nm": "Department of Education",
+     "record_fiscal_year": "2023",
+     "record_fiscal_quarter": "1",
+     "compliance_rate_amt": "99.98868266475111",
+     "total_eligible_debt_amt": "124304579573",
+     "eligible_debt_referred_amt": "124290511607"
+    },
+    {
+     "agency_nm": "Department of Education",
+     "record_fiscal_year": "2023",
+     "record_fiscal_quarter": "2",
+     "compliance_rate_amt": "99.92947697837603",
+     "total_eligible_debt_amt": "122316684699",
+     "eligible_debt_referred_amt": "122230423277"
+    },
+    {
+     "agency_nm": "Department of Education",
+     "record_fiscal_year": "2023",
+     "record_fiscal_quarter": "3",
+     "compliance_rate_amt": "99.99539058370925",
+     "total_eligible_debt_amt": "119638749294",
+     "eligible_debt_referred_amt": "119633234646"
+    },
+    {
+     "agency_nm": "Department of Education",
+     "record_fiscal_year": "2023",
+     "record_fiscal_quarter": "4",
+     "compliance_rate_amt": "97.60601477907622",
+     "total_eligible_debt_amt": "118454359000",
+     "eligible_debt_referred_amt": "115618579152"
+    },
+    {
+     "agency_nm": "Department of Education",
+     "record_fiscal_year": "2024",
+     "record_fiscal_quarter": "1",
+     "compliance_rate_amt": "97.06885647172527",
+     "total_eligible_debt_amt": "116375366443",
+     "eligible_debt_referred_amt": "112964237421"
+    },
+    {
+     "agency_nm": "Department of Education",
+     "record_fiscal_year": "2024",
+     "record_fiscal_quarter": "2",
+     "compliance_rate_amt": "97.34769113019772",
+     "total_eligible_debt_amt": "115460737581",
+     "eligible_debt_referred_amt": "112398362197"
+    },
+    {
+     "agency_nm": "Department of Education",
+     "record_fiscal_year": "2024",
+     "record_fiscal_quarter": "3",
+     "compliance_rate_amt": "97.06538075878971",
+     "total_eligible_debt_amt": "114061515988",
+     "eligible_debt_referred_amt": "110714244793"
+    },
+    {
+     "agency_nm": "Department of Education",
+     "record_fiscal_year": "2024",
+     "record_fiscal_quarter": "4",
+     "compliance_rate_amt": "97.43795650144588",
+     "total_eligible_debt_amt": "112044827210",
+     "eligible_debt_referred_amt": "109174189999"
+    },
+    {
+     "agency_nm": "Department of Education",
+     "record_fiscal_year": "2025",
+     "record_fiscal_quarter": "1",
+     "compliance_rate_amt": "97.66157193217428",
+     "total_eligible_debt_amt": "105981801369",
+     "eligible_debt_referred_amt": "103503493179"
+    },
+    {
+     "agency_nm": "Department of Education",
+     "record_fiscal_year": "2025",
+     "record_fiscal_quarter": "2",
+     "compliance_rate_amt": "97.4229752931442",
+     "total_eligible_debt_amt": "106348274299",
+     "eligible_debt_referred_amt": "103607652995"
+    },
+    {
+     "agency_nm": "Department of Education",
+     "record_fiscal_year": "2025",
+     "record_fiscal_quarter": "3",
+     "compliance_rate_amt": "99.88242289363023",
+     "total_eligible_debt_amt": "105917221341",
+     "eligible_debt_referred_amt": "105792686937"
+    },
+    {
+     "agency_nm": "Department of Education",
+     "record_fiscal_year": "2025",
+     "record_fiscal_quarter": "4",
+     "compliance_rate_amt": "99.99484632752063",
+     "total_eligible_debt_amt": "106320027552",
+     "eligible_debt_referred_amt": "106314548166"
+    },
+    {
+     "agency_nm": "Department of Energy",
+     "record_fiscal_year": "2021",
+     "record_fiscal_quarter": "1",
+     "compliance_rate_amt": "100.0",
+     "total_eligible_debt_amt": "14505094",
+     "eligible_debt_referred_amt": "14505094"
+    },
+    {
+     "agency_nm": "Department of Energy",
+     "record_fiscal_year": "2021",
+     "record_fiscal_quarter": "2",
+     "compliance_rate_amt": "100.0",
+     "total_eligible_debt_amt": "14501454",
+     "eligible_debt_referred_amt": "14501454"
+    },
+    {
+     "agency_nm": "Department of Energy",
+     "record_fiscal_year": "2021",
+     "record_fiscal_quarter": "3",
+     "compliance_rate_amt": "100.0",
+     "total_eligible_debt_amt": "14516619",
+     "eligible_debt_referred_amt": "14516619"
+    },
+    {
+     "agency_nm": "Department of Energy",
+     "record_fiscal_year": "2021",
+     "record_fiscal_quarter": "4",
+     "compliance_rate_amt": "100.0",
+     "total_eligible_debt_amt": "14391114",
+     "eligible_debt_referred_amt": "14391114"
+    },
+    {
+     "agency_nm": "Department of Energy",
+     "record_fiscal_year": "2022",
+     "record_fiscal_quarter": "1",
+     "compliance_rate_amt": "100.0",
+     "total_eligible_debt_amt": "14108003",
+     "eligible_debt_referred_amt": "14108003"
+    },
+    {
+     "agency_nm": "Department of Energy",
+     "record_fiscal_year": "2022",
+     "record_fiscal_quarter": "2",
+     "compliance_rate_amt": "100.0",
+     "total_eligible_debt_amt": "13733445",
+     "eligible_debt_referred_amt": "13733445"
+    },
+    {
+     "agency_nm": "Department of Energy",
+     "record_fiscal_year": "2022",
+     "record_fiscal_quarter": "3",
+     "compliance_rate_amt": "100.0",
+     "total_eligible_debt_amt": "13698431",
+     "eligible_debt_referred_amt": "13698431"
+    },
+    {
+     "agency_nm": "Department of Energy",
+     "record_fiscal_year": "2022",
+     "record_fiscal_quarter": "4",
+     "compliance_rate_amt": "93.33947059029013",
+     "total_eligible_debt_amt": "14656928",
+     "eligible_debt_referred_amt": "13680699"
+    },
+    {
+     "agency_nm": "Department of Energy",
+     "record_fiscal_year": "2023",
+     "record_fiscal_quarter": "1",
+     "compliance_rate_amt": "96.1754125013941",
+     "total_eligible_debt_amt": "14274376",
+     "eligible_debt_referred_amt": "13728440"
+    },
+    {
+     "agency_nm": "Department of Energy",
+     "record_fiscal_year": "2023",
+     "record_fiscal_quarter": "2",
+     "compliance_rate_amt": "99.99986076057586",
+     "total_eligible_debt_amt": "14363748",
+     "eligible_debt_referred_amt": "14363728"
+    },
+    {
+     "agency_nm": "Department of Energy",
+     "record_fiscal_year": "2023",
+     "record_fiscal_quarter": "3",
+     "compliance_rate_amt": "100.0",
+     "total_eligible_debt_amt": "14276675",
+     "eligible_debt_referred_amt": "14276675"
+    },
+    {
+     "agency_nm": "Department of Energy",
+     "record_fiscal_year": "2023",
+     "record_fiscal_quarter": "4",
+     "compliance_rate_amt": "100.0",
+     "total_eligible_debt_amt": "13760196",
+     "eligible_debt_referred_amt": "13760196"
+    },
+    {
+     "agency_nm": "Department of Energy",
+     "record_fiscal_year": "2024",
+     "record_fiscal_quarter": "1",
+     "compliance_rate_amt": "100.0",
+     "total_eligible_debt_amt": "14421542",
+     "eligible_debt_referred_amt": "14421542"
+    },
+    {
+     "agency_nm": "Department of Energy",
+     "record_fiscal_year": "2024",
+     "record_fiscal_quarter": "2",
+     "compliance_rate_amt": "100.0",
+     "total_eligible_debt_amt": "13773303",
+     "eligible_debt_referred_amt": "13773303"
+    },
+    {
+     "agency_nm": "Department of Energy",
+     "record_fiscal_year": "2024",
+     "record_fiscal_quarter": "3",
+     "compliance_rate_amt": "100.0",
+     "total_eligible_debt_amt": "13731228",
+     "eligible_debt_referred_amt": "13731228"
+    },
+    {
+     "agency_nm": "Department of Energy",
+     "record_fiscal_year": "2024",
+     "record_fiscal_quarter": "4",
+     "compliance_rate_amt": "69.21399138539525",
+     "total_eligible_debt_amt": "20150199",
+     "eligible_debt_referred_amt": "13946757"
+    },
+    {
+     "agency_nm": "Department of Energy",
+     "record_fiscal_year": "2025",
+     "record_fiscal_quarter": "1",
+     "compliance_rate_amt": "73.8222511280469",
+     "total_eligible_debt_amt": "10721407",
+     "eligible_debt_referred_amt": "7914784"
+    },
+    {
+     "agency_nm": "Department of Energy",
+     "record_fiscal_year": "2025",
+     "record_fiscal_quarter": "2",
+     "compliance_rate_amt": "80.45191174124193",
+     "total_eligible_debt_amt": "9802268",
+     "eligible_debt_referred_amt": "7886112"
+    },
+    {
+     "agency_nm": "Department of Energy",
+     "record_fiscal_year": "2025",
+     "record_fiscal_quarter": "3",
+     "compliance_rate_amt": "74.91137458686994",
+     "total_eligible_debt_amt": "10801078",
+     "eligible_debt_referred_amt": "8091236"
+    },
+    {
+     "agency_nm": "Department of Energy",
+     "record_fiscal_year": "2025",
+     "record_fiscal_quarter": "4",
+     "compliance_rate_amt": "100.0",
+     "total_eligible_debt_amt": "8123485",
+     "eligible_debt_referred_amt": "8123485"
+    },
+    {
+     "agency_nm": "Department of Health & Human Services",
+     "record_fiscal_year": "2021",
+     "record_fiscal_quarter": "1",
+     "compliance_rate_amt": "98.07324948404049",
+     "total_eligible_debt_amt": "9776287975",
+     "eligible_debt_referred_amt": "9587923296"
+    },
+    {
+     "agency_nm": "Department of Health & Human Services",
+     "record_fiscal_year": "2021",
+     "record_fiscal_quarter": "2",
+     "compliance_rate_amt": "97.84857045480602",
+     "total_eligible_debt_amt": "9688270688",
+     "eligible_debt_referred_amt": "9479834370"
+    },
+    {
+     "agency_nm": "Department of Health & Human Services",
+     "record_fiscal_year": "2021",
+     "record_fiscal_quarter": "3",
+     "compliance_rate_amt": "98.15640568931113",
+     "total_eligible_debt_amt": "9625926158",
+     "eligible_debt_referred_amt": "9448463131"
+    },
+    {
+     "agency_nm": "Department of Health & Human Services",
+     "record_fiscal_year": "2021",
+     "record_fiscal_quarter": "4",
+     "compliance_rate_amt": "98.10474152427919",
+     "total_eligible_debt_amt": "9618038929",
+     "eligible_debt_referred_amt": "9435752231"
+    },
+    {
+     "agency_nm": "Department of Health & Human Services",
+     "record_fiscal_year": "2022",
+     "record_fiscal_quarter": "1",
+     "compliance_rate_amt": "98.09879832145242",
+     "total_eligible_debt_amt": "9703220236",
+     "eligible_debt_referred_amt": "9518742450"
+    },
+    {
+     "agency_nm": "Department of Health & Human Services",
+     "record_fiscal_year": "2022",
+     "record_fiscal_quarter": "2",
+     "compliance_rate_amt": "97.88077812393404",
+     "total_eligible_debt_amt": "9494480605",
+     "eligible_debt_referred_amt": "9293271495"
+    },
+    {
+     "agency_nm": "Department of Health & Human Services",
+     "record_fiscal_year": "2022",
+     "record_fiscal_quarter": "3",
+     "compliance_rate_amt": "97.83973525343715",
+     "total_eligible_debt_amt": "9746542702",
+     "eligible_debt_referred_amt": "9535991576"
+    },
+    {
+     "agency_nm": "Department of Health & Human Services",
+     "record_fiscal_year": "2022",
+     "record_fiscal_quarter": "4",
+     "compliance_rate_amt": "98.00542362239162",
+     "total_eligible_debt_amt": "10043105155",
+     "eligible_debt_referred_amt": "9842787752"
+    },
+    {
+     "agency_nm": "Department of Health & Human Services",
+     "record_fiscal_year": "2023",
+     "record_fiscal_quarter": "1",
+     "compliance_rate_amt": "96.5410383443517",
+     "total_eligible_debt_amt": "10293433621",
+     "eligible_debt_referred_amt": "9937387699"
+    },
+    {
+     "agency_nm": "Department of Health & Human Services",
+     "record_fiscal_year": "2023",
+     "record_fiscal_quarter": "2",
+     "compliance_rate_amt": "97.72781343585758",
+     "total_eligible_debt_amt": "10575134313",
+     "eligible_debt_referred_amt": "10334847532"
+    },
+    {
+     "agency_nm": "Department of Health & Human Services",
+     "record_fiscal_year": "2023",
+     "record_fiscal_quarter": "3",
+     "compliance_rate_amt": "97.73871596764837",
+     "total_eligible_debt_amt": "10813842379",
+     "eligible_debt_referred_amt": "10569310688"
+    },
+    {
+     "agency_nm": "Department of Health & Human Services",
+     "record_fiscal_year": "2023",
+     "record_fiscal_quarter": "4",
+     "compliance_rate_amt": "97.37138243367285",
+     "total_eligible_debt_amt": "11060668038",
+     "eligible_debt_referred_amt": "10769925375"
+    },
+    {
+     "agency_nm": "Department of Health & Human Services",
+     "record_fiscal_year": "2024",
+     "record_fiscal_quarter": "1",
+     "compliance_rate_amt": "95.65171757468073",
+     "total_eligible_debt_amt": "6218583605",
+     "eligible_debt_referred_amt": "5948182027"
+    },
+    {
+     "agency_nm": "Department of Health & Human Services",
+     "record_fiscal_year": "2024",
+     "record_fiscal_quarter": "2",
+     "compliance_rate_amt": "96.31729912755311",
+     "total_eligible_debt_amt": "6507316323",
+     "eligible_debt_referred_amt": "6267671328"
+    },
+    {
+     "agency_nm": "Department of Health & Human Services",
+     "record_fiscal_year": "2024",
+     "record_fiscal_quarter": "3",
+     "compliance_rate_amt": "94.58833741126485",
+     "total_eligible_debt_amt": "5180808770",
+     "eligible_debt_referred_amt": "4900440880"
+    },
+    {
+     "agency_nm": "Department of Health & Human Services",
+     "record_fiscal_year": "2024",
+     "record_fiscal_quarter": "4",
+     "compliance_rate_amt": "94.93170266975409",
+     "total_eligible_debt_amt": "5572463208",
+     "eligible_debt_referred_amt": "5290034204"
+    },
+    {
+     "agency_nm": "Department of Health & Human Services",
+     "record_fiscal_year": "2025",
+     "record_fiscal_quarter": "1",
+     "compliance_rate_amt": "94.44975571302349",
+     "total_eligible_debt_amt": "5455851839",
+     "eligible_debt_referred_amt": "5153038734"
+    },
+    {
+     "agency_nm": "Department of Health & Human Services",
+     "record_fiscal_year": "2025",
+     "record_fiscal_quarter": "2",
+     "compliance_rate_amt": "95.57801928798513",
+     "total_eligible_debt_amt": "6030889241",
+     "eligible_debt_referred_amt": "5764204482"
+    },
+    {
+     "agency_nm": "Department of Health & Human Services",
+     "record_fiscal_year": "2025",
+     "record_fiscal_quarter": "3",
+     "compliance_rate_amt": "93.92945367077066",
+     "total_eligible_debt_amt": "6432056224",
+     "eligible_debt_referred_amt": "6041595271"
+    },
+    {
+     "agency_nm": "Department of Health & Human Services",
+     "record_fiscal_year": "2025",
+     "record_fiscal_quarter": "4",
+     "compliance_rate_amt": "94.1764946793522",
+     "total_eligible_debt_amt": "6367941516",
+     "eligible_debt_referred_amt": "5997104103"
+    },
+    {
+     "agency_nm": "Department of Homeland Security",
+     "record_fiscal_year": "2021",
+     "record_fiscal_quarter": "1",
+     "compliance_rate_amt": "99.99930494404262",
+     "total_eligible_debt_amt": "403276883",
+     "eligible_debt_referred_amt": "403274080"
+    },
+    {
+     "agency_nm": "Department of Homeland Security",
+     "record_fiscal_year": "2021",
+     "record_fiscal_quarter": "2",
+     "compliance_rate_amt": "99.9994441011302",
+     "total_eligible_debt_amt": "290880246",
+     "eligible_debt_referred_amt": "290878629"
+    },
+    {
+     "agency_nm": "Department of Homeland Security",
+     "record_fiscal_year": "2021",
+     "record_fiscal_quarter": "3",
+     "compliance_rate_amt": "99.99152711356977",
+     "total_eligible_debt_amt": "366156212",
+     "eligible_debt_referred_amt": "366125188"
+    },
+    {
+     "agency_nm": "Department of Homeland Security",
+     "record_fiscal_year": "2021",
+     "record_fiscal_quarter": "4",
+     "compliance_rate_amt": "98.44217112145984",
+     "total_eligible_debt_amt": "322734998",
+     "eligible_debt_referred_amt": "317707339"
+    },
+    {
+     "agency_nm": "Department of Homeland Security",
+     "record_fiscal_year": "2022",
+     "record_fiscal_quarter": "1",
+     "compliance_rate_amt": "99.98987521000734",
+     "total_eligible_debt_amt": "282465118",
+     "eligible_debt_referred_amt": "282436519"
+    },
+    {
+     "agency_nm": "Department of Homeland Security",
+     "record_fiscal_year": "2022",
+     "record_fiscal_quarter": "2",
+     "compliance_rate_amt": "98.35144574648517",
+     "total_eligible_debt_amt": "281004522",
+     "eligible_debt_referred_amt": "276372010"
+    },
+    {
+     "agency_nm": "Department of Homeland Security",
+     "record_fiscal_year": "2022",
+     "record_fiscal_quarter": "3",
+     "compliance_rate_amt": "98.30924838573289",
+     "total_eligible_debt_amt": "279484104",
+     "eligible_debt_referred_amt": "274758722"
+    },
+    {
+     "agency_nm": "Department of Homeland Security",
+     "record_fiscal_year": "2022",
+     "record_fiscal_quarter": "4",
+     "compliance_rate_amt": "98.39555435859899",
+     "total_eligible_debt_amt": "279055886",
+     "eligible_debt_referred_amt": "274578586"
+    },
+    {
+     "agency_nm": "Department of Homeland Security",
+     "record_fiscal_year": "2023",
+     "record_fiscal_quarter": "1",
+     "compliance_rate_amt": "98.1509751592292",
+     "total_eligible_debt_amt": "280434253",
+     "eligible_debt_referred_amt": "275248954"
+    },
+    {
+     "agency_nm": "Department of Homeland Security",
+     "record_fiscal_year": "2023",
+     "record_fiscal_quarter": "2",
+     "compliance_rate_amt": "94.85670253714314",
+     "total_eligible_debt_amt": "291417930",
+     "eligible_debt_referred_amt": "276429439"
+    },
+    {
+     "agency_nm": "Department of Homeland Security",
+     "record_fiscal_year": "2023",
+     "record_fiscal_quarter": "3",
+     "compliance_rate_amt": "93.46292594890272",
+     "total_eligible_debt_amt": "262832054",
+     "eligible_debt_referred_amt": "245650528"
+    },
+    {
+     "agency_nm": "Department of Homeland Security",
+     "record_fiscal_year": "2023",
+     "record_fiscal_quarter": "4",
+     "compliance_rate_amt": "93.1537835664913",
+     "total_eligible_debt_amt": "282180372",
+     "eligible_debt_referred_amt": "262861693"
+    },
+    {
+     "agency_nm": "Department of Homeland Security",
+     "record_fiscal_year": "2024",
+     "record_fiscal_quarter": "1",
+     "compliance_rate_amt": "90.75085682215062",
+     "total_eligible_debt_amt": "307382051",
+     "eligible_debt_referred_amt": "278951845"
+    },
+    {
+     "agency_nm": "Department of Homeland Security",
+     "record_fiscal_year": "2024",
+     "record_fiscal_quarter": "2",
+     "compliance_rate_amt": "93.52001544013638",
+     "total_eligible_debt_amt": "398504252",
+     "eligible_debt_referred_amt": "372681238"
+    },
+    {
+     "agency_nm": "Department of Homeland Security",
+     "record_fiscal_year": "2024",
+     "record_fiscal_quarter": "3",
+     "compliance_rate_amt": "90.6860236145484",
+     "total_eligible_debt_amt": "303327503",
+     "eligible_debt_referred_amt": "275075651"
+    },
+    {
+     "agency_nm": "Department of Homeland Security",
+     "record_fiscal_year": "2024",
+     "record_fiscal_quarter": "4",
+     "compliance_rate_amt": "91.97514911273083",
+     "total_eligible_debt_amt": "360594127",
+     "eligible_debt_referred_amt": "331656986"
+    },
+    {
+     "agency_nm": "Department of Homeland Security",
+     "record_fiscal_year": "2025",
+     "record_fiscal_quarter": "1",
+     "compliance_rate_amt": "91.21620683029063",
+     "total_eligible_debt_amt": "291048201",
+     "eligible_debt_referred_amt": "265483129"
+    },
+    {
+     "agency_nm": "Department of Homeland Security",
+     "record_fiscal_year": "2025",
+     "record_fiscal_quarter": "2",
+     "compliance_rate_amt": "90.47223969263125",
+     "total_eligible_debt_amt": "277806254",
+     "eligible_debt_referred_amt": "251337540"
+    },
+    {
+     "agency_nm": "Department of Homeland Security",
+     "record_fiscal_year": "2025",
+     "record_fiscal_quarter": "3",
+     "compliance_rate_amt": "84.61333855343493",
+     "total_eligible_debt_amt": "284234570",
+     "eligible_debt_referred_amt": "240500359"
+    },
+    {
+     "agency_nm": "Department of Homeland Security",
+     "record_fiscal_year": "2025",
+     "record_fiscal_quarter": "4",
+     "compliance_rate_amt": "93.33353637549665",
+     "total_eligible_debt_amt": "303188259",
+     "eligible_debt_referred_amt": "282976324"
+    },
+    {
+     "agency_nm": "Department of Housing and Urban Development",
+     "record_fiscal_year": "2021",
+     "record_fiscal_quarter": "1",
+     "compliance_rate_amt": "99.43983258040497",
+     "total_eligible_debt_amt": "141128522",
+     "eligible_debt_referred_amt": "140337966"
+    },
+    {
+     "agency_nm": "Department of Housing and Urban Development",
+     "record_fiscal_year": "2021",
+     "record_fiscal_quarter": "2",
+     "compliance_rate_amt": "98.38293183867334",
+     "total_eligible_debt_amt": "143742302",
+     "eligible_debt_referred_amt": "141417891"
+    },
+    {
+     "agency_nm": "Department of Housing and Urban Development",
+     "record_fiscal_year": "2021",
+     "record_fiscal_quarter": "3",
+     "compliance_rate_amt": "99.27247765650671",
+     "total_eligible_debt_amt": "142831627",
+     "eligible_debt_referred_amt": "141792495"
+    },
+    {
+     "agency_nm": "Department of Housing and Urban Development",
+     "record_fiscal_year": "2021",
+     "record_fiscal_quarter": "4",
+     "compliance_rate_amt": "99.61905311392249",
+     "total_eligible_debt_amt": "140078583",
+     "eligible_debt_referred_amt": "139544958"
+    },
+    {
+     "agency_nm": "Department of Housing and Urban Development",
+     "record_fiscal_year": "2022",
+     "record_fiscal_quarter": "1",
+     "compliance_rate_amt": "99.2933927035416",
+     "total_eligible_debt_amt": "143052443",
+     "eligible_debt_referred_amt": "142041624"
+    },
+    {
+     "agency_nm": "Department of Housing and Urban Development",
+     "record_fiscal_year": "2022",
+     "record_fiscal_quarter": "2",
+     "compliance_rate_amt": "98.35412402836022",
+     "total_eligible_debt_amt": "140478629",
+     "eligible_debt_referred_amt": "138166525"
+    },
+    {
+     "agency_nm": "Department of Housing and Urban Development",
+     "record_fiscal_year": "2022",
+     "record_fiscal_quarter": "3",
+     "compliance_rate_amt": "96.87832758463212",
+     "total_eligible_debt_amt": "102269187",
+     "eligible_debt_referred_amt": "99076678"
+    },
+    {
+     "agency_nm": "Department of Housing and Urban Development",
+     "record_fiscal_year": "2022",
+     "record_fiscal_quarter": "4",
+     "compliance_rate_amt": "99.96962516590636",
+     "total_eligible_debt_amt": "80546942",
+     "eligible_debt_referred_amt": "80522476"
+    },
+    {
+     "agency_nm": "Department of Housing and Urban Development",
+     "record_fiscal_year": "2023",
+     "record_fiscal_quarter": "1",
+     "compliance_rate_amt": "96.80325973111036",
+     "total_eligible_debt_amt": "64536366",
+     "eligible_debt_referred_amt": "62473306"
+    },
+    {
+     "agency_nm": "Department of Housing and Urban Development",
+     "record_fiscal_year": "2023",
+     "record_fiscal_quarter": "2",
+     "compliance_rate_amt": "99.96231894178506",
+     "total_eligible_debt_amt": "52039409",
+     "eligible_debt_referred_amt": "52019800"
+    },
+    {
+     "agency_nm": "Department of Housing and Urban Development",
+     "record_fiscal_year": "2023",
+     "record_fiscal_quarter": "3",
+     "compliance_rate_amt": "99.96046236973561",
+     "total_eligible_debt_amt": "56498075",
+     "eligible_debt_referred_amt": "56475737"
+    },
+    {
+     "agency_nm": "Department of Housing and Urban Development",
+     "record_fiscal_year": "2023",
+     "record_fiscal_quarter": "4",
+     "compliance_rate_amt": "99.74250374517507",
+     "total_eligible_debt_amt": "63635877",
+     "eligible_debt_referred_amt": "63472017"
+    },
+    {
+     "agency_nm": "Department of Housing and Urban Development",
+     "record_fiscal_year": "2024",
+     "record_fiscal_quarter": "1",
+     "compliance_rate_amt": "99.75725399287825",
+     "total_eligible_debt_amt": "70357079",
+     "eligible_debt_referred_amt": "70186290"
+    },
+    {
+     "agency_nm": "Department of Housing and Urban Development",
+     "record_fiscal_year": "2024",
+     "record_fiscal_quarter": "2",
+     "compliance_rate_amt": "99.67978676326246",
+     "total_eligible_debt_amt": "84215132",
+     "eligible_debt_referred_amt": "83945464"
+    },
+    {
+     "agency_nm": "Department of Housing and Urban Development",
+     "record_fiscal_year": "2024",
+     "record_fiscal_quarter": "3",
+     "compliance_rate_amt": "99.63446807725246",
+     "total_eligible_debt_amt": "93028537",
+     "eligible_debt_referred_amt": "92688488"
+    },
+    {
+     "agency_nm": "Department of Housing and Urban Development",
+     "record_fiscal_year": "2024",
+     "record_fiscal_quarter": "4",
+     "compliance_rate_amt": "99.50971760570921",
+     "total_eligible_debt_amt": "104728215",
+     "eligible_debt_referred_amt": "104214751"
+    },
+    {
+     "agency_nm": "Department of Housing and Urban Development",
+     "record_fiscal_year": "2025",
+     "record_fiscal_quarter": "1",
+     "compliance_rate_amt": "99.61402835562915",
+     "total_eligible_debt_amt": "115852552",
+     "eligible_debt_referred_amt": "115405394"
+    },
+    {
+     "agency_nm": "Department of Housing and Urban Development",
+     "record_fiscal_year": "2025",
+     "record_fiscal_quarter": "2",
+     "compliance_rate_amt": "99.57536405769416",
+     "total_eligible_debt_amt": "123213781",
+     "eligible_debt_referred_amt": "122690571"
+    },
+    {
+     "agency_nm": "Department of Housing and Urban Development",
+     "record_fiscal_year": "2025",
+     "record_fiscal_quarter": "3",
+     "compliance_rate_amt": "99.414205028658",
+     "total_eligible_debt_amt": "133961546",
+     "eligible_debt_referred_amt": "133176806"
+    },
+    {
+     "agency_nm": "Department of Housing and Urban Development",
+     "record_fiscal_year": "2025",
+     "record_fiscal_quarter": "4",
+     "compliance_rate_amt": "98.92885304714927",
+     "total_eligible_debt_amt": "137085112",
+     "eligible_debt_referred_amt": "135616729"
+    },
+    {
+     "agency_nm": "Department of Justice",
+     "record_fiscal_year": "2021",
+     "record_fiscal_quarter": "1",
+     "compliance_rate_amt": "95.79930545198604",
+     "total_eligible_debt_amt": "91631966",
+     "eligible_debt_referred_amt": "87782787"
+    },
+    {
+     "agency_nm": "Department of Justice",
+     "record_fiscal_year": "2021",
+     "record_fiscal_quarter": "2",
+     "compliance_rate_amt": "96.15779177402423",
+     "total_eligible_debt_amt": "92382864",
+     "eligible_debt_referred_amt": "88833322"
+    },
+    {
+     "agency_nm": "Department of Justice",
+     "record_fiscal_year": "2021",
+     "record_fiscal_quarter": "3",
+     "compliance_rate_amt": "95.2783302005771",
+     "total_eligible_debt_amt": "93794403",
+     "eligible_debt_referred_amt": "89365741"
+    },
+    {
+     "agency_nm": "Department of Justice",
+     "record_fiscal_year": "2021",
+     "record_fiscal_quarter": "4",
+     "compliance_rate_amt": "96.00359623762103",
+     "total_eligible_debt_amt": "93558890",
+     "eligible_debt_referred_amt": "89819899"
+    },
+    {
+     "agency_nm": "Department of Justice",
+     "record_fiscal_year": "2022",
+     "record_fiscal_quarter": "1",
+     "compliance_rate_amt": "96.5324015365694",
+     "total_eligible_debt_amt": "93425523",
+     "eligible_debt_referred_amt": "90185901"
+    },
+    {
+     "agency_nm": "Department of Justice",
+     "record_fiscal_year": "2022",
+     "record_fiscal_quarter": "2",
+     "compliance_rate_amt": "96.34733304634163",
+     "total_eligible_debt_amt": "93034050",
+     "eligible_debt_referred_amt": "89635826"
+    },
+    {
+     "agency_nm": "Department of Justice",
+     "record_fiscal_year": "2022",
+     "record_fiscal_quarter": "3",
+     "compliance_rate_amt": "96.01927725048635",
+     "total_eligible_debt_amt": "92278720",
+     "eligible_debt_referred_amt": "88605360"
+    },
+    {
+     "agency_nm": "Department of Justice",
+     "record_fiscal_year": "2022",
+     "record_fiscal_quarter": "4",
+     "compliance_rate_amt": "96.81204522816442",
+     "total_eligible_debt_amt": "117881503",
+     "eligible_debt_referred_amt": "114123494"
+    },
+    {
+     "agency_nm": "Department of Justice",
+     "record_fiscal_year": "2023",
+     "record_fiscal_quarter": "1",
+     "compliance_rate_amt": "97.28256121947419",
+     "total_eligible_debt_amt": "91544767",
+     "eligible_debt_referred_amt": "89057094"
+    },
+    {
+     "agency_nm": "Department of Justice",
+     "record_fiscal_year": "2023",
+     "record_fiscal_quarter": "2",
+     "compliance_rate_amt": "97.25885951184085",
+     "total_eligible_debt_amt": "89958286",
+     "eligible_debt_referred_amt": "87492403"
+    },
+    {
+     "agency_nm": "Department of Justice",
+     "record_fiscal_year": "2023",
+     "record_fiscal_quarter": "3",
+     "compliance_rate_amt": "96.4207066584786",
+     "total_eligible_debt_amt": "92624177",
+     "eligible_debt_referred_amt": "89308886"
+    },
+    {
+     "agency_nm": "Department of Justice",
+     "record_fiscal_year": "2023",
+     "record_fiscal_quarter": "4",
+     "compliance_rate_amt": "98.6437302758603",
+     "total_eligible_debt_amt": "119280551",
+     "eligible_debt_referred_amt": "117662785"
+    },
+    {
+     "agency_nm": "Department of Justice",
+     "record_fiscal_year": "2024",
+     "record_fiscal_quarter": "1",
+     "compliance_rate_amt": "97.98335590298028",
+     "total_eligible_debt_amt": "92087543",
+     "eligible_debt_referred_amt": "90230465"
+    },
+    {
+     "agency_nm": "Department of Justice",
+     "record_fiscal_year": "2024",
+     "record_fiscal_quarter": "2",
+     "compliance_rate_amt": "97.29392052192024",
+     "total_eligible_debt_amt": "93003329",
+     "eligible_debt_referred_amt": "90486585"
+    },
+    {
+     "agency_nm": "Department of Justice",
+     "record_fiscal_year": "2024",
+     "record_fiscal_quarter": "3",
+     "compliance_rate_amt": "97.27851261018827",
+     "total_eligible_debt_amt": "94058786",
+     "eligible_debt_referred_amt": "91498988"
+    },
+    {
+     "agency_nm": "Department of Justice",
+     "record_fiscal_year": "2024",
+     "record_fiscal_quarter": "4",
+     "compliance_rate_amt": "97.94648223475004",
+     "total_eligible_debt_amt": "100204782",
+     "eligible_debt_referred_amt": "98147059"
+    },
+    {
+     "agency_nm": "Department of Justice",
+     "record_fiscal_year": "2025",
+     "record_fiscal_quarter": "1",
+     "compliance_rate_amt": "97.33628330737042",
+     "total_eligible_debt_amt": "93935290",
+     "eligible_debt_referred_amt": "91433120"
+    },
+    {
+     "agency_nm": "Department of Justice",
+     "record_fiscal_year": "2025",
+     "record_fiscal_quarter": "2",
+     "compliance_rate_amt": "97.82239115091038",
+     "total_eligible_debt_amt": "94329613",
+     "eligible_debt_referred_amt": "92275483"
+    },
+    {
+     "agency_nm": "Department of Justice",
+     "record_fiscal_year": "2025",
+     "record_fiscal_quarter": "3",
+     "compliance_rate_amt": "99.0876443379155",
+     "total_eligible_debt_amt": "96517952",
+     "eligible_debt_referred_amt": "95637365"
+    },
+    {
+     "agency_nm": "Department of Justice",
+     "record_fiscal_year": "2025",
+     "record_fiscal_quarter": "4",
+     "compliance_rate_amt": "99.31836528406512",
+     "total_eligible_debt_amt": "115853841",
+     "eligible_debt_referred_amt": "115064141"
+    }
+   ],
+   "meta": {
+    "count": 200,
+    "labels": {
+     "agency_nm": "Agency Name",
+     "record_fiscal_year": "Fiscal Year",
+     "record_fiscal_quarter": "Fiscal Quarter Number",
+     "compliance_rate_amt": "Compliance Rate Amount",
+     "total_eligible_debt_amt": "Total Eligible Debt Amount",
+     "eligible_debt_referred_amt": "Eligible Debt Referred Amount"
+    },
+    "dataTypes": {
+     "agency_nm": "STRING",
+     "record_fiscal_year": "YEAR",
+     "record_fiscal_quarter": "QUARTER",
+     "compliance_rate_amt": "PERCENTAGE",
+     "total_eligible_debt_amt": "CURRENCY",
+     "eligible_debt_referred_amt": "CURRENCY"
+    },
+    "dataFormats": {
+     "agency_nm": "String",
+     "record_fiscal_year": "YYYY",
+     "record_fiscal_quarter": "Q",
+     "compliance_rate_amt": "10.2%",
+     "total_eligible_debt_amt": "$10.20",
+     "eligible_debt_referred_amt": "$10.20"
+    },
+    "total-count": 480,
+    "total-pages": 3
+   },
+   "links": {
+    "self": "&page%5Bnumber%5D=1&page%5Bsize%5D=200",
+    "first": "&page%5Bnumber%5D=1&page%5Bsize%5D=200",
+    "prev": null,
+    "next": "&page%5Bnumber%5D=2&page%5Bsize%5D=200",
+    "last": "&page%5Bnumber%5D=3&page%5Bsize%5D=200"
+   }
+  }
+ },
+ {
+  "params": {
+   "fields": "agency_nm,record_fiscal_year,record_fiscal_quarter,compliance_rate_amt,total_eligible_debt_amt,eligible_debt_referred_amt",
+   "sort": "agency_nm,record_fiscal_year,record_fiscal_quarter",
+   "filter": "record_fiscal_year:gte:2021,record_fiscal_year:lte:2025,agency_bureau_indicator:eq:Agency,cfo_agency_indicator:eq:CFO",
+   "page[size]": "200",
+   "page[number]": "2"
+  },
+  "response": {
+   "data": [
+    {
+     "agency_nm": "Department of Labor",
+     "record_fiscal_year": "2021",
+     "record_fiscal_quarter": "1",
+     "compliance_rate_amt": "89.38334459015422",
+     "total_eligible_debt_amt": "195229780",
+     "eligible_debt_referred_amt": "174502907"
+    },
+    {
+     "agency_nm": "Department of Labor",
+     "record_fiscal_year": "2021",
+     "record_fiscal_quarter": "2",
+     "compliance_rate_amt": "89.7775544162896",
+     "total_eligible_debt_amt": "193957638",
+     "eligible_debt_referred_amt": "174130424"
+    },
+    {
+     "agency_nm": "Department of Labor",
+     "record_fiscal_year": "2021",
+     "record_fiscal_quarter": "3",
+     "compliance_rate_amt": "86.23013052473146",
+     "total_eligible_debt_amt": "198215539",
+     "eligible_debt_referred_amt": "170921518"
+    },
+    {
+     "agency_nm": "Department of Labor",
+     "record_fiscal_year": "2021",
+     "record_fiscal_quarter": "4",
+     "compliance_rate_amt": "83.40479303107814",
+     "total_eligible_debt_amt": "193854491",
+     "eligible_debt_referred_amt": "161683937"
+    },
+    {
+     "agency_nm": "Department of Labor",
+     "record_fiscal_year": "2022",
+     "record_fiscal_quarter": "1",
+     "compliance_rate_amt": "83.50334280694858",
+     "total_eligible_debt_amt": "197769273",
+     "eligible_debt_referred_amt": "165143954"
+    },
+    {
+     "agency_nm": "Department of Labor",
+     "record_fiscal_year": "2022",
+     "record_fiscal_quarter": "2",
+     "compliance_rate_amt": "82.96823939646958",
+     "total_eligible_debt_amt": "185190467",
+     "eligible_debt_referred_amt": "153649270"
+    },
+    {
+     "agency_nm": "Department of Labor",
+     "record_fiscal_year": "2022",
+     "record_fiscal_quarter": "3",
+     "compliance_rate_amt": "86.9211720136525",
+     "total_eligible_debt_amt": "185188696",
+     "eligible_debt_referred_amt": "160968185"
+    },
+    {
+     "agency_nm": "Department of Labor",
+     "record_fiscal_year": "2022",
+     "record_fiscal_quarter": "4",
+     "compliance_rate_amt": "90.21687839493332",
+     "total_eligible_debt_amt": "182615516",
+     "eligible_debt_referred_amt": "164750018"
+    },
+    {
+     "agency_nm": "Department of Labor",
+     "record_fiscal_year": "2023",
+     "record_fiscal_quarter": "1",
+     "compliance_rate_amt": "90.0858721819771",
+     "total_eligible_debt_amt": "172044423",
+     "eligible_debt_referred_amt": "154987719"
+    },
+    {
+     "agency_nm": "Department of Labor",
+     "record_fiscal_year": "2023",
+     "record_fiscal_quarter": "2",
+     "compliance_rate_amt": "90.34137426904638",
+     "total_eligible_debt_amt": "162319293",
+     "eligible_debt_referred_amt": "146641480"
+    },
+    {
+     "agency_nm": "Department of Labor",
+     "record_fiscal_year": "2023",
+     "record_fiscal_quarter": "3",
+     "compliance_rate_amt": "90.89187077453957",
+     "total_eligible_debt_amt": "155892035",
+     "eligible_debt_referred_amt": "141693187"
+    },
+    {
+     "agency_nm": "Department of Labor",
+     "record_fiscal_year": "2023",
+     "record_fiscal_quarter": "4",
+     "compliance_rate_amt": "91.97041103240694",
+     "total_eligible_debt_amt": "155610431",
+     "eligible_debt_referred_amt": "143115553"
+    },
+    {
+     "agency_nm": "Department of Labor",
+     "record_fiscal_year": "2024",
+     "record_fiscal_quarter": "1",
+     "compliance_rate_amt": "86.83860771547079",
+     "total_eligible_debt_amt": "164405418",
+     "eligible_debt_referred_amt": "142767376"
+    },
+    {
+     "agency_nm": "Department of Labor",
+     "record_fiscal_year": "2024",
+     "record_fiscal_quarter": "2",
+     "compliance_rate_amt": "88.57799474492005",
+     "total_eligible_debt_amt": "175739667",
+     "eligible_debt_referred_amt": "155666673"
+    },
+    {
+     "agency_nm": "Department of Labor",
+     "record_fiscal_year": "2024",
+     "record_fiscal_quarter": "3",
+     "compliance_rate_amt": "90.05229572905112",
+     "total_eligible_debt_amt": "185111675",
+     "eligible_debt_referred_amt": "166697313"
+    },
+    {
+     "agency_nm": "Department of Labor",
+     "record_fiscal_year": "2024",
+     "record_fiscal_quarter": "4",
+     "compliance_rate_amt": "93.51751983506603",
+     "total_eligible_debt_amt": "190947688",
+     "eligible_debt_referred_amt": "178569542"
+    },
+    {
+     "agency_nm": "Department of Labor",
+     "record_fiscal_year": "2025",
+     "record_fiscal_quarter": "1",
+     "compliance_rate_amt": "91.91348619740432",
+     "total_eligible_debt_amt": "204763442",
+     "eligible_debt_referred_amt": "188205218"
+    },
+    {
+     "agency_nm": "Department of Labor",
+     "record_fiscal_year": "2025",
+     "record_fiscal_quarter": "2",
+     "compliance_rate_amt": "90.40711481782161",
+     "total_eligible_debt_amt": "221248223",
+     "eligible_debt_referred_amt": "200024135"
+    },
+    {
+     "agency_nm": "Department of Labor",
+     "record_fiscal_year": "2025",
+     "record_fiscal_quarter": "3",
+     "compliance_rate_amt": "92.36059253705945",
+     "total_eligible_debt_amt": "226037845",
+     "eligible_debt_referred_amt": "208769893"
+    },
+    {
+     "agency_nm": "Department of Labor",
+     "record_fiscal_year": "2025",
+     "record_fiscal_quarter": "4",
+     "compliance_rate_amt": "89.72237033793742",
+     "total_eligible_debt_amt": "239326769",
+     "eligible_debt_referred_amt": "214729650"
+    },
+    {
+     "agency_nm": "Department of State",
+     "record_fiscal_year": "2021",
+     "record_fiscal_quarter": "1",
+     "compliance_rate_amt": "79.90410695149306",
+     "total_eligible_debt_amt": "20452786",
+     "eligible_debt_referred_amt": "16342616"
+    },
+    {
+     "agency_nm": "Department of State",
+     "record_fiscal_year": "2021",
+     "record_fiscal_quarter": "2",
+     "compliance_rate_amt": "55.37866170695586",
+     "total_eligible_debt_amt": "26807477",
+     "eligible_debt_referred_amt": "14845622"
+    },
+    {
+     "agency_nm": "Department of State",
+     "record_fiscal_year": "2021",
+     "record_fiscal_quarter": "3",
+     "compliance_rate_amt": "98.26533048941306",
+     "total_eligible_debt_amt": "20460958",
+     "eligible_debt_referred_amt": "20106028"
+    },
+    {
+     "agency_nm": "Department of State",
+     "record_fiscal_year": "2021",
+     "record_fiscal_quarter": "4",
+     "compliance_rate_amt": "97.74979753528068",
+     "total_eligible_debt_amt": "19531798",
+     "eligible_debt_referred_amt": "19092293"
+    },
+    {
+     "agency_nm": "Department of State",
+     "record_fiscal_year": "2022",
+     "record_fiscal_quarter": "1",
+     "compliance_rate_amt": "60.483227650722",
+     "total_eligible_debt_amt": "29449184",
+     "eligible_debt_referred_amt": "17811817"
+    },
+    {
+     "agency_nm": "Department of State",
+     "record_fiscal_year": "2022",
+     "record_fiscal_quarter": "2",
+     "compliance_rate_amt": "99.818978518215",
+     "total_eligible_debt_amt": "20029667",
+     "eligible_debt_referred_amt": "19993409"
+    },
+    {
+     "agency_nm": "Department of State",
+     "record_fiscal_year": "2022",
+     "record_fiscal_quarter": "3",
+     "compliance_rate_amt": "99.4129725613963",
+     "total_eligible_debt_amt": "24604131",
+     "eligible_debt_referred_amt": "24459698"
+    },
+    {
+     "agency_nm": "Department of State",
+     "record_fiscal_year": "2022",
+     "record_fiscal_quarter": "4",
+     "compliance_rate_amt": "98.20892508257529",
+     "total_eligible_debt_amt": "24699581",
+     "eligible_debt_referred_amt": "24257193"
+    },
+    {
+     "agency_nm": "Department of State",
+     "record_fiscal_year": "2023",
+     "record_fiscal_quarter": "1",
+     "compliance_rate_amt": "96.58771785209176",
+     "total_eligible_debt_amt": "24450821",
+     "eligible_debt_referred_amt": "23616490"
+    },
+    {
+     "agency_nm": "Department of State",
+     "record_fiscal_year": "2023",
+     "record_fiscal_quarter": "2",
+     "compliance_rate_amt": "98.93492922944955",
+     "total_eligible_debt_amt": "22718772",
+     "eligible_debt_referred_amt": "22476801"
+    },
+    {
+     "agency_nm": "Department of State",
+     "record_fiscal_year": "2023",
+     "record_fiscal_quarter": "3",
+     "compliance_rate_amt": "98.52022351634156",
+     "total_eligible_debt_amt": "22314789",
+     "eligible_debt_referred_amt": "21984580"
+    },
+    {
+     "agency_nm": "Department of State",
+     "record_fiscal_year": "2023",
+     "record_fiscal_quarter": "4",
+     "compliance_rate_amt": "98.95576782428607",
+     "total_eligible_debt_amt": "22680684",
+     "eligible_debt_referred_amt": "22443845"
+    },
+    {
+     "agency_nm": "Department of State",
+     "record_fiscal_year": "2024",
+     "record_fiscal_quarter": "1",
+     "compliance_rate_amt": "99.15959750021287",
+     "total_eligible_debt_amt": "22842745",
+     "eligible_debt_referred_amt": "22650774"
+    },
+    {
+     "agency_nm": "Department of State",
+     "record_fiscal_year": "2024",
+     "record_fiscal_quarter": "2",
+     "compliance_rate_amt": "98.2023800182489",
+     "total_eligible_debt_amt": "23079739",
+     "eligible_debt_referred_amt": "22664853"
+    },
+    {
+     "agency_nm": "Department of State",
+     "record_fiscal_year": "2024",
+     "record_fiscal_quarter": "3",
+     "compliance_rate_amt": "99.63521502432076",
+     "total_eligible_debt_amt": "22679388",
+     "eligible_debt_referred_amt": "22596657"
+    },
+    {
+     "agency_nm": "Department of State",
+     "record_fiscal_year": "2024",
+     "record_fiscal_quarter": "4",
+     "compliance_rate_amt": "98.90893230262053",
+     "total_eligible_debt_amt": "22523442",
+     "eligible_debt_referred_amt": "22277696"
+    },
+    {
+     "agency_nm": "Department of State",
+     "record_fiscal_year": "2025",
+     "record_fiscal_quarter": "1",
+     "compliance_rate_amt": "99.96358832429556",
+     "total_eligible_debt_amt": "24382289",
+     "eligible_debt_referred_amt": "24373411"
+    },
+    {
+     "agency_nm": "Department of State",
+     "record_fiscal_year": "2025",
+     "record_fiscal_quarter": "2",
+     "compliance_rate_amt": "99.96859205151247",
+     "total_eligible_debt_amt": "23280731",
+     "eligible_debt_referred_amt": "23273419"
+    },
+    {
+     "agency_nm": "Department of State",
+     "record_fiscal_year": "2025",
+     "record_fiscal_quarter": "3",
+     "compliance_rate_amt": "99.77518367831529",
+     "total_eligible_debt_amt": "23280783",
+     "eligible_debt_referred_amt": "23228444"
+    },
+    {
+     "agency_nm": "Department of State",
+     "record_fiscal_year": "2025",
+     "record_fiscal_quarter": "4",
+     "compliance_rate_amt": "96.6813021699718",
+     "total_eligible_debt_amt": "25148207",
+     "eligible_debt_referred_amt": "24313614"
+    },
+    {
+     "agency_nm": "Department of Transportation",
+     "record_fiscal_year": "2021",
+     "record_fiscal_quarter": "1",
+     "compliance_rate_amt": "99.0788647303713",
+     "total_eligible_debt_amt": "66193861",
+     "eligible_debt_referred_amt": "65584126"
+    },
+    {
+     "agency_nm": "Department of Transportation",
+     "record_fiscal_year": "2021",
+     "record_fiscal_quarter": "2",
+     "compliance_rate_amt": "99.89300361290007",
+     "total_eligible_debt_amt": "66308781",
+     "eligible_debt_referred_amt": "66237833"
+    },
+    {
+     "agency_nm": "Department of Transportation",
+     "record_fiscal_year": "2021",
+     "record_fiscal_quarter": "3",
+     "compliance_rate_amt": "99.89076148093137",
+     "total_eligible_debt_amt": "66249525",
+     "eligible_debt_referred_amt": "66177155"
+    },
+    {
+     "agency_nm": "Department of Transportation",
+     "record_fiscal_year": "2021",
+     "record_fiscal_quarter": "4",
+     "compliance_rate_amt": "99.80811609178886",
+     "total_eligible_debt_amt": "67427749",
+     "eligible_debt_referred_amt": "67298366"
+    },
+    {
+     "agency_nm": "Department of Transportation",
+     "record_fiscal_year": "2022",
+     "record_fiscal_quarter": "1",
+     "compliance_rate_amt": "99.9590554561559",
+     "total_eligible_debt_amt": "67781925",
+     "eligible_debt_referred_amt": "67754172"
+    },
+    {
+     "agency_nm": "Department of Transportation",
+     "record_fiscal_year": "2022",
+     "record_fiscal_quarter": "2",
+     "compliance_rate_amt": "99.975824058751",
+     "total_eligible_debt_amt": "69929025",
+     "eligible_debt_referred_amt": "69912119"
+    },
+    {
+     "agency_nm": "Department of Transportation",
+     "record_fiscal_year": "2022",
+     "record_fiscal_quarter": "3",
+     "compliance_rate_amt": "99.85114880449983",
+     "total_eligible_debt_amt": "71312830",
+     "eligible_debt_referred_amt": "71206680"
+    },
+    {
+     "agency_nm": "Department of Transportation",
+     "record_fiscal_year": "2022",
+     "record_fiscal_quarter": "4",
+     "compliance_rate_amt": "99.99960419073723",
+     "total_eligible_debt_amt": "74530848",
+     "eligible_debt_referred_amt": "74530553"
+    },
+    {
+     "agency_nm": "Department of Transportation",
+     "record_fiscal_year": "2023",
+     "record_fiscal_quarter": "1",
+     "compliance_rate_amt": "99.99927253749529",
+     "total_eligible_debt_amt": "75330343",
+     "eligible_debt_referred_amt": "75329795"
+    },
+    {
+     "agency_nm": "Department of Transportation",
+     "record_fiscal_year": "2023",
+     "record_fiscal_quarter": "2",
+     "compliance_rate_amt": "99.99873684297371",
+     "total_eligible_debt_amt": "78058387",
+     "eligible_debt_referred_amt": "78057401"
+    },
+    {
+     "agency_nm": "Department of Transportation",
+     "record_fiscal_year": "2023",
+     "record_fiscal_quarter": "3",
+     "compliance_rate_amt": "100.0",
+     "total_eligible_debt_amt": "80519033",
+     "eligible_debt_referred_amt": "80519033"
+    },
+    {
+     "agency_nm": "Department of Transportation",
+     "record_fiscal_year": "2023",
+     "record_fiscal_quarter": "4",
+     "compliance_rate_amt": "100.0",
+     "total_eligible_debt_amt": "82954724",
+     "eligible_debt_referred_amt": "82954724"
+    },
+    {
+     "agency_nm": "Department of Transportation",
+     "record_fiscal_year": "2024",
+     "record_fiscal_quarter": "1",
+     "compliance_rate_amt": "99.99196712463097",
+     "total_eligible_debt_amt": "85897013",
+     "eligible_debt_referred_amt": "85890113"
+    },
+    {
+     "agency_nm": "Department of Transportation",
+     "record_fiscal_year": "2024",
+     "record_fiscal_quarter": "2",
+     "compliance_rate_amt": "99.9711866886275",
+     "total_eligible_debt_amt": "89042178",
+     "eligible_debt_referred_amt": "89016522"
+    },
+    {
+     "agency_nm": "Department of Transportation",
+     "record_fiscal_year": "2024",
+     "record_fiscal_quarter": "3",
+     "compliance_rate_amt": "99.99182352640362",
+     "total_eligible_debt_amt": "91555362",
+     "eligible_debt_referred_amt": "91547876"
+    },
+    {
+     "agency_nm": "Department of Transportation",
+     "record_fiscal_year": "2024",
+     "record_fiscal_quarter": "4",
+     "compliance_rate_amt": "100.0",
+     "total_eligible_debt_amt": "91094326",
+     "eligible_debt_referred_amt": "91094326"
+    },
+    {
+     "agency_nm": "Department of Transportation",
+     "record_fiscal_year": "2025",
+     "record_fiscal_quarter": "1",
+     "compliance_rate_amt": "99.97085612791136",
+     "total_eligible_debt_amt": "93086464",
+     "eligible_debt_referred_amt": "93059335"
+    },
+    {
+     "agency_nm": "Department of Transportation",
+     "record_fiscal_year": "2025",
+     "record_fiscal_quarter": "2",
+     "compliance_rate_amt": "99.97301965900724",
+     "total_eligible_debt_amt": "93227139",
+     "eligible_debt_referred_amt": "93201986"
+    },
+    {
+     "agency_nm": "Department of Transportation",
+     "record_fiscal_year": "2025",
+     "record_fiscal_quarter": "3",
+     "compliance_rate_amt": "100.0",
+     "total_eligible_debt_amt": "95822649",
+     "eligible_debt_referred_amt": "95822649"
+    },
+    {
+     "agency_nm": "Department of Transportation",
+     "record_fiscal_year": "2025",
+     "record_fiscal_quarter": "4",
+     "compliance_rate_amt": "100.0",
+     "total_eligible_debt_amt": "96570537",
+     "eligible_debt_referred_amt": "96570537"
+    },
+    {
+     "agency_nm": "Department of Veterans Affairs",
+     "record_fiscal_year": "2021",
+     "record_fiscal_quarter": "1",
+     "compliance_rate_amt": "60.06761652835057",
+     "total_eligible_debt_amt": "10934013",
+     "eligible_debt_referred_amt": "6567801"
+    },
+    {
+     "agency_nm": "Department of Veterans Affairs",
+     "record_fiscal_year": "2021",
+     "record_fiscal_quarter": "2",
+     "compliance_rate_amt": "60.03182939430151",
+     "total_eligible_debt_amt": "11031941",
+     "eligible_debt_referred_amt": "6622676"
+    },
+    {
+     "agency_nm": "Department of Veterans Affairs",
+     "record_fiscal_year": "2021",
+     "record_fiscal_quarter": "3",
+     "compliance_rate_amt": "49.4692184794282",
+     "total_eligible_debt_amt": "11135561",
+     "eligible_debt_referred_amt": "5508675"
+    },
+    {
+     "agency_nm": "Department of Veterans Affairs",
+     "record_fiscal_year": "2021",
+     "record_fiscal_quarter": "4",
+     "compliance_rate_amt": "57.995208835866066",
+     "total_eligible_debt_amt": "10256380",
+     "eligible_debt_referred_amt": "5948209"
+    },
+    {
+     "agency_nm": "Department of Veterans Affairs",
+     "record_fiscal_year": "2022",
+     "record_fiscal_quarter": "1",
+     "compliance_rate_amt": "97.93812149514527",
+     "total_eligible_debt_amt": "200454100",
+     "eligible_debt_referred_amt": "196320980"
+    },
+    {
+     "agency_nm": "Department of Veterans Affairs",
+     "record_fiscal_year": "2022",
+     "record_fiscal_quarter": "2",
+     "compliance_rate_amt": "98.10467565696683",
+     "total_eligible_debt_amt": "245766062",
+     "eligible_debt_referred_amt": "241107998"
+    },
+    {
+     "agency_nm": "Department of Veterans Affairs",
+     "record_fiscal_year": "2022",
+     "record_fiscal_quarter": "3",
+     "compliance_rate_amt": "55.77361687755386",
+     "total_eligible_debt_amt": "355045337",
+     "eligible_debt_referred_amt": "198021626"
+    },
+    {
+     "agency_nm": "Department of Veterans Affairs",
+     "record_fiscal_year": "2022",
+     "record_fiscal_quarter": "4",
+     "compliance_rate_amt": "40.01116151922148",
+     "total_eligible_debt_amt": "521267749",
+     "eligible_debt_referred_amt": "208565281"
+    },
+    {
+     "agency_nm": "Department of Veterans Affairs",
+     "record_fiscal_year": "2023",
+     "record_fiscal_quarter": "1",
+     "compliance_rate_amt": "98.96328428226785",
+     "total_eligible_debt_amt": "405338120",
+     "eligible_debt_referred_amt": "401135916"
+    },
+    {
+     "agency_nm": "Department of Veterans Affairs",
+     "record_fiscal_year": "2023",
+     "record_fiscal_quarter": "2",
+     "compliance_rate_amt": "98.68560438131196",
+     "total_eligible_debt_amt": "197176555",
+     "eligible_debt_referred_amt": "194584875"
+    },
+    {
+     "agency_nm": "Department of Veterans Affairs",
+     "record_fiscal_year": "2023",
+     "record_fiscal_quarter": "3",
+     "compliance_rate_amt": "98.67788365662109",
+     "total_eligible_debt_amt": "209980991",
+     "eligible_debt_referred_amt": "207204798"
+    },
+    {
+     "agency_nm": "Department of Veterans Affairs",
+     "record_fiscal_year": "2023",
+     "record_fiscal_quarter": "4",
+     "compliance_rate_amt": "98.93178511830669",
+     "total_eligible_debt_amt": "248734786",
+     "eligible_debt_referred_amt": "246077764"
+    },
+    {
+     "agency_nm": "Department of Veterans Affairs",
+     "record_fiscal_year": "2024",
+     "record_fiscal_quarter": "1",
+     "compliance_rate_amt": "55.62361911063477",
+     "total_eligible_debt_amt": "271895877",
+     "eligible_debt_referred_amt": "151238327"
+    },
+    {
+     "agency_nm": "Department of Veterans Affairs",
+     "record_fiscal_year": "2024",
+     "record_fiscal_quarter": "2",
+     "compliance_rate_amt": "96.50143293950092",
+     "total_eligible_debt_amt": "202699416",
+     "eligible_debt_referred_amt": "195607841"
+    },
+    {
+     "agency_nm": "Department of Veterans Affairs",
+     "record_fiscal_year": "2024",
+     "record_fiscal_quarter": "3",
+     "compliance_rate_amt": "98.72862416617842",
+     "total_eligible_debt_amt": "536284694",
+     "eligible_debt_referred_amt": "529466500"
+    },
+    {
+     "agency_nm": "Department of Veterans Affairs",
+     "record_fiscal_year": "2024",
+     "record_fiscal_quarter": "4",
+     "compliance_rate_amt": "97.94822737810394",
+     "total_eligible_debt_amt": "366707447",
+     "eligible_debt_referred_amt": "359183444"
+    },
+    {
+     "agency_nm": "Department of Veterans Affairs",
+     "record_fiscal_year": "2025",
+     "record_fiscal_quarter": "1",
+     "compliance_rate_amt": "94.96852622862261",
+     "total_eligible_debt_amt": "147286766",
+     "eligible_debt_referred_amt": "139876071"
+    },
+    {
+     "agency_nm": "Department of Veterans Affairs",
+     "record_fiscal_year": "2025",
+     "record_fiscal_quarter": "2",
+     "compliance_rate_amt": "95.38594508686835",
+     "total_eligible_debt_amt": "170586483",
+     "eligible_debt_referred_amt": "162715529"
+    },
+    {
+     "agency_nm": "Department of Veterans Affairs",
+     "record_fiscal_year": "2025",
+     "record_fiscal_quarter": "3",
+     "compliance_rate_amt": "97.69145199741456",
+     "total_eligible_debt_amt": "217021998",
+     "eligible_debt_referred_amt": "212011941"
+    },
+    {
+     "agency_nm": "Department of Veterans Affairs",
+     "record_fiscal_year": "2025",
+     "record_fiscal_quarter": "4",
+     "compliance_rate_amt": "98.65422582197755",
+     "total_eligible_debt_amt": "578792425",
+     "eligible_debt_referred_amt": "571003186"
+    },
+    {
+     "agency_nm": "Department of the Interior",
+     "record_fiscal_year": "2021",
+     "record_fiscal_quarter": "1",
+     "compliance_rate_amt": "99.99990570983522",
+     "total_eligible_debt_amt": "91207816",
+     "eligible_debt_referred_amt": "91207730"
+    },
+    {
+     "agency_nm": "Department of the Interior",
+     "record_fiscal_year": "2021",
+     "record_fiscal_quarter": "2",
+     "compliance_rate_amt": "99.99520193984334",
+     "total_eligible_debt_amt": "82408304",
+     "eligible_debt_referred_amt": "82404350"
+    },
+    {
+     "agency_nm": "Department of the Interior",
+     "record_fiscal_year": "2021",
+     "record_fiscal_quarter": "3",
+     "compliance_rate_amt": "99.99988629168263",
+     "total_eligible_debt_amt": "80029326",
+     "eligible_debt_referred_amt": "80029235"
+    },
+    {
+     "agency_nm": "Department of the Interior",
+     "record_fiscal_year": "2021",
+     "record_fiscal_quarter": "4",
+     "compliance_rate_amt": "100.0",
+     "total_eligible_debt_amt": "71536817",
+     "eligible_debt_referred_amt": "71536817"
+    },
+    {
+     "agency_nm": "Department of the Interior",
+     "record_fiscal_year": "2022",
+     "record_fiscal_quarter": "1",
+     "compliance_rate_amt": "99.96889448362003",
+     "total_eligible_debt_amt": "71331399",
+     "eligible_debt_referred_amt": "71309211"
+    },
+    {
+     "agency_nm": "Department of the Interior",
+     "record_fiscal_year": "2022",
+     "record_fiscal_quarter": "2",
+     "compliance_rate_amt": "99.97764867483666",
+     "total_eligible_debt_amt": "48475873",
+     "eligible_debt_referred_amt": "48465038"
+    },
+    {
+     "agency_nm": "Department of the Interior",
+     "record_fiscal_year": "2022",
+     "record_fiscal_quarter": "3",
+     "compliance_rate_amt": "99.97713222522074",
+     "total_eligible_debt_amt": "55191203",
+     "eligible_debt_referred_amt": "55178582"
+    },
+    {
+     "agency_nm": "Department of the Interior",
+     "record_fiscal_year": "2022",
+     "record_fiscal_quarter": "4",
+     "compliance_rate_amt": "99.76439160932549",
+     "total_eligible_debt_amt": "61582272",
+     "eligible_debt_referred_amt": "61437179"
+    },
+    {
+     "agency_nm": "Department of the Interior",
+     "record_fiscal_year": "2023",
+     "record_fiscal_quarter": "1",
+     "compliance_rate_amt": "99.99559313359052",
+     "total_eligible_debt_amt": "72318961",
+     "eligible_debt_referred_amt": "72315774"
+    },
+    {
+     "agency_nm": "Department of the Interior",
+     "record_fiscal_year": "2023",
+     "record_fiscal_quarter": "2",
+     "compliance_rate_amt": "99.99253897808111",
+     "total_eligible_debt_amt": "74239160",
+     "eligible_debt_referred_amt": "74233621"
+    },
+    {
+     "agency_nm": "Department of the Interior",
+     "record_fiscal_year": "2023",
+     "record_fiscal_quarter": "3",
+     "compliance_rate_amt": "99.97633411332012",
+     "total_eligible_debt_amt": "86449328",
+     "eligible_debt_referred_amt": "86428869"
+    },
+    {
+     "agency_nm": "Department of the Interior",
+     "record_fiscal_year": "2023",
+     "record_fiscal_quarter": "4",
+     "compliance_rate_amt": "99.98523080684508",
+     "total_eligible_debt_amt": "88542413",
+     "eligible_debt_referred_amt": "88529336"
+    },
+    {
+     "agency_nm": "Department of the Interior",
+     "record_fiscal_year": "2024",
+     "record_fiscal_quarter": "1",
+     "compliance_rate_amt": "99.99536718557913",
+     "total_eligible_debt_amt": "92190181",
+     "eligible_debt_referred_amt": "92185910"
+    },
+    {
+     "agency_nm": "Department of the Interior",
+     "record_fiscal_year": "2024",
+     "record_fiscal_quarter": "2",
+     "compliance_rate_amt": "99.9926301156974",
+     "total_eligible_debt_amt": "80761105",
+     "eligible_debt_referred_amt": "80755153"
+    },
+    {
+     "agency_nm": "Department of the Interior",
+     "record_fiscal_year": "2024",
+     "record_fiscal_quarter": "3",
+     "compliance_rate_amt": "99.9919340626373",
+     "total_eligible_debt_amt": "76705282",
+     "eligible_debt_referred_amt": "76699095"
+    },
+    {
+     "agency_nm": "Department of the Interior",
+     "record_fiscal_year": "2024",
+     "record_fiscal_quarter": "4",
+     "compliance_rate_amt": "99.99176559418652",
+     "total_eligible_debt_amt": "78427031",
+     "eligible_debt_referred_amt": "78420573"
+    },
+    {
+     "agency_nm": "Department of the Interior",
+     "record_fiscal_year": "2025",
+     "record_fiscal_quarter": "1",
+     "compliance_rate_amt": "99.87094233749225",
+     "total_eligible_debt_amt": "82657626",
+     "eligible_debt_referred_amt": "82550950"
+    },
+    {
+     "agency_nm": "Department of the Interior",
+     "record_fiscal_year": "2025",
+     "record_fiscal_quarter": "2",
+     "compliance_rate_amt": "99.9828328623125",
+     "total_eligible_debt_amt": "83065682",
+     "eligible_debt_referred_amt": "83051422"
+    },
+    {
+     "agency_nm": "Department of the Interior",
+     "record_fiscal_year": "2025",
+     "record_fiscal_quarter": "3",
+     "compliance_rate_amt": "99.98221777909713",
+     "total_eligible_debt_amt": "84128974",
+     "eligible_debt_referred_amt": "84114014"
+    },
+    {
+     "agency_nm": "Department of the Interior",
+     "record_fiscal_year": "2025",
+     "record_fiscal_quarter": "4",
+     "compliance_rate_amt": "99.97846231157504",
+     "total_eligible_debt_amt": "89731078",
+     "eligible_debt_referred_amt": "89711752"
+    },
+    {
+     "agency_nm": "Department of the Treasury",
+     "record_fiscal_year": "2021",
+     "record_fiscal_quarter": "1",
+     "compliance_rate_amt": "98.66845406775106",
+     "total_eligible_debt_amt": "45475337",
+     "eligible_debt_referred_amt": "44869812"
+    },
+    {
+     "agency_nm": "Department of the Treasury",
+     "record_fiscal_year": "2021",
+     "record_fiscal_quarter": "2",
+     "compliance_rate_amt": "98.01798381841127",
+     "total_eligible_debt_amt": "46051844",
+     "eligible_debt_referred_amt": "45139089"
+    },
+    {
+     "agency_nm": "Department of the Treasury",
+     "record_fiscal_year": "2021",
+     "record_fiscal_quarter": "3",
+     "compliance_rate_amt": "98.12422994958858",
+     "total_eligible_debt_amt": "44363167",
+     "eligible_debt_referred_amt": "43531016"
+    },
+    {
+     "agency_nm": "Department of the Treasury",
+     "record_fiscal_year": "2021",
+     "record_fiscal_quarter": "4",
+     "compliance_rate_amt": "97.50633753921879",
+     "total_eligible_debt_amt": "45000116",
+     "eligible_debt_referred_amt": "43877965"
+    },
+    {
+     "agency_nm": "Department of the Treasury",
+     "record_fiscal_year": "2022",
+     "record_fiscal_quarter": "1",
+     "compliance_rate_amt": "97.56914063131545",
+     "total_eligible_debt_amt": "44966649",
+     "eligible_debt_referred_amt": "43873573"
+    },
+    {
+     "agency_nm": "Department of the Treasury",
+     "record_fiscal_year": "2022",
+     "record_fiscal_quarter": "2",
+     "compliance_rate_amt": "98.67666470918253",
+     "total_eligible_debt_amt": "44553788",
+     "eligible_debt_referred_amt": "43964192"
+    },
+    {
+     "agency_nm": "Department of the Treasury",
+     "record_fiscal_year": "2022",
+     "record_fiscal_quarter": "3",
+     "compliance_rate_amt": "98.82382800240816",
+     "total_eligible_debt_amt": "43892475",
+     "eligible_debt_referred_amt": "43376224"
+    },
+    {
+     "agency_nm": "Department of the Treasury",
+     "record_fiscal_year": "2022",
+     "record_fiscal_quarter": "4",
+     "compliance_rate_amt": "99.54250969797482",
+     "total_eligible_debt_amt": "42753256",
+     "eligible_debt_referred_amt": "42557664"
+    },
+    {
+     "agency_nm": "Department of the Treasury",
+     "record_fiscal_year": "2023",
+     "record_fiscal_quarter": "1",
+     "compliance_rate_amt": "98.47191897366437",
+     "total_eligible_debt_amt": "41823044",
+     "eligible_debt_referred_amt": "41183954"
+    },
+    {
+     "agency_nm": "Department of the Treasury",
+     "record_fiscal_year": "2023",
+     "record_fiscal_quarter": "2",
+     "compliance_rate_amt": "99.28694055918545",
+     "total_eligible_debt_amt": "54755323",
+     "eligible_debt_referred_amt": "54364885"
+    },
+    {
+     "agency_nm": "Department of the Treasury",
+     "record_fiscal_year": "2023",
+     "record_fiscal_quarter": "3",
+     "compliance_rate_amt": "99.18188600016352",
+     "total_eligible_debt_amt": "45940908",
+     "eligible_debt_referred_amt": "45565059"
+    },
+    {
+     "agency_nm": "Department of the Treasury",
+     "record_fiscal_year": "2023",
+     "record_fiscal_quarter": "4",
+     "compliance_rate_amt": "99.38128354197774",
+     "total_eligible_debt_amt": "46814659",
+     "eligible_debt_referred_amt": "46525009"
+    },
+    {
+     "agency_nm": "Department of the Treasury",
+     "record_fiscal_year": "2024",
+     "record_fiscal_quarter": "1",
+     "compliance_rate_amt": "98.86979617101905",
+     "total_eligible_debt_amt": "46827394",
+     "eligible_debt_referred_amt": "46298149"
+    },
+    {
+     "agency_nm": "Department of the Treasury",
+     "record_fiscal_year": "2024",
+     "record_fiscal_quarter": "2",
+     "compliance_rate_amt": "98.8145014009244",
+     "total_eligible_debt_amt": "46442906",
+     "eligible_debt_referred_amt": "45892326"
+    },
+    {
+     "agency_nm": "Department of the Treasury",
+     "record_fiscal_year": "2024",
+     "record_fiscal_quarter": "3",
+     "compliance_rate_amt": "99.62608470100876",
+     "total_eligible_debt_amt": "44786881",
+     "eligible_debt_referred_amt": "44619416"
+    },
+    {
+     "agency_nm": "Department of the Treasury",
+     "record_fiscal_year": "2024",
+     "record_fiscal_quarter": "4",
+     "compliance_rate_amt": "99.62711758539324",
+     "total_eligible_debt_amt": "45435771",
+     "eligible_debt_referred_amt": "45266349"
+    },
+    {
+     "agency_nm": "Department of the Treasury",
+     "record_fiscal_year": "2025",
+     "record_fiscal_quarter": "1",
+     "compliance_rate_amt": "99.64157435358987",
+     "total_eligible_debt_amt": "50705077",
+     "eligible_debt_referred_amt": "50523337"
+    },
+    {
+     "agency_nm": "Department of the Treasury",
+     "record_fiscal_year": "2025",
+     "record_fiscal_quarter": "2",
+     "compliance_rate_amt": "99.94745997339523",
+     "total_eligible_debt_amt": "50902144",
+     "eligible_debt_referred_amt": "50875400"
+    },
+    {
+     "agency_nm": "Department of the Treasury",
+     "record_fiscal_year": "2025",
+     "record_fiscal_quarter": "3",
+     "compliance_rate_amt": "99.95197506835076",
+     "total_eligible_debt_amt": "49957385",
+     "eligible_debt_referred_amt": "49933393"
+    },
+    {
+     "agency_nm": "Department of the Treasury",
+     "record_fiscal_year": "2025",
+     "record_fiscal_quarter": "4",
+     "compliance_rate_amt": "99.95265013514077",
+     "total_eligible_debt_amt": "51636895",
+     "eligible_debt_referred_amt": "51612445"
+    },
+    {
+     "agency_nm": "Environmental Protection Agency",
+     "record_fiscal_year": "2021",
+     "record_fiscal_quarter": "1",
+     "compliance_rate_amt": "99.98197721150672",
+     "total_eligible_debt_amt": "24191595",
+     "eligible_debt_referred_amt": "24187235"
+    },
+    {
+     "agency_nm": "Environmental Protection Agency",
+     "record_fiscal_year": "2021",
+     "record_fiscal_quarter": "2",
+     "compliance_rate_amt": "100.0",
+     "total_eligible_debt_amt": "24323933",
+     "eligible_debt_referred_amt": "24323933"
+    },
+    {
+     "agency_nm": "Environmental Protection Agency",
+     "record_fiscal_year": "2021",
+     "record_fiscal_quarter": "3",
+     "compliance_rate_amt": "100.0",
+     "total_eligible_debt_amt": "24643592",
+     "eligible_debt_referred_amt": "24643592"
+    },
+    {
+     "agency_nm": "Environmental Protection Agency",
+     "record_fiscal_year": "2021",
+     "record_fiscal_quarter": "4",
+     "compliance_rate_amt": "100.0",
+     "total_eligible_debt_amt": "24814614",
+     "eligible_debt_referred_amt": "24814614"
+    },
+    {
+     "agency_nm": "Environmental Protection Agency",
+     "record_fiscal_year": "2022",
+     "record_fiscal_quarter": "1",
+     "compliance_rate_amt": "99.28438082529762",
+     "total_eligible_debt_amt": "25460609",
+     "eligible_debt_referred_amt": "25278408"
+    },
+    {
+     "agency_nm": "Environmental Protection Agency",
+     "record_fiscal_year": "2022",
+     "record_fiscal_quarter": "2",
+     "compliance_rate_amt": "99.93794293155732",
+     "total_eligible_debt_amt": "26017987",
+     "eligible_debt_referred_amt": "26001841"
+    },
+    {
+     "agency_nm": "Environmental Protection Agency",
+     "record_fiscal_year": "2022",
+     "record_fiscal_quarter": "3",
+     "compliance_rate_amt": "99.96248169891506",
+     "total_eligible_debt_amt": "26115255",
+     "eligible_debt_referred_amt": "26105457"
+    },
+    {
+     "agency_nm": "Environmental Protection Agency",
+     "record_fiscal_year": "2022",
+     "record_fiscal_quarter": "4",
+     "compliance_rate_amt": "99.79564477483538",
+     "total_eligible_debt_amt": "26158372",
+     "eligible_debt_referred_amt": "26104916"
+    },
+    {
+     "agency_nm": "Environmental Protection Agency",
+     "record_fiscal_year": "2023",
+     "record_fiscal_quarter": "1",
+     "compliance_rate_amt": "99.9985623894384",
+     "total_eligible_debt_amt": "26224070",
+     "eligible_debt_referred_amt": "26223693"
+    },
+    {
+     "agency_nm": "Environmental Protection Agency",
+     "record_fiscal_year": "2023",
+     "record_fiscal_quarter": "2",
+     "compliance_rate_amt": "100.0",
+     "total_eligible_debt_amt": "26123455",
+     "eligible_debt_referred_amt": "26123455"
+    },
+    {
+     "agency_nm": "Environmental Protection Agency",
+     "record_fiscal_year": "2023",
+     "record_fiscal_quarter": "3",
+     "compliance_rate_amt": "100.0",
+     "total_eligible_debt_amt": "26318019",
+     "eligible_debt_referred_amt": "26318019"
+    },
+    {
+     "agency_nm": "Environmental Protection Agency",
+     "record_fiscal_year": "2023",
+     "record_fiscal_quarter": "4",
+     "compliance_rate_amt": "99.9863087338638",
+     "total_eligible_debt_amt": "28178548",
+     "eligible_debt_referred_amt": "28174690"
+    },
+    {
+     "agency_nm": "Environmental Protection Agency",
+     "record_fiscal_year": "2024",
+     "record_fiscal_quarter": "1",
+     "compliance_rate_amt": "99.97649928426439",
+     "total_eligible_debt_amt": "28420411",
+     "eligible_debt_referred_amt": "28413732"
+    },
+    {
+     "agency_nm": "Environmental Protection Agency",
+     "record_fiscal_year": "2024",
+     "record_fiscal_quarter": "2",
+     "compliance_rate_amt": "100.0",
+     "total_eligible_debt_amt": "28612461",
+     "eligible_debt_referred_amt": "28612461"
+    },
+    {
+     "agency_nm": "Environmental Protection Agency",
+     "record_fiscal_year": "2024",
+     "record_fiscal_quarter": "3",
+     "compliance_rate_amt": "100.0",
+     "total_eligible_debt_amt": "28860774",
+     "eligible_debt_referred_amt": "28860774"
+    },
+    {
+     "agency_nm": "Environmental Protection Agency",
+     "record_fiscal_year": "2024",
+     "record_fiscal_quarter": "4",
+     "compliance_rate_amt": "100.0",
+     "total_eligible_debt_amt": "29092747",
+     "eligible_debt_referred_amt": "29092747"
+    },
+    {
+     "agency_nm": "Environmental Protection Agency",
+     "record_fiscal_year": "2025",
+     "record_fiscal_quarter": "1",
+     "compliance_rate_amt": "100.0",
+     "total_eligible_debt_amt": "29278555",
+     "eligible_debt_referred_amt": "29278555"
+    },
+    {
+     "agency_nm": "Environmental Protection Agency",
+     "record_fiscal_year": "2025",
+     "record_fiscal_quarter": "2",
+     "compliance_rate_amt": "100.0",
+     "total_eligible_debt_amt": "29507689",
+     "eligible_debt_referred_amt": "29507689"
+    },
+    {
+     "agency_nm": "Environmental Protection Agency",
+     "record_fiscal_year": "2025",
+     "record_fiscal_quarter": "3",
+     "compliance_rate_amt": "100.0",
+     "total_eligible_debt_amt": "30633979",
+     "eligible_debt_referred_amt": "30633979"
+    },
+    {
+     "agency_nm": "Environmental Protection Agency",
+     "record_fiscal_year": "2025",
+     "record_fiscal_quarter": "4",
+     "compliance_rate_amt": "100.0",
+     "total_eligible_debt_amt": "29406670",
+     "eligible_debt_referred_amt": "29406670"
+    },
+    {
+     "agency_nm": "General Services Administration",
+     "record_fiscal_year": "2021",
+     "record_fiscal_quarter": "1",
+     "compliance_rate_amt": "75.04968006898503",
+     "total_eligible_debt_amt": "6489524",
+     "eligible_debt_referred_amt": "4870367"
+    },
+    {
+     "agency_nm": "General Services Administration",
+     "record_fiscal_year": "2021",
+     "record_fiscal_quarter": "2",
+     "compliance_rate_amt": "74.02382742835351",
+     "total_eligible_debt_amt": "6534654",
+     "eligible_debt_referred_amt": "4837201"
+    },
+    {
+     "agency_nm": "General Services Administration",
+     "record_fiscal_year": "2021",
+     "record_fiscal_quarter": "3",
+     "compliance_rate_amt": "62.31889489398436",
+     "total_eligible_debt_amt": "7071032",
+     "eligible_debt_referred_amt": "4406589"
+    },
+    {
+     "agency_nm": "General Services Administration",
+     "record_fiscal_year": "2021",
+     "record_fiscal_quarter": "4",
+     "compliance_rate_amt": "97.01704706218388",
+     "total_eligible_debt_amt": "10426078",
+     "eligible_debt_referred_amt": "10115073"
+    },
+    {
+     "agency_nm": "General Services Administration",
+     "record_fiscal_year": "2022",
+     "record_fiscal_quarter": "1",
+     "compliance_rate_amt": "71.57393339243401",
+     "total_eligible_debt_amt": "10419507",
+     "eligible_debt_referred_amt": "7457651"
+    },
+    {
+     "agency_nm": "General Services Administration",
+     "record_fiscal_year": "2022",
+     "record_fiscal_quarter": "2",
+     "compliance_rate_amt": "90.90873747273501",
+     "total_eligible_debt_amt": "15381450",
+     "eligible_debt_referred_amt": "13983082"
+    },
+    {
+     "agency_nm": "General Services Administration",
+     "record_fiscal_year": "2022",
+     "record_fiscal_quarter": "3",
+     "compliance_rate_amt": "92.36423120936473",
+     "total_eligible_debt_amt": "14114584",
+     "eligible_debt_referred_amt": "13036827"
+    },
+    {
+     "agency_nm": "General Services Administration",
+     "record_fiscal_year": "2022",
+     "record_fiscal_quarter": "4",
+     "compliance_rate_amt": "93.20673116182941",
+     "total_eligible_debt_amt": "14217397",
+     "eligible_debt_referred_amt": "13251571"
+    },
+    {
+     "agency_nm": "General Services Administration",
+     "record_fiscal_year": "2023",
+     "record_fiscal_quarter": "1",
+     "compliance_rate_amt": "82.97738345063425",
+     "total_eligible_debt_amt": "11448475",
+     "eligible_debt_referred_amt": "9499645"
+    },
+    {
+     "agency_nm": "General Services Administration",
+     "record_fiscal_year": "2023",
+     "record_fiscal_quarter": "2",
+     "compliance_rate_amt": "83.41704679193136",
+     "total_eligible_debt_amt": "12902545",
+     "eligible_debt_referred_amt": "10762922"
+    },
+    {
+     "agency_nm": "General Services Administration",
+     "record_fiscal_year": "2023",
+     "record_fiscal_quarter": "3",
+     "compliance_rate_amt": "88.61667590387479",
+     "total_eligible_debt_amt": "18062817",
+     "eligible_debt_referred_amt": "16006668"
+    },
+    {
+     "agency_nm": "General Services Administration",
+     "record_fiscal_year": "2023",
+     "record_fiscal_quarter": "4",
+     "compliance_rate_amt": "0.0",
+     "total_eligible_debt_amt": "1259836",
+     "eligible_debt_referred_amt": "0"
+    },
+    {
+     "agency_nm": "General Services Administration",
+     "record_fiscal_year": "2024",
+     "record_fiscal_quarter": "1",
+     "compliance_rate_amt": "100.0",
+     "total_eligible_debt_amt": "10115910",
+     "eligible_debt_referred_amt": "10115910"
+    },
+    {
+     "agency_nm": "General Services Administration",
+     "record_fiscal_year": "2024",
+     "record_fiscal_quarter": "2",
+     "compliance_rate_amt": "100.0",
+     "total_eligible_debt_amt": "10027350",
+     "eligible_debt_referred_amt": "10027350"
+    },
+    {
+     "agency_nm": "General Services Administration",
+     "record_fiscal_year": "2024",
+     "record_fiscal_quarter": "3",
+     "compliance_rate_amt": "100.0",
+     "total_eligible_debt_amt": "10836356",
+     "eligible_debt_referred_amt": "10836356"
+    },
+    {
+     "agency_nm": "General Services Administration",
+     "record_fiscal_year": "2024",
+     "record_fiscal_quarter": "4",
+     "compliance_rate_amt": "100.0",
+     "total_eligible_debt_amt": "11059634",
+     "eligible_debt_referred_amt": "11059634"
+    },
+    {
+     "agency_nm": "General Services Administration",
+     "record_fiscal_year": "2025",
+     "record_fiscal_quarter": "1",
+     "compliance_rate_amt": "99.99999088851884",
+     "total_eligible_debt_amt": "10975164",
+     "eligible_debt_referred_amt": "10975163"
+    },
+    {
+     "agency_nm": "General Services Administration",
+     "record_fiscal_year": "2025",
+     "record_fiscal_quarter": "2",
+     "compliance_rate_amt": "100.0",
+     "total_eligible_debt_amt": "11540074",
+     "eligible_debt_referred_amt": "11540074"
+    },
+    {
+     "agency_nm": "General Services Administration",
+     "record_fiscal_year": "2025",
+     "record_fiscal_quarter": "3",
+     "compliance_rate_amt": "100.0",
+     "total_eligible_debt_amt": "11593121",
+     "eligible_debt_referred_amt": "11593121"
+    },
+    {
+     "agency_nm": "General Services Administration",
+     "record_fiscal_year": "2025",
+     "record_fiscal_quarter": "4",
+     "compliance_rate_amt": "100.0",
+     "total_eligible_debt_amt": "11613435",
+     "eligible_debt_referred_amt": "11613435"
+    },
+    {
+     "agency_nm": "National Aeronautics and Space Administration",
+     "record_fiscal_year": "2021",
+     "record_fiscal_quarter": "1",
+     "compliance_rate_amt": "100.0",
+     "total_eligible_debt_amt": "1268442",
+     "eligible_debt_referred_amt": "1268442"
+    },
+    {
+     "agency_nm": "National Aeronautics and Space Administration",
+     "record_fiscal_year": "2021",
+     "record_fiscal_quarter": "2",
+     "compliance_rate_amt": "100.0",
+     "total_eligible_debt_amt": "1250613",
+     "eligible_debt_referred_amt": "1250613"
+    },
+    {
+     "agency_nm": "National Aeronautics and Space Administration",
+     "record_fiscal_year": "2021",
+     "record_fiscal_quarter": "3",
+     "compliance_rate_amt": "100.0",
+     "total_eligible_debt_amt": "1215551",
+     "eligible_debt_referred_amt": "1215551"
+    },
+    {
+     "agency_nm": "National Aeronautics and Space Administration",
+     "record_fiscal_year": "2021",
+     "record_fiscal_quarter": "4",
+     "compliance_rate_amt": "100.0",
+     "total_eligible_debt_amt": "1307058",
+     "eligible_debt_referred_amt": "1307058"
+    },
+    {
+     "agency_nm": "National Aeronautics and Space Administration",
+     "record_fiscal_year": "2022",
+     "record_fiscal_quarter": "1",
+     "compliance_rate_amt": "100.0",
+     "total_eligible_debt_amt": "1558326",
+     "eligible_debt_referred_amt": "1558326"
+    },
+    {
+     "agency_nm": "National Aeronautics and Space Administration",
+     "record_fiscal_year": "2022",
+     "record_fiscal_quarter": "2",
+     "compliance_rate_amt": "100.0",
+     "total_eligible_debt_amt": "1558415",
+     "eligible_debt_referred_amt": "1558415"
+    },
+    {
+     "agency_nm": "National Aeronautics and Space Administration",
+     "record_fiscal_year": "2022",
+     "record_fiscal_quarter": "3",
+     "compliance_rate_amt": "100.0",
+     "total_eligible_debt_amt": "1584125",
+     "eligible_debt_referred_amt": "1584125"
+    },
+    {
+     "agency_nm": "National Aeronautics and Space Administration",
+     "record_fiscal_year": "2022",
+     "record_fiscal_quarter": "4",
+     "compliance_rate_amt": "100.0",
+     "total_eligible_debt_amt": "1581797",
+     "eligible_debt_referred_amt": "1581797"
+    },
+    {
+     "agency_nm": "National Aeronautics and Space Administration",
+     "record_fiscal_year": "2023",
+     "record_fiscal_quarter": "1",
+     "compliance_rate_amt": "100.0",
+     "total_eligible_debt_amt": "1523852",
+     "eligible_debt_referred_amt": "1523852"
+    },
+    {
+     "agency_nm": "National Aeronautics and Space Administration",
+     "record_fiscal_year": "2023",
+     "record_fiscal_quarter": "2",
+     "compliance_rate_amt": "100.0",
+     "total_eligible_debt_amt": "1518126",
+     "eligible_debt_referred_amt": "1518126"
+    },
+    {
+     "agency_nm": "National Aeronautics and Space Administration",
+     "record_fiscal_year": "2023",
+     "record_fiscal_quarter": "3",
+     "compliance_rate_amt": "100.0",
+     "total_eligible_debt_amt": "1493206",
+     "eligible_debt_referred_amt": "1493206"
+    },
+    {
+     "agency_nm": "National Aeronautics and Space Administration",
+     "record_fiscal_year": "2023",
+     "record_fiscal_quarter": "4",
+     "compliance_rate_amt": "100.0",
+     "total_eligible_debt_amt": "1047677",
+     "eligible_debt_referred_amt": "1047677"
+    },
+    {
+     "agency_nm": "National Aeronautics and Space Administration",
+     "record_fiscal_year": "2024",
+     "record_fiscal_quarter": "1",
+     "compliance_rate_amt": "99.97432750012422",
+     "total_eligible_debt_amt": "1086766",
+     "eligible_debt_referred_amt": "1086487"
+    },
+    {
+     "agency_nm": "National Aeronautics and Space Administration",
+     "record_fiscal_year": "2024",
+     "record_fiscal_quarter": "2",
+     "compliance_rate_amt": "100.0",
+     "total_eligible_debt_amt": "1075789",
+     "eligible_debt_referred_amt": "1075789"
+    },
+    {
+     "agency_nm": "National Aeronautics and Space Administration",
+     "record_fiscal_year": "2024",
+     "record_fiscal_quarter": "3",
+     "compliance_rate_amt": "100.0",
+     "total_eligible_debt_amt": "1207201",
+     "eligible_debt_referred_amt": "1207201"
+    },
+    {
+     "agency_nm": "National Aeronautics and Space Administration",
+     "record_fiscal_year": "2024",
+     "record_fiscal_quarter": "4",
+     "compliance_rate_amt": "100.0",
+     "total_eligible_debt_amt": "1402782",
+     "eligible_debt_referred_amt": "1402782"
+    },
+    {
+     "agency_nm": "National Aeronautics and Space Administration",
+     "record_fiscal_year": "2025",
+     "record_fiscal_quarter": "1",
+     "compliance_rate_amt": "100.0",
+     "total_eligible_debt_amt": "1414965",
+     "eligible_debt_referred_amt": "1414965"
+    },
+    {
+     "agency_nm": "National Aeronautics and Space Administration",
+     "record_fiscal_year": "2025",
+     "record_fiscal_quarter": "2",
+     "compliance_rate_amt": "100.0",
+     "total_eligible_debt_amt": "1137820",
+     "eligible_debt_referred_amt": "1137820"
+    },
+    {
+     "agency_nm": "National Aeronautics and Space Administration",
+     "record_fiscal_year": "2025",
+     "record_fiscal_quarter": "3",
+     "compliance_rate_amt": "100.0",
+     "total_eligible_debt_amt": "1099500",
+     "eligible_debt_referred_amt": "1099500"
+    },
+    {
+     "agency_nm": "National Aeronautics and Space Administration",
+     "record_fiscal_year": "2025",
+     "record_fiscal_quarter": "4",
+     "compliance_rate_amt": "100.0",
+     "total_eligible_debt_amt": "1676159",
+     "eligible_debt_referred_amt": "1676159"
+    },
+    {
+     "agency_nm": "National Science Foundation",
+     "record_fiscal_year": "2021",
+     "record_fiscal_quarter": "1",
+     "compliance_rate_amt": "99.80654205412226",
+     "total_eligible_debt_amt": "478657",
+     "eligible_debt_referred_amt": "477731"
+    },
+    {
+     "agency_nm": "National Science Foundation",
+     "record_fiscal_year": "2021",
+     "record_fiscal_quarter": "2",
+     "compliance_rate_amt": "100.0",
+     "total_eligible_debt_amt": "541399",
+     "eligible_debt_referred_amt": "541399"
+    },
+    {
+     "agency_nm": "National Science Foundation",
+     "record_fiscal_year": "2021",
+     "record_fiscal_quarter": "3",
+     "compliance_rate_amt": "100.0",
+     "total_eligible_debt_amt": "533678",
+     "eligible_debt_referred_amt": "533678"
+    },
+    {
+     "agency_nm": "National Science Foundation",
+     "record_fiscal_year": "2021",
+     "record_fiscal_quarter": "4",
+     "compliance_rate_amt": "100.0",
+     "total_eligible_debt_amt": "527228",
+     "eligible_debt_referred_amt": "527228"
+    },
+    {
+     "agency_nm": "National Science Foundation",
+     "record_fiscal_year": "2022",
+     "record_fiscal_quarter": "1",
+     "compliance_rate_amt": "100.0",
+     "total_eligible_debt_amt": "595663",
+     "eligible_debt_referred_amt": "595663"
+    },
+    {
+     "agency_nm": "National Science Foundation",
+     "record_fiscal_year": "2022",
+     "record_fiscal_quarter": "2",
+     "compliance_rate_amt": "100.0",
+     "total_eligible_debt_amt": "561973",
+     "eligible_debt_referred_amt": "561973"
+    },
+    {
+     "agency_nm": "National Science Foundation",
+     "record_fiscal_year": "2022",
+     "record_fiscal_quarter": "3",
+     "compliance_rate_amt": "100.0",
+     "total_eligible_debt_amt": "561275",
+     "eligible_debt_referred_amt": "561275"
+    },
+    {
+     "agency_nm": "National Science Foundation",
+     "record_fiscal_year": "2022",
+     "record_fiscal_quarter": "4",
+     "compliance_rate_amt": "100.0",
+     "total_eligible_debt_amt": "556521",
+     "eligible_debt_referred_amt": "556521"
+    },
+    {
+     "agency_nm": "National Science Foundation",
+     "record_fiscal_year": "2023",
+     "record_fiscal_quarter": "1",
+     "compliance_rate_amt": "100.0",
+     "total_eligible_debt_amt": "556441",
+     "eligible_debt_referred_amt": "556441"
+    },
+    {
+     "agency_nm": "National Science Foundation",
+     "record_fiscal_year": "2023",
+     "record_fiscal_quarter": "2",
+     "compliance_rate_amt": "100.0",
+     "total_eligible_debt_amt": "723090",
+     "eligible_debt_referred_amt": "723090"
+    },
+    {
+     "agency_nm": "National Science Foundation",
+     "record_fiscal_year": "2023",
+     "record_fiscal_quarter": "3",
+     "compliance_rate_amt": "100.0",
+     "total_eligible_debt_amt": "711137",
+     "eligible_debt_referred_amt": "711137"
+    },
+    {
+     "agency_nm": "National Science Foundation",
+     "record_fiscal_year": "2023",
+     "record_fiscal_quarter": "4",
+     "compliance_rate_amt": "100.0",
+     "total_eligible_debt_amt": "710131",
+     "eligible_debt_referred_amt": "710131"
+    },
+    {
+     "agency_nm": "National Science Foundation",
+     "record_fiscal_year": "2024",
+     "record_fiscal_quarter": "1",
+     "compliance_rate_amt": "99.9116092126549",
+     "total_eligible_debt_amt": "719532",
+     "eligible_debt_referred_amt": "718896"
+    },
+    {
+     "agency_nm": "National Science Foundation",
+     "record_fiscal_year": "2024",
+     "record_fiscal_quarter": "2",
+     "compliance_rate_amt": "99.9115831618751",
+     "total_eligible_debt_amt": "719320",
+     "eligible_debt_referred_amt": "718684"
+    },
+    {
+     "agency_nm": "National Science Foundation",
+     "record_fiscal_year": "2024",
+     "record_fiscal_quarter": "3",
+     "compliance_rate_amt": "100.0",
+     "total_eligible_debt_amt": "555548",
+     "eligible_debt_referred_amt": "555548"
+    },
+    {
+     "agency_nm": "National Science Foundation",
+     "record_fiscal_year": "2024",
+     "record_fiscal_quarter": "4",
+     "compliance_rate_amt": "100.0",
+     "total_eligible_debt_amt": "805022",
+     "eligible_debt_referred_amt": "805022"
+    },
+    {
+     "agency_nm": "National Science Foundation",
+     "record_fiscal_year": "2025",
+     "record_fiscal_quarter": "1",
+     "compliance_rate_amt": "100.0",
+     "total_eligible_debt_amt": "902499",
+     "eligible_debt_referred_amt": "902499"
+    },
+    {
+     "agency_nm": "National Science Foundation",
+     "record_fiscal_year": "2025",
+     "record_fiscal_quarter": "2",
+     "compliance_rate_amt": "100.0",
+     "total_eligible_debt_amt": "898070",
+     "eligible_debt_referred_amt": "898070"
+    },
+    {
+     "agency_nm": "National Science Foundation",
+     "record_fiscal_year": "2025",
+     "record_fiscal_quarter": "3",
+     "compliance_rate_amt": "100.0",
+     "total_eligible_debt_amt": "676141",
+     "eligible_debt_referred_amt": "676141"
+    },
+    {
+     "agency_nm": "National Science Foundation",
+     "record_fiscal_year": "2025",
+     "record_fiscal_quarter": "4",
+     "compliance_rate_amt": "100.0",
+     "total_eligible_debt_amt": "669820",
+     "eligible_debt_referred_amt": "669820"
+    }
+   ],
+   "meta": {
+    "count": 200,
+    "labels": {
+     "agency_nm": "Agency Name",
+     "record_fiscal_year": "Fiscal Year",
+     "record_fiscal_quarter": "Fiscal Quarter Number",
+     "compliance_rate_amt": "Compliance Rate Amount",
+     "total_eligible_debt_amt": "Total Eligible Debt Amount",
+     "eligible_debt_referred_amt": "Eligible Debt Referred Amount"
+    },
+    "dataTypes": {
+     "agency_nm": "STRING",
+     "record_fiscal_year": "YEAR",
+     "record_fiscal_quarter": "QUARTER",
+     "compliance_rate_amt": "PERCENTAGE",
+     "total_eligible_debt_amt": "CURRENCY",
+     "eligible_debt_referred_amt": "CURRENCY"
+    },
+    "dataFormats": {
+     "agency_nm": "String",
+     "record_fiscal_year": "YYYY",
+     "record_fiscal_quarter": "Q",
+     "compliance_rate_amt": "10.2%",
+     "total_eligible_debt_amt": "$10.20",
+     "eligible_debt_referred_amt": "$10.20"
+    },
+    "total-count": 480,
+    "total-pages": 3
+   },
+   "links": {
+    "self": "&page%5Bnumber%5D=2&page%5Bsize%5D=200",
+    "first": "&page%5Bnumber%5D=1&page%5Bsize%5D=200",
+    "prev": "&page%5Bnumber%5D=1&page%5Bsize%5D=200",
+    "next": "&page%5Bnumber%5D=3&page%5Bsize%5D=200",
+    "last": "&page%5Bnumber%5D=3&page%5Bsize%5D=200"
+   }
+  }
+ },
+ {
+  "params": {
+   "fields": "agency_nm,record_fiscal_year,record_fiscal_quarter,compliance_rate_amt,total_eligible_debt_amt,eligible_debt_referred_amt",
+   "sort": "agency_nm,record_fiscal_year,record_fiscal_quarter",
+   "filter": "record_fiscal_year:gte:2021,record_fiscal_year:lte:2025,agency_bureau_indicator:eq:Agency,cfo_agency_indicator:eq:CFO",
+   "page[size]": "200",
+   "page[number]": "3"
+  },
+  "response": {
+   "data": [
+    {
+     "agency_nm": "Nuclear Regulatory Commission",
+     "record_fiscal_year": "2021",
+     "record_fiscal_quarter": "1",
+     "compliance_rate_amt": "99.5862666583599",
+     "total_eligible_debt_amt": "2471882",
+     "eligible_debt_referred_amt": "2461655"
+    },
+    {
+     "agency_nm": "Nuclear Regulatory Commission",
+     "record_fiscal_year": "2021",
+     "record_fiscal_quarter": "2",
+     "compliance_rate_amt": "99.97097605028989",
+     "total_eligible_debt_amt": "2625418",
+     "eligible_debt_referred_amt": "2624656"
+    },
+    {
+     "agency_nm": "Nuclear Regulatory Commission",
+     "record_fiscal_year": "2021",
+     "record_fiscal_quarter": "3",
+     "compliance_rate_amt": "100.0",
+     "total_eligible_debt_amt": "2609778",
+     "eligible_debt_referred_amt": "2609778"
+    },
+    {
+     "agency_nm": "Nuclear Regulatory Commission",
+     "record_fiscal_year": "2021",
+     "record_fiscal_quarter": "4",
+     "compliance_rate_amt": "100.0",
+     "total_eligible_debt_amt": "2940093",
+     "eligible_debt_referred_amt": "2940093"
+    },
+    {
+     "agency_nm": "Nuclear Regulatory Commission",
+     "record_fiscal_year": "2022",
+     "record_fiscal_quarter": "1",
+     "compliance_rate_amt": "100.0",
+     "total_eligible_debt_amt": "2936862",
+     "eligible_debt_referred_amt": "2936862"
+    },
+    {
+     "agency_nm": "Nuclear Regulatory Commission",
+     "record_fiscal_year": "2022",
+     "record_fiscal_quarter": "2",
+     "compliance_rate_amt": "100.0",
+     "total_eligible_debt_amt": "2780487",
+     "eligible_debt_referred_amt": "2780487"
+    },
+    {
+     "agency_nm": "Nuclear Regulatory Commission",
+     "record_fiscal_year": "2022",
+     "record_fiscal_quarter": "3",
+     "compliance_rate_amt": "100.0",
+     "total_eligible_debt_amt": "2876643",
+     "eligible_debt_referred_amt": "2876643"
+    },
+    {
+     "agency_nm": "Nuclear Regulatory Commission",
+     "record_fiscal_year": "2022",
+     "record_fiscal_quarter": "4",
+     "compliance_rate_amt": "100.0",
+     "total_eligible_debt_amt": "3238856",
+     "eligible_debt_referred_amt": "3238856"
+    },
+    {
+     "agency_nm": "Nuclear Regulatory Commission",
+     "record_fiscal_year": "2023",
+     "record_fiscal_quarter": "1",
+     "compliance_rate_amt": "100.0",
+     "total_eligible_debt_amt": "3380515",
+     "eligible_debt_referred_amt": "3380515"
+    },
+    {
+     "agency_nm": "Nuclear Regulatory Commission",
+     "record_fiscal_year": "2023",
+     "record_fiscal_quarter": "2",
+     "compliance_rate_amt": "100.0",
+     "total_eligible_debt_amt": "3403607",
+     "eligible_debt_referred_amt": "3403607"
+    },
+    {
+     "agency_nm": "Nuclear Regulatory Commission",
+     "record_fiscal_year": "2023",
+     "record_fiscal_quarter": "3",
+     "compliance_rate_amt": "100.0",
+     "total_eligible_debt_amt": "2911495",
+     "eligible_debt_referred_amt": "2911495"
+    },
+    {
+     "agency_nm": "Nuclear Regulatory Commission",
+     "record_fiscal_year": "2023",
+     "record_fiscal_quarter": "4",
+     "compliance_rate_amt": "100.0",
+     "total_eligible_debt_amt": "3168818",
+     "eligible_debt_referred_amt": "3168818"
+    },
+    {
+     "agency_nm": "Nuclear Regulatory Commission",
+     "record_fiscal_year": "2024",
+     "record_fiscal_quarter": "1",
+     "compliance_rate_amt": "100.0",
+     "total_eligible_debt_amt": "3168984",
+     "eligible_debt_referred_amt": "3168984"
+    },
+    {
+     "agency_nm": "Nuclear Regulatory Commission",
+     "record_fiscal_year": "2024",
+     "record_fiscal_quarter": "2",
+     "compliance_rate_amt": "100.0",
+     "total_eligible_debt_amt": "3246047",
+     "eligible_debt_referred_amt": "3246047"
+    },
+    {
+     "agency_nm": "Nuclear Regulatory Commission",
+     "record_fiscal_year": "2024",
+     "record_fiscal_quarter": "3",
+     "compliance_rate_amt": "100.0",
+     "total_eligible_debt_amt": "3409530",
+     "eligible_debt_referred_amt": "3409530"
+    },
+    {
+     "agency_nm": "Nuclear Regulatory Commission",
+     "record_fiscal_year": "2024",
+     "record_fiscal_quarter": "4",
+     "compliance_rate_amt": "100.0",
+     "total_eligible_debt_amt": "3556238",
+     "eligible_debt_referred_amt": "3556238"
+    },
+    {
+     "agency_nm": "Nuclear Regulatory Commission",
+     "record_fiscal_year": "2025",
+     "record_fiscal_quarter": "1",
+     "compliance_rate_amt": "100.0",
+     "total_eligible_debt_amt": "4072750",
+     "eligible_debt_referred_amt": "4072750"
+    },
+    {
+     "agency_nm": "Nuclear Regulatory Commission",
+     "record_fiscal_year": "2025",
+     "record_fiscal_quarter": "2",
+     "compliance_rate_amt": "100.0",
+     "total_eligible_debt_amt": "3877112",
+     "eligible_debt_referred_amt": "3877112"
+    },
+    {
+     "agency_nm": "Nuclear Regulatory Commission",
+     "record_fiscal_year": "2025",
+     "record_fiscal_quarter": "3",
+     "compliance_rate_amt": "100.0",
+     "total_eligible_debt_amt": "3888411",
+     "eligible_debt_referred_amt": "3888411"
+    },
+    {
+     "agency_nm": "Nuclear Regulatory Commission",
+     "record_fiscal_year": "2025",
+     "record_fiscal_quarter": "4",
+     "compliance_rate_amt": "100.0",
+     "total_eligible_debt_amt": "4183018",
+     "eligible_debt_referred_amt": "4183018"
+    },
+    {
+     "agency_nm": "Office of Personnel Management",
+     "record_fiscal_year": "2021",
+     "record_fiscal_quarter": "1",
+     "compliance_rate_amt": "98.3532087651813",
+     "total_eligible_debt_amt": "22659885",
+     "eligible_debt_referred_amt": "22286724"
+    },
+    {
+     "agency_nm": "Office of Personnel Management",
+     "record_fiscal_year": "2021",
+     "record_fiscal_quarter": "2",
+     "compliance_rate_amt": "97.0931640454129",
+     "total_eligible_debt_amt": "22266444",
+     "eligible_debt_referred_amt": "21619195"
+    },
+    {
+     "agency_nm": "Office of Personnel Management",
+     "record_fiscal_year": "2021",
+     "record_fiscal_quarter": "3",
+     "compliance_rate_amt": "93.05589906407761",
+     "total_eligible_debt_amt": "23232482",
+     "eligible_debt_referred_amt": "21619195"
+    },
+    {
+     "agency_nm": "Office of Personnel Management",
+     "record_fiscal_year": "2021",
+     "record_fiscal_quarter": "4",
+     "compliance_rate_amt": "90.83676946871138",
+     "total_eligible_debt_amt": "24100234",
+     "eligible_debt_referred_amt": "21891874"
+    },
+    {
+     "agency_nm": "Office of Personnel Management",
+     "record_fiscal_year": "2022",
+     "record_fiscal_quarter": "1",
+     "compliance_rate_amt": "99.33565605054038",
+     "total_eligible_debt_amt": "22037982",
+     "eligible_debt_referred_amt": "21891574"
+    },
+    {
+     "agency_nm": "Office of Personnel Management",
+     "record_fiscal_year": "2022",
+     "record_fiscal_quarter": "2",
+     "compliance_rate_amt": "93.3594015008753",
+     "total_eligible_debt_amt": "12101605",
+     "eligible_debt_referred_amt": "11297986"
+    },
+    {
+     "agency_nm": "Office of Personnel Management",
+     "record_fiscal_year": "2022",
+     "record_fiscal_quarter": "3",
+     "compliance_rate_amt": "90.65517746423863",
+     "total_eligible_debt_amt": "12904290",
+     "eligible_debt_referred_amt": "11698407"
+    },
+    {
+     "agency_nm": "Office of Personnel Management",
+     "record_fiscal_year": "2022",
+     "record_fiscal_quarter": "4",
+     "compliance_rate_amt": "100.0",
+     "total_eligible_debt_amt": "13793795",
+     "eligible_debt_referred_amt": "13793795"
+    },
+    {
+     "agency_nm": "Office of Personnel Management",
+     "record_fiscal_year": "2023",
+     "record_fiscal_quarter": "1",
+     "compliance_rate_amt": "34.878107407796",
+     "total_eligible_debt_amt": "52402118",
+     "eligible_debt_referred_amt": "18276867"
+    },
+    {
+     "agency_nm": "Office of Personnel Management",
+     "record_fiscal_year": "2023",
+     "record_fiscal_quarter": "2",
+     "compliance_rate_amt": "100.0",
+     "total_eligible_debt_amt": "20818481",
+     "eligible_debt_referred_amt": "20818481"
+    },
+    {
+     "agency_nm": "Office of Personnel Management",
+     "record_fiscal_year": "2023",
+     "record_fiscal_quarter": "3",
+     "compliance_rate_amt": "100.0",
+     "total_eligible_debt_amt": "21360898",
+     "eligible_debt_referred_amt": "21360898"
+    },
+    {
+     "agency_nm": "Office of Personnel Management",
+     "record_fiscal_year": "2023",
+     "record_fiscal_quarter": "4",
+     "compliance_rate_amt": "100.0",
+     "total_eligible_debt_amt": "20899877",
+     "eligible_debt_referred_amt": "20899877"
+    },
+    {
+     "agency_nm": "Office of Personnel Management",
+     "record_fiscal_year": "2024",
+     "record_fiscal_quarter": "1",
+     "compliance_rate_amt": "100.0",
+     "total_eligible_debt_amt": "18911332",
+     "eligible_debt_referred_amt": "18911332"
+    },
+    {
+     "agency_nm": "Office of Personnel Management",
+     "record_fiscal_year": "2024",
+     "record_fiscal_quarter": "2",
+     "compliance_rate_amt": "100.0",
+     "total_eligible_debt_amt": "15868250",
+     "eligible_debt_referred_amt": "15868250"
+    },
+    {
+     "agency_nm": "Office of Personnel Management",
+     "record_fiscal_year": "2024",
+     "record_fiscal_quarter": "3",
+     "compliance_rate_amt": "100.0",
+     "total_eligible_debt_amt": "17802092",
+     "eligible_debt_referred_amt": "17802092"
+    },
+    {
+     "agency_nm": "Office of Personnel Management",
+     "record_fiscal_year": "2024",
+     "record_fiscal_quarter": "4",
+     "compliance_rate_amt": "100.0",
+     "total_eligible_debt_amt": "19337916",
+     "eligible_debt_referred_amt": "19337916"
+    },
+    {
+     "agency_nm": "Office of Personnel Management",
+     "record_fiscal_year": "2025",
+     "record_fiscal_quarter": "1",
+     "compliance_rate_amt": "100.0",
+     "total_eligible_debt_amt": "18537135",
+     "eligible_debt_referred_amt": "18537135"
+    },
+    {
+     "agency_nm": "Office of Personnel Management",
+     "record_fiscal_year": "2025",
+     "record_fiscal_quarter": "2",
+     "compliance_rate_amt": "100.0",
+     "total_eligible_debt_amt": "19906889",
+     "eligible_debt_referred_amt": "19906889"
+    },
+    {
+     "agency_nm": "Office of Personnel Management",
+     "record_fiscal_year": "2025",
+     "record_fiscal_quarter": "3",
+     "compliance_rate_amt": "100.0",
+     "total_eligible_debt_amt": "20395221",
+     "eligible_debt_referred_amt": "20395221"
+    },
+    {
+     "agency_nm": "Office of Personnel Management",
+     "record_fiscal_year": "2025",
+     "record_fiscal_quarter": "4",
+     "compliance_rate_amt": "100.0",
+     "total_eligible_debt_amt": "20227194",
+     "eligible_debt_referred_amt": "20227194"
+    },
+    {
+     "agency_nm": "Small Business Administration",
+     "record_fiscal_year": "2021",
+     "record_fiscal_quarter": "1",
+     "compliance_rate_amt": "100.0",
+     "total_eligible_debt_amt": "12370402730",
+     "eligible_debt_referred_amt": "12370402730"
+    },
+    {
+     "agency_nm": "Small Business Administration",
+     "record_fiscal_year": "2021",
+     "record_fiscal_quarter": "2",
+     "compliance_rate_amt": "100.0",
+     "total_eligible_debt_amt": "12394281956",
+     "eligible_debt_referred_amt": "12394281956"
+    },
+    {
+     "agency_nm": "Small Business Administration",
+     "record_fiscal_year": "2021",
+     "record_fiscal_quarter": "3",
+     "compliance_rate_amt": "100.0",
+     "total_eligible_debt_amt": "12431248241",
+     "eligible_debt_referred_amt": "12431248241"
+    },
+    {
+     "agency_nm": "Small Business Administration",
+     "record_fiscal_year": "2021",
+     "record_fiscal_quarter": "4",
+     "compliance_rate_amt": "100.0",
+     "total_eligible_debt_amt": "12471591443",
+     "eligible_debt_referred_amt": "12471591443"
+    },
+    {
+     "agency_nm": "Small Business Administration",
+     "record_fiscal_year": "2022",
+     "record_fiscal_quarter": "1",
+     "compliance_rate_amt": "100.0",
+     "total_eligible_debt_amt": "12469486128",
+     "eligible_debt_referred_amt": "12469486128"
+    },
+    {
+     "agency_nm": "Small Business Administration",
+     "record_fiscal_year": "2022",
+     "record_fiscal_quarter": "2",
+     "compliance_rate_amt": "100.0",
+     "total_eligible_debt_amt": "12433141154",
+     "eligible_debt_referred_amt": "12433141154"
+    },
+    {
+     "agency_nm": "Small Business Administration",
+     "record_fiscal_year": "2022",
+     "record_fiscal_quarter": "3",
+     "compliance_rate_amt": "100.0",
+     "total_eligible_debt_amt": "13770704135",
+     "eligible_debt_referred_amt": "13770704135"
+    },
+    {
+     "agency_nm": "Small Business Administration",
+     "record_fiscal_year": "2022",
+     "record_fiscal_quarter": "4",
+     "compliance_rate_amt": "100.0",
+     "total_eligible_debt_amt": "13846407520",
+     "eligible_debt_referred_amt": "13846407520"
+    },
+    {
+     "agency_nm": "Small Business Administration",
+     "record_fiscal_year": "2023",
+     "record_fiscal_quarter": "1",
+     "compliance_rate_amt": "100.0",
+     "total_eligible_debt_amt": "13906655806",
+     "eligible_debt_referred_amt": "13906655806"
+    },
+    {
+     "agency_nm": "Small Business Administration",
+     "record_fiscal_year": "2023",
+     "record_fiscal_quarter": "2",
+     "compliance_rate_amt": "100.0",
+     "total_eligible_debt_amt": "17077256847",
+     "eligible_debt_referred_amt": "17077256847"
+    },
+    {
+     "agency_nm": "Small Business Administration",
+     "record_fiscal_year": "2023",
+     "record_fiscal_quarter": "3",
+     "compliance_rate_amt": "100.0",
+     "total_eligible_debt_amt": "17230635410",
+     "eligible_debt_referred_amt": "17230635410"
+    },
+    {
+     "agency_nm": "Small Business Administration",
+     "record_fiscal_year": "2023",
+     "record_fiscal_quarter": "4",
+     "compliance_rate_amt": "100.0",
+     "total_eligible_debt_amt": "18648730593",
+     "eligible_debt_referred_amt": "18648730593"
+    },
+    {
+     "agency_nm": "Small Business Administration",
+     "record_fiscal_year": "2024",
+     "record_fiscal_quarter": "1",
+     "compliance_rate_amt": "100.0",
+     "total_eligible_debt_amt": "19752855663",
+     "eligible_debt_referred_amt": "19752855663"
+    },
+    {
+     "agency_nm": "Small Business Administration",
+     "record_fiscal_year": "2024",
+     "record_fiscal_quarter": "2",
+     "compliance_rate_amt": "100.0",
+     "total_eligible_debt_amt": "57217803197",
+     "eligible_debt_referred_amt": "57217803197"
+    },
+    {
+     "agency_nm": "Small Business Administration",
+     "record_fiscal_year": "2024",
+     "record_fiscal_quarter": "3",
+     "compliance_rate_amt": "100.0",
+     "total_eligible_debt_amt": "74414103000",
+     "eligible_debt_referred_amt": "74414103000"
+    },
+    {
+     "agency_nm": "Small Business Administration",
+     "record_fiscal_year": "2024",
+     "record_fiscal_quarter": "4",
+     "compliance_rate_amt": "100.0",
+     "total_eligible_debt_amt": "73340495363",
+     "eligible_debt_referred_amt": "73340495363"
+    },
+    {
+     "agency_nm": "Small Business Administration",
+     "record_fiscal_year": "2025",
+     "record_fiscal_quarter": "1",
+     "compliance_rate_amt": "100.0",
+     "total_eligible_debt_amt": "55195614642",
+     "eligible_debt_referred_amt": "55195614642"
+    },
+    {
+     "agency_nm": "Small Business Administration",
+     "record_fiscal_year": "2025",
+     "record_fiscal_quarter": "2",
+     "compliance_rate_amt": "100.0",
+     "total_eligible_debt_amt": "56023120483",
+     "eligible_debt_referred_amt": "56023120483"
+    },
+    {
+     "agency_nm": "Small Business Administration",
+     "record_fiscal_year": "2025",
+     "record_fiscal_quarter": "3",
+     "compliance_rate_amt": "100.0",
+     "total_eligible_debt_amt": "61254727989",
+     "eligible_debt_referred_amt": "61254727989"
+    },
+    {
+     "agency_nm": "Small Business Administration",
+     "record_fiscal_year": "2025",
+     "record_fiscal_quarter": "4",
+     "compliance_rate_amt": "56.63788826414583",
+     "total_eligible_debt_amt": "102764899981",
+     "eligible_debt_referred_amt": "58203869226"
+    },
+    {
+     "agency_nm": "Social Security Administration",
+     "record_fiscal_year": "2021",
+     "record_fiscal_quarter": "1",
+     "compliance_rate_amt": "58.42332992960558",
+     "total_eligible_debt_amt": "5019638635",
+     "eligible_debt_referred_amt": "2932640041"
+    },
+    {
+     "agency_nm": "Social Security Administration",
+     "record_fiscal_year": "2021",
+     "record_fiscal_quarter": "2",
+     "compliance_rate_amt": "59.51897971608444",
+     "total_eligible_debt_amt": "4614357012",
+     "eligible_debt_referred_amt": "2746418214"
+    },
+    {
+     "agency_nm": "Social Security Administration",
+     "record_fiscal_year": "2021",
+     "record_fiscal_quarter": "3",
+     "compliance_rate_amt": "62.517167082104564",
+     "total_eligible_debt_amt": "4359039413",
+     "eligible_debt_referred_amt": "2725147953"
+    },
+    {
+     "agency_nm": "Social Security Administration",
+     "record_fiscal_year": "2021",
+     "record_fiscal_quarter": "4",
+     "compliance_rate_amt": "62.20521396886934",
+     "total_eligible_debt_amt": "4346303894",
+     "eligible_debt_referred_amt": "2703627637"
+    },
+    {
+     "agency_nm": "Social Security Administration",
+     "record_fiscal_year": "2022",
+     "record_fiscal_quarter": "1",
+     "compliance_rate_amt": "60.688062278458496",
+     "total_eligible_debt_amt": "4425385834",
+     "eligible_debt_referred_amt": "2685680911"
+    },
+    {
+     "agency_nm": "Social Security Administration",
+     "record_fiscal_year": "2022",
+     "record_fiscal_quarter": "2",
+     "compliance_rate_amt": "60.07402872383431",
+     "total_eligible_debt_amt": "4399579827",
+     "eligible_debt_referred_amt": "2643004849"
+    },
+    {
+     "agency_nm": "Social Security Administration",
+     "record_fiscal_year": "2022",
+     "record_fiscal_quarter": "3",
+     "compliance_rate_amt": "59.703118468542996",
+     "total_eligible_debt_amt": "4366880734",
+     "eligible_debt_referred_amt": "2607163978"
+    },
+    {
+     "agency_nm": "Social Security Administration",
+     "record_fiscal_year": "2022",
+     "record_fiscal_quarter": "4",
+     "compliance_rate_amt": "58.856659511962356",
+     "total_eligible_debt_amt": "4361025322",
+     "eligible_debt_referred_amt": "2566753825"
+    },
+    {
+     "agency_nm": "Social Security Administration",
+     "record_fiscal_year": "2023",
+     "record_fiscal_quarter": "1",
+     "compliance_rate_amt": "57.285101322008295",
+     "total_eligible_debt_amt": "4420467503",
+     "eligible_debt_referred_amt": "2532269288"
+    },
+    {
+     "agency_nm": "Social Security Administration",
+     "record_fiscal_year": "2023",
+     "record_fiscal_quarter": "2",
+     "compliance_rate_amt": "58.09810200121109",
+     "total_eligible_debt_amt": "4267946717",
+     "eligible_debt_referred_amt": "2479596037"
+    },
+    {
+     "agency_nm": "Social Security Administration",
+     "record_fiscal_year": "2023",
+     "record_fiscal_quarter": "3",
+     "compliance_rate_amt": "57.731384953169105",
+     "total_eligible_debt_amt": "4241885380",
+     "eligible_debt_referred_amt": "2448899178"
+    },
+    {
+     "agency_nm": "Social Security Administration",
+     "record_fiscal_year": "2023",
+     "record_fiscal_quarter": "4",
+     "compliance_rate_amt": "56.94592081586121",
+     "total_eligible_debt_amt": "4239136715",
+     "eligible_debt_referred_amt": "2414015437"
+    },
+    {
+     "agency_nm": "Social Security Administration",
+     "record_fiscal_year": "2024",
+     "record_fiscal_quarter": "1",
+     "compliance_rate_amt": "55.07360394474552",
+     "total_eligible_debt_amt": "4328552581",
+     "eligible_debt_referred_amt": "2383889905"
+    },
+    {
+     "agency_nm": "Social Security Administration",
+     "record_fiscal_year": "2024",
+     "record_fiscal_quarter": "2",
+     "compliance_rate_amt": "54.65488905163852",
+     "total_eligible_debt_amt": "4286940597",
+     "eligible_debt_referred_amt": "2343022627"
+    },
+    {
+     "agency_nm": "Social Security Administration",
+     "record_fiscal_year": "2024",
+     "record_fiscal_quarter": "3",
+     "compliance_rate_amt": "54.31493382407205",
+     "total_eligible_debt_amt": "4253622106",
+     "eligible_debt_referred_amt": "2310352032"
+    },
+    {
+     "agency_nm": "Social Security Administration",
+     "record_fiscal_year": "2024",
+     "record_fiscal_quarter": "4",
+     "compliance_rate_amt": "53.33463137170888",
+     "total_eligible_debt_amt": "4273022101",
+     "eligible_debt_referred_amt": "2279000586"
+    },
+    {
+     "agency_nm": "Social Security Administration",
+     "record_fiscal_year": "2025",
+     "record_fiscal_quarter": "1",
+     "compliance_rate_amt": "51.62884569083507",
+     "total_eligible_debt_amt": "4359565022",
+     "eligible_debt_referred_amt": "2250793098"
+    },
+    {
+     "agency_nm": "Social Security Administration",
+     "record_fiscal_year": "2025",
+     "record_fiscal_quarter": "2",
+     "compliance_rate_amt": "50.95240564266637",
+     "total_eligible_debt_amt": "4327111543",
+     "eligible_debt_referred_amt": "2204767426"
+    },
+    {
+     "agency_nm": "Social Security Administration",
+     "record_fiscal_year": "2025",
+     "record_fiscal_quarter": "3",
+     "compliance_rate_amt": "51.4021544358455",
+     "total_eligible_debt_amt": "4113031919",
+     "eligible_debt_referred_amt": "2114187019"
+    },
+    {
+     "agency_nm": "Social Security Administration",
+     "record_fiscal_year": "2025",
+     "record_fiscal_quarter": "4",
+     "compliance_rate_amt": "47.79420266897001",
+     "total_eligible_debt_amt": "4188505068",
+     "eligible_debt_referred_amt": "2001862601"
+    }
+   ],
+   "meta": {
+    "count": 80,
+    "labels": {
+     "agency_nm": "Agency Name",
+     "record_fiscal_year": "Fiscal Year",
+     "record_fiscal_quarter": "Fiscal Quarter Number",
+     "compliance_rate_amt": "Compliance Rate Amount",
+     "total_eligible_debt_amt": "Total Eligible Debt Amount",
+     "eligible_debt_referred_amt": "Eligible Debt Referred Amount"
+    },
+    "dataTypes": {
+     "agency_nm": "STRING",
+     "record_fiscal_year": "YEAR",
+     "record_fiscal_quarter": "QUARTER",
+     "compliance_rate_amt": "PERCENTAGE",
+     "total_eligible_debt_amt": "CURRENCY",
+     "eligible_debt_referred_amt": "CURRENCY"
+    },
+    "dataFormats": {
+     "agency_nm": "String",
+     "record_fiscal_year": "YYYY",
+     "record_fiscal_quarter": "Q",
+     "compliance_rate_amt": "10.2%",
+     "total_eligible_debt_amt": "$10.20",
+     "eligible_debt_referred_amt": "$10.20"
+    },
+    "total-count": 480,
+    "total-pages": 3
+   },
+   "links": {
+    "self": "&page%5Bnumber%5D=3&page%5Bsize%5D=200",
+    "first": "&page%5Bnumber%5D=1&page%5Bsize%5D=200",
+    "prev": "&page%5Bnumber%5D=2&page%5Bsize%5D=200",
+    "next": null,
+    "last": "&page%5Bnumber%5D=3&page%5Bsize%5D=200"
+   }
+  }
+ }
+]

@@ -24,6 +24,7 @@ CASSETTE_DIR = Path(__file__).parent / "cassettes"
 # cassette name -> (tool, arguments)
 SCENARIOS: dict[str, tuple[str, dict]] = {
     "list_agencies_all": ("list_agencies", {"limit": 100}),
+    "list_agencies_cfo": ("list_agencies", {"cfo_agencies_only": True, "limit": 100}),
     "trends_govwide_default": ("get_delinquency_trends", {}),
     "trends_doj_2021_2026": (
         "get_delinquency_trends",

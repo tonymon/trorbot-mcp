@@ -1,0 +1,211 @@
+[
+ {
+  "params": {
+   "fields": "agency_nm,record_fiscal_year,record_fiscal_quarter,compliance_rate_amt,total_eligible_debt_amt,eligible_debt_referred_amt",
+   "sort": "agency_nm,record_fiscal_year,record_fiscal_quarter",
+   "filter": "record_fiscal_year:gte:2021,record_fiscal_year:lte:2025,agency_bureau_indicator:eq:Agency,agency_nm:eq:Social Security Administration",
+   "page[size]": "200",
+   "page[number]": "1"
+  },
+  "response": {
+   "data": [
+    {
+     "agency_nm": "Social Security Administration",
+     "record_fiscal_year": "2021",
+     "record_fiscal_quarter": "1",
+     "compliance_rate_amt": "58.42332992960558",
+     "total_eligible_debt_amt": "5019638635",
+     "eligible_debt_referred_amt": "2932640041"
+    },
+    {
+     "agency_nm": "Social Security Administration",
+     "record_fiscal_year": "2021",
+     "record_fiscal_quarter": "2",
+     "compliance_rate_amt": "59.51897971608444",
+     "total_eligible_debt_amt": "4614357012",
+     "eligible_debt_referred_amt": "2746418214"
+    },
+    {
+     "agency_nm": "Social Security Administration",
+     "record_fiscal_year": "2021",
+     "record_fiscal_quarter": "3",
+     "compliance_rate_amt": "62.517167082104564",
+     "total_eligible_debt_amt": "4359039413",
+     "eligible_debt_referred_amt": "2725147953"
+    },
+    {
+     "agency_nm": "Social Security Administration",
+     "record_fiscal_year": "2021",
+     "record_fiscal_quarter": "4",
+     "compliance_rate_amt": "62.20521396886934",
+     "total_eligible_debt_amt": "4346303894",
+     "eligible_debt_referred_amt": "2703627637"
+    },
+    {
+     "agency_nm": "Social Security Administration",
+     "record_fiscal_year": "2022",
+     "record_fiscal_quarter": "1",
+     "compliance_rate_amt": "60.688062278458496",
+     "total_eligible_debt_amt": "4425385834",
+     "eligible_debt_referred_amt": "2685680911"
+    },
+    {
+     "agency_nm": "Social Security Administration",
+     "record_fiscal_year": "2022",
+     "record_fiscal_quarter": "2",
+     "compliance_rate_amt": "60.07402872383431",
+     "total_eligible_debt_amt": "4399579827",
+     "eligible_debt_referred_amt": "2643004849"
+    },
+    {
+     "agency_nm": "Social Security Administration",
+     "record_fiscal_year": "2022",
+     "record_fiscal_quarter": "3",
+     "compliance_rate_amt": "59.703118468542996",
+     "total_eligible_debt_amt": "4366880734",
+     "eligible_debt_referred_amt": "2607163978"
+    },
+    {
+     "agency_nm": "Social Security Administration",
+     "record_fiscal_year": "2022",
+     "record_fiscal_quarter": "4",
+     "compliance_rate_amt": "58.856659511962356",
+     "total_eligible_debt_amt": "4361025322",
+     "eligible_debt_referred_amt": "2566753825"
+    },
+    {
+     "agency_nm": "Social Security Administration",
+     "record_fiscal_year": "2023",
+     "record_fiscal_quarter": "1",
+     "compliance_rate_amt": "57.285101322008295",
+     "total_eligible_debt_amt": "4420467503",
+     "eligible_debt_referred_amt": "2532269288"
+    },
+    {
+     "agency_nm": "Social Security Administration",
+     "record_fiscal_year": "2023",
+     "record_fiscal_quarter": "2",
+     "compliance_rate_amt": "58.09810200121109",
+     "total_eligible_debt_amt": "4267946717",
+     "eligible_debt_referred_amt": "2479596037"
+    },
+    {
+     "agency_nm": "Social Security Administration",
+     "record_fiscal_year": "2023",
+     "record_fiscal_quarter": "3",
+     "compliance_rate_amt": "57.731384953169105",
+     "total_eligible_debt_amt": "4241885380",
+     "eligible_debt_referred_amt": "2448899178"
+    },
+    {
+     "agency_nm": "Social Security Administration",
+     "record_fiscal_year": "2023",
+     "record_fiscal_quarter": "4",
+     "compliance_rate_amt": "56.94592081586121",
+     "total_eligible_debt_amt": "4239136715",
+     "eligible_debt_referred_amt": "2414015437"
+    },
+    {
+     "agency_nm": "Social Security Administration",
+     "record_fiscal_year": "2024",
+     "record_fiscal_quarter": "1",
+     "compliance_rate_amt": "55.07360394474552",
+     "total_eligible_debt_amt": "4328552581",
+     "eligible_debt_referred_amt": "2383889905"
+    },
+    {
+     "agency_nm": "Social Security Administration",
+     "record_fiscal_year": "2024",
+     "record_fiscal_quarter": "2",
+     "compliance_rate_amt": "54.65488905163852",
+     "total_eligible_debt_amt": "4286940597",
+     "eligible_debt_referred_amt": "2343022627"
+    },
+    {
+     "agency_nm": "Social Security Administration",
+     "record_fiscal_year": "2024",
+     "record_fiscal_quarter": "3",
+     "compliance_rate_amt": "54.31493382407205",
+     "total_eligible_debt_amt": "4253622106",
+     "eligible_debt_referred_amt": "2310352032"
+    },
+    {
+     "agency_nm": "Social Security Administration",
+     "record_fiscal_year": "2024",
+     "record_fiscal_quarter": "4",
+     "compliance_rate_amt": "53.33463137170888",
+     "total_eligible_debt_amt": "4273022101",
+     "eligible_debt_referred_amt": "2279000586"
+    },
+    {
+     "agency_nm": "Social Security Administration",
+     "record_fiscal_year": "2025",
+     "record_fiscal_quarter": "1",
+     "compliance_rate_amt": "51.62884569083507",
+     "total_eligible_debt_amt": "4359565022",
+     "eligible_debt_referred_amt": "2250793098"
+    },
+    {
+     "agency_nm": "Social Security Administration",
+     "record_fiscal_year": "2025",
+     "record_fiscal_quarter": "2",
+     "compliance_rate_amt": "50.95240564266637",
+     "total_eligible_debt_amt": "4327111543",
+     "eligible_debt_referred_amt": "2204767426"
+    },
+    {
+     "agency_nm": "Social Security Administration",
+     "record_fiscal_year": "2025",
+     "record_fiscal_quarter": "3",
+     "compliance_rate_amt": "51.4021544358455",
+     "total_eligible_debt_amt": "4113031919",
+     "eligible_debt_referred_amt": "2114187019"
+    },
+    {
+     "agency_nm": "Social Security Administration",
+     "record_fiscal_year": "2025",
+     "record_fiscal_quarter": "4",
+     "compliance_rate_amt": "47.79420266897001",
+     "total_eligible_debt_amt": "4188505068",
+     "eligible_debt_referred_amt": "2001862601"
+    }
+   ],
+   "meta": {
+    "count": 20,
+    "labels": {
+     "agency_nm": "Agency Name",
+     "record_fiscal_year": "Fiscal Year",
+     "record_fiscal_quarter": "Fiscal Quarter Number",
+     "compliance_rate_amt": "Compliance Rate Amount",
+     "total_eligible_debt_amt": "Total Eligible Debt Amount",
+     "eligible_debt_referred_amt": "Eligible Debt Referred Amount"
+    },
+    "dataTypes": {
+     "agency_nm": "STRING",
+     "record_fiscal_year": "YEAR",
+     "record_fiscal_quarter": "QUARTER",
+     "compliance_rate_amt": "PERCENTAGE",
+     "total_eligible_debt_amt": "CURRENCY",
+     "eligible_debt_referred_amt": "CURRENCY"
+    },
+    "dataFormats": {
+     "agency_nm": "String",
+     "record_fiscal_year": "YYYY",
+     "record_fiscal_quarter": "Q",
+     "compliance_rate_amt": "10.2%",
+     "total_eligible_debt_amt": "$10.20",
+     "eligible_debt_referred_amt": "$10.20"
+    },
+    "total-count": 20,
+    "total-pages": 1
+   },
+   "links": {
+    "self": "&page%5Bnumber%5D=1&page%5Bsize%5D=200",
+    "first": "&page%5Bnumber%5D=1&page%5Bsize%5D=200",
+    "prev": null,
+    "next": null,
+    "last": "&page%5Bnumber%5D=1&page%5Bsize%5D=200"
+   }
+  }
+ }
+]

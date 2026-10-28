@@ -36,6 +36,14 @@ async def test_list_agencies_search_and_paging(client, replay):
     assert second["returned"] == 21 and second["has_more"] is False
 
 
+async def test_list_agencies_cfo_only(client, replay):
+    replay("list_agencies_cfo")
+    out = await call(client, "list_agencies", {"cfo_agencies_only": True, "limit": 100})
+    assert out["total"] == 24
+    assert all(a["cfo_agency"] for a in out["agencies"])
+    assert "Small Business Administration" in {a["agency_name"] for a in out["agencies"]}
+
+
 # ── get_delinquency_trends ──────────────────────────────────────────────
 
 

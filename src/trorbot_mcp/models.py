@@ -52,6 +52,10 @@ class ListAgenciesInput(PaginationParams):
         int | None,
         Field(ge=1999, le=2030, description="Only return agencies that have reported TROR data since this fiscal year.")
     ] = None
+    cfo_agencies_only: Annotated[
+        bool,
+        Field(description="Only return the 24 CFO Act agencies (the large agencies under Congressional oversight).")
+    ] = False
 
 
 class QueryReceivablesInput(PaginationParams):

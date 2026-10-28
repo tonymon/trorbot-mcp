@@ -1,0 +1,61 @@
+{
+  "agency_count": 71,
+  "doj_fy2024_q4_rate": 97.94648223475004,
+  "cfo_largest_decline": {
+    "agency": "Small Business Administration",
+    "change_pct_points": -43.36211173585417
+  },
+  "cfo_largest_improvement": {
+    "agency": "Department of Veterans Affairs",
+    "change_pct_points": 40.65901698611148
+  },
+  "ssa_series_2021_2025": [
+    {
+      "fy": 2021,
+      "rate": 62.20521396886934
+    },
+    {
+      "fy": 2022,
+      "rate": 58.856659511962356
+    },
+    {
+      "fy": 2023,
+      "rate": 56.94592081586121
+    },
+    {
+      "fy": 2024,
+      "rate": 53.33463137170888
+    },
+    {
+      "fy": 2025,
+      "rate": 47.79420266897001
+    }
+  ],
+  "dod_fy2025_eligible_debt": 2458092153.0,
+  "full_compliance_fy2025_q4": 22,
+  "cfo_mean_rate_trend": {
+    "series": [
+      {
+        "fy": 2021,
+        "mean_rate": 92.34308553513112
+      },
+      {
+        "fy": 2022,
+        "mean_rate": 91.67503678642368
+      },
+      {
+        "fy": 2023,
+        "mean_rate": 90.20289592629756
+      },
+      {
+        "fy": 2024,
+        "mean_rate": 92.17731089668423
+      },
+      {
+        "fy": 2025,
+        "mean_rate": 91.43918510451475
+      }
+    ],
+    "direction": "down"
+  }
+}

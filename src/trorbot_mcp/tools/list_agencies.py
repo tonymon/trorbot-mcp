@@ -39,21 +39,24 @@ def register(mcp: FastMCP) -> None:
         """List federal agencies that report 120-day delinquent debt referral (DDR)
         compliance data under the Treasury Report on Receivables (TROR).
 
-        Returns unique agency names and their reporting fiscal year range.
+        Returns unique agency names, whether each is a CFO Act agency, and their
+        reporting fiscal year range. Set cfo_agencies_only to list just the 24 CFO Act agencies.
         Use the exact agency_name returned here when calling query_receivables
         or get_delinquency_trends. Supports substring search and fiscal-year filtering.
 
         Data source: Fiscal Data API (api.fiscaldata.treasury.gov), updated quarterly.
-        Returns: { agencies: [{agency_name, first_fy, latest_fy}], total, has_more }
+        Returns: { agencies: [{agency_name, cfo_agency, first_fy, latest_fy}], total, has_more }
         """
         filters = ["agency_bureau_indicator:eq:Agency"]  # agency-level rows only, not bureaus
         if params.has_data_since_fy:
             filters.append(f"record_fiscal_year:gte:{params.has_data_since_fy}")
+        if params.cfo_agencies_only:
+            filters.append("cfo_agency_indicator:eq:CFO")
 
-        # Requesting only name + FY lets the API collapse quarterly rows into distinct
-        # (agency, FY) pairs — ~770 rows instead of ~3,000.
+        # Requesting only name + FY (+ the per-agency CFO flag) lets the API collapse
+        # quarterly rows into distinct (agency, FY) pairs — ~770 rows instead of ~3,000.
         data, error = await fetch_fiscal_all(_TROR_PATH, {
-            "fields": "agency_nm,record_fiscal_year",
+            "fields": "agency_nm,record_fiscal_year,cfo_agency_indicator",
             "sort": "agency_nm",
             "filter": ",".join(filters),
         })
@@ -68,7 +71,12 @@ def register(mcp: FastMCP) -> None:
             if not name:
                 continue
             if name not in agencies:
-                agencies[name] = {"agency_name": name, "first_fy": fy, "latest_fy": fy}
+                agencies[name] = {
+                    "agency_name": name,
+                    "cfo_agency": row.get("cfo_agency_indicator") == "CFO",
+                    "first_fy": fy,
+                    "latest_fy": fy,
+                }
             else:
                 agencies[name]["first_fy"] = min(agencies[name]["first_fy"], fy)
                 agencies[name]["latest_fy"] = max(agencies[name]["latest_fy"], fy)
