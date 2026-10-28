@@ -1,4 +1,5 @@
 from fastmcp import FastMCP
+
 from trorbot_mcp.resources import fiscal_year_metadata
 
 

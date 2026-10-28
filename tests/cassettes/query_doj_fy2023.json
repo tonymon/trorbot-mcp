@@ -1,0 +1,146 @@
+[
+ {
+  "params": {
+   "fields": "record_fiscal_year,record_fiscal_quarter,record_date,agency_nm,bureau_nm,agency_bureau_indicator,total_eligible_debt_amt,total_eligible_debt_cnt,eligible_debt_referred_amt,eligible_debt_referred_cnt,eligible_debt_not_referred_amt,eligible_debt_not_referred_cnt,compliance_rate_amt,compliance_rate_cnt,cfo_agency_indicator",
+   "page[size]": "20",
+   "page[number]": "1",
+   "sort": "-record_fiscal_year",
+   "filter": "agency_nm:eq:Department of Justice,record_fiscal_year:eq:2023,agency_bureau_indicator:eq:Agency"
+  },
+  "response": {
+   "data": [
+    {
+     "record_fiscal_year": "2023",
+     "record_fiscal_quarter": "1",
+     "record_date": "2022-12-31",
+     "agency_nm": "Department of Justice",
+     "bureau_nm": "null",
+     "agency_bureau_indicator": "Agency",
+     "total_eligible_debt_amt": "91544767",
+     "total_eligible_debt_cnt": "39054",
+     "eligible_debt_referred_amt": "89057094",
+     "eligible_debt_referred_cnt": "38633",
+     "eligible_debt_not_referred_amt": "2487673",
+     "eligible_debt_not_referred_cnt": "421",
+     "compliance_rate_amt": "97.28256121947419",
+     "compliance_rate_cnt": "98.92200542838121",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "record_fiscal_year": "2023",
+     "record_fiscal_quarter": "2",
+     "record_date": "2023-03-31",
+     "agency_nm": "Department of Justice",
+     "bureau_nm": "null",
+     "agency_bureau_indicator": "Agency",
+     "total_eligible_debt_amt": "89958286",
+     "total_eligible_debt_cnt": "39203",
+     "eligible_debt_referred_amt": "87492403",
+     "eligible_debt_referred_cnt": "38735",
+     "eligible_debt_not_referred_amt": "2465883",
+     "eligible_debt_not_referred_cnt": "468",
+     "compliance_rate_amt": "97.25885951184085",
+     "compliance_rate_cnt": "98.80621381016759",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "record_fiscal_year": "2023",
+     "record_fiscal_quarter": "4",
+     "record_date": "2023-09-30",
+     "agency_nm": "Department of Justice",
+     "bureau_nm": "null",
+     "agency_bureau_indicator": "Agency",
+     "total_eligible_debt_amt": "119280551",
+     "total_eligible_debt_cnt": "40595",
+     "eligible_debt_referred_amt": "117662785",
+     "eligible_debt_referred_cnt": "40138",
+     "eligible_debt_not_referred_amt": "1617766",
+     "eligible_debt_not_referred_cnt": "457",
+     "compliance_rate_amt": "98.6437302758603",
+     "compliance_rate_cnt": "98.87424559674837",
+     "cfo_agency_indicator": "CFO"
+    },
+    {
+     "record_fiscal_year": "2023",
+     "record_fiscal_quarter": "3",
+     "record_date": "2023-06-30",
+     "agency_nm": "Department of Justice",
+     "bureau_nm": "null",
+     "agency_bureau_indicator": "Agency",
+     "total_eligible_debt_amt": "92624177",
+     "total_eligible_debt_cnt": "39273",
+     "eligible_debt_referred_amt": "89308886",
+     "eligible_debt_referred_cnt": "38805",
+     "eligible_debt_not_referred_amt": "3315291",
+     "eligible_debt_not_referred_cnt": "468",
+     "compliance_rate_amt": "96.4207066584786",
+     "compliance_rate_cnt": "98.80834160873883",
+     "cfo_agency_indicator": "CFO"
+    }
+   ],
+   "meta": {
+    "count": 4,
+    "labels": {
+     "record_fiscal_year": "Fiscal Year",
+     "record_fiscal_quarter": "Fiscal Quarter Number",
+     "record_date": "Record Date",
+     "agency_nm": "Agency Name",
+     "bureau_nm": "Bureau Name",
+     "agency_bureau_indicator": "Agency Bureau Indicator",
+     "total_eligible_debt_amt": "Total Eligible Debt Amount",
+     "total_eligible_debt_cnt": "Total Eligible Debt Count",
+     "eligible_debt_referred_amt": "Eligible Debt Referred Amount",
+     "eligible_debt_referred_cnt": "Eligible Debt Referred Count",
+     "eligible_debt_not_referred_amt": "Eligible Debt Not Referred Amount",
+     "eligible_debt_not_referred_cnt": "Eligible Debt Not Referred Count",
+     "compliance_rate_amt": "Compliance Rate Amount",
+     "compliance_rate_cnt": "Compliance Rate Count",
+     "cfo_agency_indicator": "CFO Agency Indicator"
+    },
+    "dataTypes": {
+     "record_fiscal_year": "YEAR",
+     "record_fiscal_quarter": "QUARTER",
+     "record_date": "DATE",
+     "agency_nm": "STRING",
+     "bureau_nm": "STRING",
+     "agency_bureau_indicator": "STRING",
+     "total_eligible_debt_amt": "CURRENCY",
+     "total_eligible_debt_cnt": "NUMBER",
+     "eligible_debt_referred_amt": "CURRENCY",
+     "eligible_debt_referred_cnt": "NUMBER",
+     "eligible_debt_not_referred_amt": "CURRENCY",
+     "eligible_debt_not_referred_cnt": "NUMBER",
+     "compliance_rate_amt": "PERCENTAGE",
+     "compliance_rate_cnt": "PERCENTAGE",
+     "cfo_agency_indicator": "STRING"
+    },
+    "dataFormats": {
+     "record_fiscal_year": "YYYY",
+     "record_fiscal_quarter": "Q",
+     "record_date": "YYYY-MM-DD",
+     "agency_nm": "String",
+     "bureau_nm": "String",
+     "agency_bureau_indicator": "String",
+     "total_eligible_debt_amt": "$10.20",
+     "total_eligible_debt_cnt": "10.2",
+     "eligible_debt_referred_amt": "$10.20",
+     "eligible_debt_referred_cnt": "10.2",
+     "eligible_debt_not_referred_amt": "$10.20",
+     "eligible_debt_not_referred_cnt": "10.2",
+     "compliance_rate_amt": "10.2%",
+     "compliance_rate_cnt": "10.2%",
+     "cfo_agency_indicator": "String"
+    },
+    "total-count": 4,
+    "total-pages": 1
+   },
+   "links": {
+    "self": "&page%5Bnumber%5D=1&page%5Bsize%5D=20",
+    "first": "&page%5Bnumber%5D=1&page%5Bsize%5D=20",
+    "prev": null,
+    "next": null,
+    "last": "&page%5Bnumber%5D=1&page%5Bsize%5D=20"
+   }
+  }
+ }
+]

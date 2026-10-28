@@ -111,12 +111,12 @@ for "Department of Defense".
 
 ```
 Use trorbot get_delinquency_trends to show the top 10 agencies by
-change in compliance rate from FY2020 to FY2024.
+change in compliance rate from FY2021 to FY2025.
 ```
 
 ```
 Use trorbot get_delinquency_trends to show the year-by-year compliance
-rate for "Social Security Administration" from FY2016 to FY2024.
+rate for "Social Security Administration" from FY2016 to FY2025.
 ```
 
 ---
@@ -195,11 +195,16 @@ Fiscal Data API    TRORBOT API
 ## Development
 
 ```bash
-# Run tests
+uv sync --group dev
+
+# Run tests (offline — Fiscal Data responses are replayed from tests/cassettes/)
 uv run pytest tests/ -v
 
-# Watch mode
-uv run pytest tests/ -v --tb=short -q
+# Lint
+uv run ruff check .
+
+# Re-record cassettes from the live API (only when upstream data or a query changes)
+uv run python tests/record_cassettes.py
 ```
 
 ### Project structure
@@ -215,7 +220,11 @@ trorbot-mcp/
 │   ├── prompts/        # 2 MCP prompts
 │   └── resources/      # 1 MCP resource
 ├── tests/
-│   └── test_tools.py   # 12 smoke tests
+│   ├── test_tools.py         # registration and input-validation tests
+│   ├── test_fiscal_tools.py  # tool behavior, replayed from recorded API responses
+│   ├── conftest.py           # respx replay fixtures
+│   ├── record_cassettes.py   # re-records cassettes from the live API
+│   └── cassettes/            # recorded Fiscal Data API responses
 ├── pyproject.toml
 └── .env.example
 ```
@@ -240,4 +249,4 @@ trorbot-mcp/
 
 ## License
 
-Public domain. Data sourced from the U.S. Department of the Treasury, Bureau of the Fiscal Service.
+Public domain — see [LICENSE](LICENSE) (CC0 1.0). Security posture: [SECURITY.md](SECURITY.md). Data sourced from the U.S. Department of the Treasury, Bureau of the Fiscal Service.

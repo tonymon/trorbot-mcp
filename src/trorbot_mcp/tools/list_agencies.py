@@ -19,7 +19,7 @@ from typing import Annotated
 from fastmcp import FastMCP
 
 from trorbot_mcp.models import ListAgenciesInput
-from trorbot_mcp.utils import fetch_fiscal
+from trorbot_mcp.utils import fetch_fiscal_all
 
 _TROR_PATH = "/v2/debt/tror/data_act_compliance"
 
@@ -46,24 +46,19 @@ def register(mcp: FastMCP) -> None:
         Data source: Fiscal Data API (api.fiscaldata.treasury.gov), updated quarterly.
         Returns: { agencies: [{agency_name, first_fy, latest_fy}], total, has_more }
         """
-        api_params: dict = {
-            "page[size]": 100,
-            "page[number]": 1,
-            "fields": "agency_nm,record_fiscal_year,agency_bureau_indicator",
-            "sort": "agency_nm",
-            # Only return agency-level rows (not bureau sub-rows) to keep the list concise
-            "filter": "agency_bureau_indicator:eq:Agency",
-        }
-
+        filters = ["agency_bureau_indicator:eq:Agency"]  # agency-level rows only, not bureaus
         if params.has_data_since_fy:
-            api_params["filter"] += f",record_fiscal_year:gte:{params.has_data_since_fy}"
+            filters.append(f"record_fiscal_year:gte:{params.has_data_since_fy}")
 
-        raw = await fetch_fiscal(_TROR_PATH, api_params)
-
-        if "error" in raw:
-            return raw
-
-        data = raw.get("data", [])
+        # Requesting only name + FY lets the API collapse quarterly rows into distinct
+        # (agency, FY) pairs — ~770 rows instead of ~3,000.
+        data, error = await fetch_fiscal_all(_TROR_PATH, {
+            "fields": "agency_nm,record_fiscal_year",
+            "sort": "agency_nm",
+            "filter": ",".join(filters),
+        })
+        if error:
+            return error
 
         # Deduplicate by agency name, collecting fiscal year range
         agencies: dict[str, dict] = {}
@@ -84,7 +79,7 @@ def register(mcp: FastMCP) -> None:
             term = params.search.lower()
             result = [a for a in result if term in a["agency_name"].lower()]
 
-        # Apply offset/limit after deduplication (API gives all pages in one pull above)
+        # Apply offset/limit after deduplication (all pages were fetched above)
         total = len(result)
         paged = result[params.offset: params.offset + params.limit]
         has_more = (params.offset + params.limit) < total

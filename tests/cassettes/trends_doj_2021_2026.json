@@ -1,0 +1,183 @@
+[
+ {
+  "params": {
+   "fields": "agency_nm,record_fiscal_year,record_fiscal_quarter,compliance_rate_amt",
+   "sort": "agency_nm,record_fiscal_year,record_fiscal_quarter",
+   "filter": "record_fiscal_year:gte:2021,record_fiscal_year:lte:2026,agency_bureau_indicator:eq:Agency,agency_nm:eq:Department of Justice",
+   "page[size]": "200",
+   "page[number]": "1"
+  },
+  "response": {
+   "data": [
+    {
+     "agency_nm": "Department of Justice",
+     "record_fiscal_year": "2021",
+     "record_fiscal_quarter": "1",
+     "compliance_rate_amt": "95.79930545198604"
+    },
+    {
+     "agency_nm": "Department of Justice",
+     "record_fiscal_year": "2021",
+     "record_fiscal_quarter": "2",
+     "compliance_rate_amt": "96.15779177402423"
+    },
+    {
+     "agency_nm": "Department of Justice",
+     "record_fiscal_year": "2021",
+     "record_fiscal_quarter": "3",
+     "compliance_rate_amt": "95.2783302005771"
+    },
+    {
+     "agency_nm": "Department of Justice",
+     "record_fiscal_year": "2021",
+     "record_fiscal_quarter": "4",
+     "compliance_rate_amt": "96.00359623762103"
+    },
+    {
+     "agency_nm": "Department of Justice",
+     "record_fiscal_year": "2022",
+     "record_fiscal_quarter": "1",
+     "compliance_rate_amt": "96.5324015365694"
+    },
+    {
+     "agency_nm": "Department of Justice",
+     "record_fiscal_year": "2022",
+     "record_fiscal_quarter": "2",
+     "compliance_rate_amt": "96.34733304634163"
+    },
+    {
+     "agency_nm": "Department of Justice",
+     "record_fiscal_year": "2022",
+     "record_fiscal_quarter": "3",
+     "compliance_rate_amt": "96.01927725048635"
+    },
+    {
+     "agency_nm": "Department of Justice",
+     "record_fiscal_year": "2022",
+     "record_fiscal_quarter": "4",
+     "compliance_rate_amt": "96.81204522816442"
+    },
+    {
+     "agency_nm": "Department of Justice",
+     "record_fiscal_year": "2023",
+     "record_fiscal_quarter": "1",
+     "compliance_rate_amt": "97.28256121947419"
+    },
+    {
+     "agency_nm": "Department of Justice",
+     "record_fiscal_year": "2023",
+     "record_fiscal_quarter": "2",
+     "compliance_rate_amt": "97.25885951184085"
+    },
+    {
+     "agency_nm": "Department of Justice",
+     "record_fiscal_year": "2023",
+     "record_fiscal_quarter": "3",
+     "compliance_rate_amt": "96.4207066584786"
+    },
+    {
+     "agency_nm": "Department of Justice",
+     "record_fiscal_year": "2023",
+     "record_fiscal_quarter": "4",
+     "compliance_rate_amt": "98.6437302758603"
+    },
+    {
+     "agency_nm": "Department of Justice",
+     "record_fiscal_year": "2024",
+     "record_fiscal_quarter": "1",
+     "compliance_rate_amt": "97.98335590298028"
+    },
+    {
+     "agency_nm": "Department of Justice",
+     "record_fiscal_year": "2024",
+     "record_fiscal_quarter": "2",
+     "compliance_rate_amt": "97.29392052192024"
+    },
+    {
+     "agency_nm": "Department of Justice",
+     "record_fiscal_year": "2024",
+     "record_fiscal_quarter": "3",
+     "compliance_rate_amt": "97.27851261018827"
+    },
+    {
+     "agency_nm": "Department of Justice",
+     "record_fiscal_year": "2024",
+     "record_fiscal_quarter": "4",
+     "compliance_rate_amt": "97.94648223475004"
+    },
+    {
+     "agency_nm": "Department of Justice",
+     "record_fiscal_year": "2025",
+     "record_fiscal_quarter": "1",
+     "compliance_rate_amt": "97.33628330737042"
+    },
+    {
+     "agency_nm": "Department of Justice",
+     "record_fiscal_year": "2025",
+     "record_fiscal_quarter": "2",
+     "compliance_rate_amt": "97.82239115091038"
+    },
+    {
+     "agency_nm": "Department of Justice",
+     "record_fiscal_year": "2025",
+     "record_fiscal_quarter": "3",
+     "compliance_rate_amt": "99.0876443379155"
+    },
+    {
+     "agency_nm": "Department of Justice",
+     "record_fiscal_year": "2025",
+     "record_fiscal_quarter": "4",
+     "compliance_rate_amt": "99.31836528406512"
+    },
+    {
+     "agency_nm": "Department of Justice",
+     "record_fiscal_year": "2026",
+     "record_fiscal_quarter": "1",
+     "compliance_rate_amt": "97.15899551054633"
+    },
+    {
+     "agency_nm": "Department of Justice",
+     "record_fiscal_year": "2026",
+     "record_fiscal_quarter": "2",
+     "compliance_rate_amt": "97.3691387329647"
+    },
+    {
+     "agency_nm": "Department of Justice",
+     "record_fiscal_year": "2026",
+     "record_fiscal_quarter": "3",
+     "compliance_rate_amt": "97.00206913414483"
+    }
+   ],
+   "meta": {
+    "count": 23,
+    "labels": {
+     "agency_nm": "Agency Name",
+     "record_fiscal_year": "Fiscal Year",
+     "record_fiscal_quarter": "Fiscal Quarter Number",
+     "compliance_rate_amt": "Compliance Rate Amount"
+    },
+    "dataTypes": {
+     "agency_nm": "STRING",
+     "record_fiscal_year": "YEAR",
+     "record_fiscal_quarter": "QUARTER",
+     "compliance_rate_amt": "PERCENTAGE"
+    },
+    "dataFormats": {
+     "agency_nm": "String",
+     "record_fiscal_year": "YYYY",
+     "record_fiscal_quarter": "Q",
+     "compliance_rate_amt": "10.2%"
+    },
+    "total-count": 23,
+    "total-pages": 1
+   },
+   "links": {
+    "self": "&page%5Bnumber%5D=1&page%5Bsize%5D=200",
+    "first": "&page%5Bnumber%5D=1&page%5Bsize%5D=200",
+    "prev": null,
+    "next": null,
+    "last": "&page%5Bnumber%5D=1&page%5Bsize%5D=200"
+   }
+  }
+ }
+]

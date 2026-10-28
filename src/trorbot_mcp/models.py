@@ -10,8 +10,7 @@ from __future__ import annotations
 from enum import Enum
 from typing import Annotated
 
-from pydantic import BaseModel, Field, field_validator
-
+from pydantic import BaseModel, Field, field_validator, model_validator
 
 # ── enums ──────────────────────────────────────────────────────────────
 
@@ -87,6 +86,20 @@ class QueryReceivablesInput(PaginationParams):
         ))
     ] = "fiscal_year"
     sort_order: Annotated[SortOrder, Field(description="Sort direction.")] = SortOrder.desc
+    offset: Annotated[
+        int,
+        Field(ge=0, description="Zero-based record offset for pagination. Must be a multiple of limit.")
+    ] = 0
+
+    @model_validator(mode="after")
+    def offset_page_aligned(self) -> "QueryReceivablesInput":
+        # The Fiscal Data API pages by page number, so only page-aligned offsets are exact.
+        if self.offset % self.limit != 0:
+            raise ValueError(
+                f"offset ({self.offset}) must be a multiple of limit ({self.limit}); "
+                "use the next_offset value from the previous response"
+            )
+        return self
 
 
 class DelinquencyTrendsInput(BaseModel):
@@ -94,11 +107,11 @@ class DelinquencyTrendsInput(BaseModel):
     fiscal_year_start: Annotated[
         int,
         Field(ge=2016, le=2029, description="Start of the trend window (inclusive).")
-    ] = 2020
+    ] = 2021
     fiscal_year_end: Annotated[
         int,
         Field(ge=2017, le=2030, description="End of the trend window (inclusive).")
-    ] = 2024
+    ] = 2025
     agency_name: Annotated[
         str | None,
         Field(description="Exact agency name from list_agencies. Omit for government-wide trend.")
@@ -112,7 +125,10 @@ class DelinquencyTrendsInput(BaseModel):
     ] = TrendMetric.compliance_rate
     top_n: Annotated[
         int,
-        Field(ge=1, le=20, description="When agency_code is omitted, return only the top N agencies by change magnitude.")
+        Field(
+            ge=1, le=20,
+            description="When agency_name is omitted, return only the top N agencies by change magnitude.",
+        )
     ] = 10
 
     @field_validator("fiscal_year_end")
@@ -125,7 +141,10 @@ class DelinquencyTrendsInput(BaseModel):
 
 
 class KBSearchInput(BaseModel):
-    """Inputs for Bedrock KB search tools (search_program_context, search_program_guidance, get_annual_report_insights)."""
+    """Inputs for the Bedrock KB search tools.
+
+    Used by search_program_context, search_program_guidance, and get_annual_report_insights.
+    """
     query: Annotated[
         str,
         Field(

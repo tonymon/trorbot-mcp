@@ -16,7 +16,7 @@ from typing import Annotated
 from fastmcp import FastMCP
 
 from trorbot_mcp.models import DelinquencyTrendsInput, TrendMetric
-from trorbot_mcp.utils import fetch_fiscal
+from trorbot_mcp.utils import fetch_fiscal_all
 
 _TROR_PATH = "/v2/debt/tror/data_act_compliance"
 
@@ -35,27 +35,10 @@ _METRIC_LABEL: dict[str, str] = {
 }
 
 
-async def _fetch_all_pages(filters: list[str], fields: str) -> list[dict]:
-    """Pull all pages for a filter set (up to 1 000 rows to stay responsive)."""
-    rows: list[dict] = []
-    page = 1
-    while True:
-        params: dict = {
-            "page[size]": 100,
-            "page[number]": page,
-            "fields": fields,
-            "sort": "agency_nm,record_fiscal_year",
-            "filter": ",".join(filters),
-        }
-        raw = await fetch_fiscal(_TROR_PATH, params)
-        if "error" in raw:
-            return []
-        rows.extend(raw.get("data", []))
-        total = int(raw.get("meta", {}).get("total-count", 0))
-        if len(rows) >= total or len(rows) >= 1000:
-            break
-        page += 1
-    return rows
+def _year_value(quarters: dict[int, float]) -> tuple[float, int]:
+    """Pick one value per fiscal year: Q4 (year-end) if reported, else the latest quarter."""
+    q = 4 if 4 in quarters else max(quarters)
+    return quarters[q], q
 
 
 def register(mcp: FastMCP) -> None:
@@ -87,10 +70,13 @@ def register(mcp: FastMCP) -> None:
           { metric, window, trend_direction (up/down/flat), agency_trends: [...],
             start_fy, end_fy, note }
         Each agency_trend: { agency_name, start_value, end_value, change_abs,
-                             change_pct, direction, series: [{fy, value}] }
+                             change_pct, direction, series: [{fy, quarter, value}] }
+
+        The data is quarterly; each fiscal year is represented by its Q4 (year-end)
+        value, or its latest reported quarter if Q4 is not yet published.
         """
         metric_field = _METRIC_FIELD[params.metric]
-        fields = f"agency_nm,record_fiscal_year,{metric_field}"
+        fields = f"agency_nm,record_fiscal_year,record_fiscal_quarter,{metric_field}"
 
         filters = [
             f"record_fiscal_year:gte:{params.fiscal_year_start}",
@@ -100,19 +86,25 @@ def register(mcp: FastMCP) -> None:
         if params.agency_name:
             filters.append(f"agency_nm:eq:{params.agency_name}")
 
-        rows = await _fetch_all_pages(filters, fields)
-
+        rows, error = await fetch_fiscal_all(_TROR_PATH, {
+            "fields": fields,
+            "sort": "agency_nm,record_fiscal_year,record_fiscal_quarter",
+            "filter": ",".join(filters),
+        })
+        if error:
+            return error
         if not rows:
             return {
                 "error": "No data returned for the requested range.",
                 "hint": "Check that agency_name exactly matches a name from list_agencies.",
             }
 
-        # Group: {agency_name: {fy: value}}
-        grouped: dict[str, dict[int, float]] = {}
+        # Group: {agency_name: {fy: {quarter: value}}}
+        grouped: dict[str, dict[int, dict[int, float]]] = {}
         for row in rows:
             name = row.get("agency_nm", "")
             fy = int(row.get("record_fiscal_year", 0))
+            quarter = int(row.get("record_fiscal_quarter", 0))
             raw_val = row.get(metric_field)
             try:
                 val = float(raw_val) if raw_val not in (None, "null") else None
@@ -120,23 +112,28 @@ def register(mcp: FastMCP) -> None:
                 val = None
             if not name or val is None:
                 continue
-            grouped.setdefault(name, {})[fy] = val
+            grouped.setdefault(name, {}).setdefault(fy, {})[quarter] = val
 
         # Compute trend per agency
         start_fy = params.fiscal_year_start
         end_fy = params.fiscal_year_end
 
         agency_trends = []
-        for name, fy_map in grouped.items():
+        for name, fy_quarters in grouped.items():
+            fy_map = {fy: _year_value(qs) for fy, qs in fy_quarters.items()}
             fys = sorted(fy_map)
             if len(fys) < 2:
                 continue
-            start_val = fy_map.get(start_fy) or fy_map[fys[0]]
-            end_val = fy_map.get(end_fy) or fy_map[fys[-1]]
+            # Membership test, not `or`: a real 0.0 value must not fall through.
+            start_val = (fy_map[start_fy] if start_fy in fy_map else fy_map[fys[0]])[0]
+            end_val = (fy_map[end_fy] if end_fy in fy_map else fy_map[fys[-1]])[0]
             change_abs = end_val - start_val
             change_pct = (change_abs / start_val * 100) if start_val else None
             direction = "up" if change_abs > 0.001 else ("down" if change_abs < -0.001 else "flat")
-            series = [{"fy": fy, "value": round(fy_map[fy], 4)} for fy in fys]
+            series = [
+                {"fy": fy, "quarter": fy_map[fy][1], "value": round(fy_map[fy][0], 4)}
+                for fy in fys
+            ]
             agency_trends.append({
                 "agency_name": name,
                 "start_value": round(start_val, 4),
@@ -167,7 +164,8 @@ def register(mcp: FastMCP) -> None:
             "end_fy": end_fy,
             "agencies_analyzed": len(grouped),
             "note": (
-                "Values are percentages (0–100)." if is_pct_metric
-                else "Values are USD amounts."
+                ("Values are percentages (0–100)." if is_pct_metric else "Values are USD amounts.")
+                + " Each fiscal year uses its Q4 (year-end) value, or the latest reported"
+                " quarter when Q4 is not yet available."
             ),
         }

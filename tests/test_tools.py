@@ -1,6 +1,7 @@
 """Smoke tests — verify tools register and models validate without hitting live APIs."""
 
 import pytest
+
 from trorbot_mcp.app import mcp
 from trorbot_mcp.models import (
     DelinquencyTrendsInput,
@@ -61,10 +62,16 @@ def test_delinquency_trends_same_year_invalid():
         DelinquencyTrendsInput(fiscal_year_start=2022, fiscal_year_end=2022)
 
 
+def test_query_receivables_offset_must_be_page_aligned():
+    QueryReceivablesInput(offset=20, limit=10)
+    with pytest.raises(Exception):
+        QueryReceivablesInput(offset=5, limit=10)
+
+
 def test_delinquency_trends_defaults():
     p = DelinquencyTrendsInput()
-    assert p.fiscal_year_start == 2020
-    assert p.fiscal_year_end == 2024
+    assert p.fiscal_year_start == 2021
+    assert p.fiscal_year_end == 2025
     assert p.metric.value == "compliance_rate"
     assert p.top_n == 10
     assert p.agency_name is None
@@ -85,3 +92,22 @@ def test_kb_search_input_valid():
     from trorbot_mcp.models import KBSearchInput
     p = KBSearchInput(query="What is the 120-day referral rule?")
     assert p.max_results == 5
+
+
+def test_latest_complete_fy_allows_for_publication_lag(monkeypatch):
+    from datetime import date
+
+    from trorbot_mcp.resources import fiscal_year_metadata as meta
+
+    class FakeDate(date):
+        today_value = date(2026, 10, 28)
+
+        @classmethod
+        def today(cls):
+            return cls.today_value
+
+    monkeypatch.setattr(meta, "date", FakeDate)
+    assert meta._current_fiscal_year() == 2027
+    assert meta._latest_complete_fiscal_year() == 2025  # FY2026 Q4 not yet published
+    FakeDate.today_value = date(2026, 12, 15)
+    assert meta._latest_complete_fiscal_year() == 2026
