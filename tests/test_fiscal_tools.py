@@ -123,3 +123,51 @@ async def test_unexpected_errors_are_sanitized(fiscal_api):
 async def test_fetch_rejects_non_relative_paths(path):
     with pytest.raises(ValueError):
         await fetch_fiscal(path)
+
+
+# ── get_delinquency_trends filters ──────────────────────────────────────
+
+
+def _trend_rows(agency: str, eligible: str, rates: list[str]) -> list[dict]:
+    return [
+        {"agency_nm": agency, "record_fiscal_year": str(2021 + i), "record_fiscal_quarter": "4",
+         "compliance_rate_amt": rate, "total_eligible_debt_amt": eligible,
+         "eligible_debt_referred_amt": str(float(eligible) * float(rate) / 100)}
+        for i, rate in enumerate(rates)
+    ]
+
+
+async def test_trends_cfo_filter_is_sent_to_api(client, fiscal_api):
+    route = fiscal_api.get(TROR_URL).respond(json={
+        "data": _trend_rows("Big Dept", "1000000", ["90", "95"]), "meta": {"total-pages": 1},
+    })
+    out = await call(client, "get_delinquency_trends",
+                     {"cfo_agencies_only": True, "fiscal_year_start": 2021, "fiscal_year_end": 2022})
+
+    assert "cfo_agency_indicator:eq:CFO" in route.calls.last.request.url.params["filter"]
+    assert out["filters"]["cfo_agencies_only"] is True
+
+
+async def test_trends_min_eligible_debt_drops_small_agencies(client, fiscal_api):
+    rows = _trend_rows("Big Dept", "5000000000", ["90", "80"]) + _trend_rows("Tiny Board", "1200", ["100", "0"])
+    fiscal_api.get(TROR_URL).respond(json={"data": rows, "meta": {"total-pages": 1}})
+
+    out = await call(client, "get_delinquency_trends",
+                     {"min_eligible_debt_usd": 1_000_000, "fiscal_year_start": 2021, "fiscal_year_end": 2022})
+
+    assert [t["agency_name"] for t in out["agency_trends"]] == ["Big Dept"]
+    assert out["filters"]["excluded_below_threshold"] == 1
+    assert out["agencies_analyzed"] == 1
+
+
+async def test_trends_government_wide_mean_and_dollar_weighted(client, fiscal_api):
+    rows = _trend_rows("Big Dept", "9000", ["90", "90"]) + _trend_rows("Small Dept", "1000", ["50", "70"])
+    fiscal_api.get(TROR_URL).respond(json={"data": rows, "meta": {"total-pages": 1}})
+
+    out = await call(client, "get_delinquency_trends", {"fiscal_year_start": 2021, "fiscal_year_end": 2022})
+    fy2021, fy2022 = out["government_wide"]["series"]
+
+    assert fy2021["mean_value"] == 70.0  # (90 + 50) / 2
+    assert fy2021["dollar_weighted_value"] == 86.0  # (8100 + 500) / 10000
+    assert fy2022["mean_value"] == 80.0
+    assert out["government_wide"]["direction"] == "up"

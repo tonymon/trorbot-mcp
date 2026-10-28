@@ -126,10 +126,24 @@ class DelinquencyTrendsInput(BaseModel):
     top_n: Annotated[
         int,
         Field(
-            ge=1, le=20,
+            ge=1, le=100,
             description="When agency_name is omitted, return only the top N agencies by change magnitude.",
         )
     ] = 10
+    cfo_agencies_only: Annotated[
+        bool,
+        Field(description=(
+            "Only include the 24 CFO Act agencies — the large agencies that receive "
+            "Congressional oversight. Recommended for government-wide 'biggest movers' questions."
+        ))
+    ] = False
+    min_eligible_debt_usd: Annotated[
+        float | None,
+        Field(ge=0, description=(
+            "Drop agencies whose start-year total eligible debt is below this USD amount "
+            "before ranking. Filters out small agencies whose rates swing 0↔100% on a few debts."
+        ))
+    ] = None
 
     @field_validator("fiscal_year_end")
     @classmethod

@@ -19,7 +19,7 @@ The TROR dataset tracks whether federal agencies comply with the **Debt Collecti
 |---|---|---|
 | `list_agencies` | None | List federal agencies reporting TROR data, with fiscal year coverage |
 | `query_receivables` | None | Query DDR compliance records by agency, fiscal year, and quarter |
-| `get_delinquency_trends` | None | Rank agencies by change in compliance rate or debt amounts over a FY window |
+| `get_delinquency_trends` | None | Rank agencies by change in compliance rate or debt amounts over a FY window, with a government-wide aggregate. Filter to the 24 CFO Act agencies (`cfo_agencies_only`) or by size (`min_eligible_debt_usd`) |
 | `search_program_context` | TRORBOT API | Search analyst-curated policy events explaining data changes |
 | `search_program_guidance` | TRORBOT API | Search program rules, legal authorities, TFM chapters |
 | `get_annual_report_insights` | TRORBOT API | Search Annual TROR Reports to Congress |
@@ -110,8 +110,8 @@ for "Department of Defense".
 ```
 
 ```
-Use trorbot get_delinquency_trends to show the top 10 agencies by
-change in compliance rate from FY2021 to FY2025.
+Use trorbot get_delinquency_trends to show which CFO Act agencies
+improved or declined the most in compliance rate from FY2021 to FY2025.
 ```
 
 ```
@@ -192,6 +192,18 @@ Fiscal Data API    TRORBOT API
 
 ---
 
+## Evaluation
+
+8 ground-truth analyst questions answered through the live tools and scored against
+answers computed independently from raw API rows — **8/8 passing** (the initial
+commit scored 3/8). See [eval/README.md](eval/README.md).
+
+```bash
+uv run python eval/run_eval.py --live
+```
+
+---
+
 ## Development
 
 ```bash
@@ -219,11 +231,13 @@ trorbot-mcp/
 │   ├── tools/          # 6 MCP tools
 │   ├── prompts/        # 2 MCP prompts
 │   └── resources/      # 1 MCP resource
+├── eval/                     # ground-truth eval: cases, runner, fixtures, results
 ├── tests/
 │   ├── test_tools.py         # registration and input-validation tests
 │   ├── test_fiscal_tools.py  # tool behavior, replayed from recorded API responses
 │   ├── conftest.py           # respx replay fixtures
 │   ├── record_cassettes.py   # re-records cassettes from the live API
+│   ├── test_eval.py          # runs the eval offline in CI
 │   └── cassettes/            # recorded Fiscal Data API responses
 ├── pyproject.toml
 └── .env.example
