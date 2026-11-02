@@ -158,12 +158,19 @@ class DelinquencyTrendsInput(BaseModel):
         return v
 
 
-class TRORSubmissionInput(BaseModel):
-    """Inputs for validate_tror_submission.
+class FormLine(BaseModel):
+    """One TROR Form 05 line: a dollar amount and a number of accounts."""
+    usd: Annotated[float, Field(ge=0, description="Dollar amount (USD), entered as a positive figure.")] = 0.0
+    count: Annotated[int, Field(ge=0, description="Number of accounts.")] = 0
 
-    Covers the key sections of TROR Form 05 that drive DDR compliance analysis.
-    Derived fields (ending balance, compliance rates) are computed and validated
-    by the tool — do not compute them before submitting.
+
+class TRORSubmissionInput(BaseModel):
+    """Inputs for validate_tror_submission, following TROR Form 05 line by line.
+
+    Part I-A is fiscal-year-to-date. Enter every amount as a positive figure: the tool
+    applies the form's signs (collections, write-offs and Part II-B deductions subtract).
+    Derived lines (ending balance, eligible balances, compliance rates) are computed by
+    the tool; don't compute them before submitting.
     """
     agency_name: Annotated[
         str,
@@ -184,87 +191,74 @@ class TRORSubmissionInput(BaseModel):
         Field(description="Fiscal quarter: 1=Oct–Dec, 2=Jan–Mar, 3=Apr–Jun, 4=Jul–Sep."),
     ]
 
-    # Part I-A: Status of Receivables
-    beginning_balance_usd: Annotated[
+    # Part I, Section A: Receivables and Collections (fiscal-year-to-date)
+    beginning_fy_balance_usd: Annotated[
         float,
-        Field(ge=0, description="Total receivables outstanding at the start of the quarter (USD)."),
+        Field(ge=0, description="Part I-A line 1: receivables outstanding at the start of the fiscal year (USD)."),
     ]
     new_receivables_usd: Annotated[
         float,
-        Field(ge=0, description="New receivables established during the quarter (USD)."),
+        Field(ge=0, description="Part I-A line 2: new receivables (principal) generated this fiscal year (USD)."),
     ]
+    accruals_usd: Annotated[
+        float,
+        Field(ge=0, description="Part I-A line 3: interest and late charges accrued this fiscal year (USD)."),
+    ] = 0.0
     collections_usd: Annotated[
         float,
-        Field(ge=0, description="Total collections received during the quarter (USD)."),
-    ]
-    write_offs_usd: Annotated[
-        float,
-        Field(ge=0, description="Amounts written off during the quarter (USD)."),
+        Field(ge=0, description="Part I-A line 4: collections on receivables this fiscal year (USD)."),
     ]
     adjustments_usd: Annotated[
         float,
-        Field(description="Net adjustments during the quarter (USD). May be negative."),
+        Field(description="Part I-A line 5: net adjustments this fiscal year (USD); may be negative."),
+    ] = 0.0
+    amounts_written_off_usd: Annotated[
+        float,
+        Field(ge=0, description="Part I-A line 6: amounts written off this fiscal year, CNC plus closed out (USD)."),
     ] = 0.0
 
-    # Part I-C: Delinquency snapshot
-    total_delinquent_usd: Annotated[
-        float,
-        Field(ge=0, description="Total delinquent receivables at end of quarter (USD)."),
+    # Part I, Section C: Delinquent Debt (excluding CNC debts)
+    total_delinquent: Annotated[
+        FormLine,
+        Field(description="Part I-C line 1(I): total delinquencies by age, all aging buckets, excluding CNC."),
     ]
 
-    # Part II-B: 120-Day DDR Compliance (the mandatory DCIA referral section)
-    total_eligible_debt_usd: Annotated[
-        float,
-        Field(ge=0, description="Total debt eligible for 120-day referral to Cross-Servicing/TOP (USD)."),
+    # Part II, Section B(1): Debt eligible for referral to the Treasury Offset Program (DATA Act, 120 days)
+    delinquent_over_120_days: Annotated[
+        FormLine,
+        Field(description="Part II-B line 1A: debt over 120 days delinquent (Part I-C aging buckets 121 days and up)."),
     ]
-    total_eligible_debt_count: Annotated[
-        int,
-        Field(ge=0, description="Number of eligible debt accounts."),
-    ]
-    referred_to_treasury_usd: Annotated[
-        float,
-        Field(ge=0, description="Eligible debt actually referred to Treasury Cross-Servicing or TOP (USD)."),
-    ]
-    referred_to_treasury_count: Annotated[
-        int,
-        Field(ge=0, description="Number of accounts referred to Treasury."),
-    ]
-
-    # Common exemptions (optional — include only what applies)
-    exempt_bankruptcy_usd: Annotated[
-        float,
-        Field(ge=0, description="Debt exempt from referral because the debtor is in bankruptcy (USD)."),
-    ] = 0.0
-    exempt_litigation_usd: Annotated[
-        float,
-        Field(ge=0, description="Debt exempt from referral due to active litigation or enforcement action (USD)."),
-    ] = 0.0
-    exempt_other_usd: Annotated[
-        float,
-        Field(ge=0, description="Debt exempt for other approved reasons (USD)."),
-    ] = 0.0
-
-    @field_validator("referred_to_treasury_usd")
-    @classmethod
-    def referred_le_eligible(cls, v: float, info) -> float:
-        eligible = info.data.get("total_eligible_debt_usd")
-        if eligible is not None and v > eligible * 1.001:  # allow 0.1% rounding tolerance
-            raise ValueError(
-                f"referred_to_treasury_usd ({v:,.0f}) cannot exceed "
-                f"total_eligible_debt_usd ({eligible:,.0f})"
-            )
-        return v
-
-    @field_validator("referred_to_treasury_count")
-    @classmethod
-    def referred_count_le_eligible(cls, v: int, info) -> int:
-        eligible = info.data.get("total_eligible_debt_count")
-        if eligible is not None and v > eligible:
-            raise ValueError(
-                f"referred_to_treasury_count ({v}) cannot exceed "
-                f"total_eligible_debt_count ({eligible})"
-            )
-        return v
+    currently_not_collectible: Annotated[
+        FormLine,
+        Field(description="Part II-B line 1B: CNC debt, written off but not closed out."),
+    ] = FormLine()
+    ineligible_bankruptcy: Annotated[
+        FormLine, Field(description="Part II-B line 1D: in bankruptcy (ineligible for offset)."),
+    ] = FormLine()
+    ineligible_forbearance_or_appeals: Annotated[
+        FormLine, Field(description="Part II-B line 1E: in forbearance or formal appeals (ineligible for offset)."),
+    ] = FormLine()
+    ineligible_foreclosure: Annotated[
+        FormLine, Field(description="Part II-B line 1F: in foreclosure (ineligible for offset)."),
+    ] = FormLine()
+    ineligible_other: Annotated[
+        FormLine, Field(description="Part II-B line 1G: other ineligible debt; must be footnoted on the form."),
+    ] = FormLine()
+    exception_foreign_sovereign: Annotated[
+        FormLine, Field(description="Part II-B line 1J: owed by foreign sovereign nations (exception from referral)."),
+    ] = FormLine()
+    exception_litigation: Annotated[
+        FormLine, Field(description="Part II-B line 1K: in litigation for enforced collection (exception)."),
+    ] = FormLine()
+    exception_other: Annotated[
+        FormLine, Field(description="Part II-B line 1L: other exceptions from referral; must be footnoted."),
+    ] = FormLine()
+    referred_directly_to_top: Annotated[
+        FormLine, Field(description="Part II-B line 1N: referred directly to the Treasury Offset Program."),
+    ] = FormLine()
+    referred_to_top_via_cross_servicing: Annotated[
+        FormLine, Field(description="Part II-B line 1O: referred to the Treasury Offset Program via Cross-Servicing."),
+    ] = FormLine()
 
 
 class KBSearchInput(BaseModel):

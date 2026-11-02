@@ -1,5 +1,7 @@
 """Smoke tests — verify tools register and models validate without hitting live APIs."""
 
+from datetime import date
+
 import pytest
 
 from trorbot_mcp.app import mcp
@@ -10,6 +12,7 @@ from trorbot_mcp.models import (
     QueryReceivablesInput,
     TRORSubmissionInput,
 )
+from trorbot_mcp.tools.validate_tror_submission import compute_form_lines, run_checks
 
 
 async def test_all_tools_registered():
@@ -97,65 +100,103 @@ def test_kb_search_input_valid():
     assert p.max_results == 5
 
 
-# ── TRORSubmissionInput validation ──────────────────────────────────────
+# ── validate_tror_submission: inputs, Form 05 arithmetic, checks ─────────
 
 _VALID_SUBMISSION = dict(
     agency_name="Department of Justice",
     fiscal_year=2025,
     fiscal_quarter=FiscalQuarter.Q4,
-    beginning_balance_usd=1_000_000.0,
+    beginning_fy_balance_usd=1_000_000.0,
     new_receivables_usd=200_000.0,
+    accruals_usd=10_000.0,
     collections_usd=150_000.0,
-    write_offs_usd=50_000.0,
-    adjustments_usd=0.0,
-    total_delinquent_usd=300_000.0,
-    total_eligible_debt_usd=250_000.0,
-    total_eligible_debt_count=100,
-    referred_to_treasury_usd=200_000.0,
-    referred_to_treasury_count=80,
+    amounts_written_off_usd=50_000.0,
+    total_delinquent={"usd": 300_000.0, "count": 120},
+    delinquent_over_120_days={"usd": 250_000.0, "count": 100},
+    currently_not_collectible={"usd": 20_000.0, "count": 10},
+    ineligible_bankruptcy={"usd": 15_000.0, "count": 5},
+    ineligible_forbearance_or_appeals={"usd": 5_000.0, "count": 3},
+    exception_litigation={"usd": 10_000.0, "count": 2},
+    referred_directly_to_top={"usd": 150_000.0, "count": 60},
+    referred_to_top_via_cross_servicing={"usd": 54_000.0, "count": 20},
 )
+_TODAY = date(2026, 11, 2)
 
 
-def test_tror_submission_valid():
+def _results(submission: dict) -> tuple[dict, dict]:
+    p = TRORSubmissionInput(**submission)
+    lines = compute_form_lines(p)
+    return lines, {c["rule"]: c["result"] for c in run_checks(p, lines, _TODAY)}
+
+
+def test_tror_submission_optional_lines_default_zero():
     p = TRORSubmissionInput(**_VALID_SUBMISSION)
-    assert p.agency_name == "Department of Justice"
-    assert p.fiscal_quarter == FiscalQuarter.Q4
+    assert p.adjustments_usd == 0.0
+    assert p.ineligible_foreclosure.usd == 0.0 and p.exception_foreign_sovereign.count == 0
 
 
-def test_tror_submission_referred_exceeds_eligible_usd():
-    bad = {**_VALID_SUBMISSION, "referred_to_treasury_usd": 300_000.0}
-    with pytest.raises(Exception, match="cannot exceed"):
-        TRORSubmissionInput(**bad)
-
-
-def test_tror_submission_referred_count_exceeds_eligible():
-    bad = {**_VALID_SUBMISSION, "referred_to_treasury_count": 101}
-    with pytest.raises(Exception, match="cannot exceed"):
-        TRORSubmissionInput(**bad)
+def test_tror_submission_rejects_negative_amounts():
+    with pytest.raises(Exception):
+        TRORSubmissionInput(**{**_VALID_SUBMISSION, "ineligible_bankruptcy": {"usd": -1.0, "count": 0}})
 
 
 def test_tror_submission_fy_below_2016():
-    bad = {**_VALID_SUBMISSION, "fiscal_year": 2015}
     with pytest.raises(Exception):
-        TRORSubmissionInput(**bad)
-
-
-def test_tror_submission_exemptions_default_zero():
-    p = TRORSubmissionInput(**_VALID_SUBMISSION)
-    assert p.exempt_bankruptcy_usd == 0.0
-    assert p.exempt_litigation_usd == 0.0
-    assert p.exempt_other_usd == 0.0
-
-
-def test_tror_submission_adjustments_default_zero():
-    p = TRORSubmissionInput(**_VALID_SUBMISSION)
-    assert p.adjustments_usd == 0.0
+        TRORSubmissionInput(**{**_VALID_SUBMISSION, "fiscal_year": 2015})
 
 
 def test_tror_submission_agency_name_too_short():
-    bad = {**_VALID_SUBMISSION, "agency_name": "A"}
     with pytest.raises(Exception):
-        TRORSubmissionInput(**bad)
+        TRORSubmissionInput(**{**_VALID_SUBMISSION, "agency_name": "A"})
+
+
+def test_form_lines_follow_form_05():
+    lines, results = _results(_VALID_SUBMISSION)
+    assert lines["ending_balance_usd"] == 1_010_000.0  # 1,000,000 + 200,000 + 10,000 − 150,000 − 50,000
+    assert lines["total_over_120_and_cnc"] == {"usd": 270_000.0, "count": 110}  # 1C = 1A + 1B
+    assert lines["eligible_for_offset"] == {"usd": 250_000.0, "count": 102}  # 1H = 1C − 1D…1G
+    assert lines["required_to_be_referred"] == {"usd": 240_000.0, "count": 100}  # 1M = 1H − 1J…1L
+    assert lines["referred_to_top"] == {"usd": 204_000.0, "count": 80}  # 1N + 1O
+    assert lines["remaining_to_be_referred"] == {"usd": 36_000.0, "count": 20}  # 1P
+    assert lines["compliance_rate_amt_pct"] == 85.0
+    assert lines["compliance_rate_cnt_pct"] == 80.0
+    assert set(results.values()) == {"pass"}
+
+
+def test_cnc_debt_can_exceed_delinquent_without_failing():
+    # Part I-C excludes CNC debt, Part II-B adds it back, so 1C can exceed total delinquent.
+    lines, results = _results({**_VALID_SUBMISSION, "currently_not_collectible": {"usd": 400_000.0, "count": 50}})
+    assert lines["total_over_120_and_cnc"]["usd"] > _VALID_SUBMISSION["total_delinquent"]["usd"]
+    assert set(results.values()) == {"pass"}
+
+
+def test_over_120_exceeding_total_delinquent_fails():
+    _, results = _results({**_VALID_SUBMISSION, "delinquent_over_120_days": {"usd": 350_000.0, "count": 100}})
+    assert results["over_120_within_total_delinquent"] == "fail"
+
+
+def test_ineligible_exceeding_over_120_and_cnc_fails():
+    _, results = _results({**_VALID_SUBMISSION, "ineligible_bankruptcy": {"usd": 300_000.0, "count": 5}})
+    assert results["ineligible_within_over_120_and_cnc"] == "fail"
+
+
+def test_referred_exceeding_required_fails():
+    _, results = _results({**_VALID_SUBMISSION, "referred_directly_to_top": {"usd": 200_000.0, "count": 60}})
+    assert results["referred_within_required"] == "fail"
+
+
+def test_nothing_required_to_refer_reports_zero_rate_like_fiscal_data():
+    empty = {"usd": 0.0, "count": 0}
+    lines, _ = _results({**_VALID_SUBMISSION, "delinquent_over_120_days": empty, "currently_not_collectible": empty,
+                         "ineligible_bankruptcy": empty, "ineligible_forbearance_or_appeals": empty,
+                         "exception_litigation": empty, "referred_directly_to_top": empty,
+                         "referred_to_top_via_cross_servicing": empty})
+    assert lines["compliance_rate_amt_pct"] == 0.0 and lines["compliance_rate_cnt_pct"] == 0.0
+
+
+def test_open_quarter_is_a_warning():
+    _, results = _results({**_VALID_SUBMISSION, "fiscal_year": 2027, "fiscal_quarter": FiscalQuarter.Q1})
+    assert results["quarter_has_closed"] == "warning"
 
 
 def test_latest_complete_fy_allows_for_publication_lag(monkeypatch):

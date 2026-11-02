@@ -20,7 +20,7 @@ The TROR dataset tracks whether federal agencies comply with the **Debt Collecti
 | `list_agencies` | None | List federal agencies reporting TROR data, with fiscal year coverage |
 | `query_receivables` | None | Query DDR compliance records by agency, fiscal year, and quarter |
 | `get_delinquency_trends` | None | Rank agencies by change in compliance rate or debt amounts over a FY window, with a government-wide aggregate. Filter to the 24 CFO Act agencies (`cfo_agencies_only`) or by size (`min_eligible_debt_usd`) |
-| `validate_tror_submission` | None | Validate an agency's draft quarterly TROR Form 05 figures: computes ending balance and DDR compliance rates, runs consistency checks, and compares against the agency's last published quarter. Validates only; nothing is stored or filed |
+| `validate_tror_submission` | None | Validate an agency's draft quarterly TROR Form 05 lines: computes the form's derived lines and the Treasury Offset Program compliance rate, runs consistency checks, and compares against the agency's last published quarter. Validates only; nothing is stored or filed |
 | `search_program_context` | TRORBOT API | Search analyst-curated policy events explaining data changes |
 | `search_program_guidance` | TRORBOT API | Search program rules, legal authorities, TFM chapters |
 | `get_annual_report_insights` | TRORBOT API | Search Annual TROR Reports to Congress |
@@ -137,14 +137,30 @@ connected to TRORBOT MCP can check its draft first:
    computed rates, check results and the change from the last published quarter,
    before anyone touches the form.
 
+The tool's inputs follow TROR Form 05 line by line:
+
+- **Part I-A** (fiscal-year-to-date): beginning FY balance, new receivables, accruals,
+  collections, adjustments, amounts written off.
+- **Part I-C**: total delinquencies, excluding currently-not-collectible (CNC) debt.
+- **Part II-B section 1** (Treasury Offset Program, 120 days under the DATA Act): debt
+  over 120 days delinquent, CNC debt, ineligible debt (bankruptcy, forbearance or
+  appeals, foreclosure, other), exceptions (foreign sovereign, litigation, other), and
+  debt referred directly or through Cross-Servicing. Each line takes dollars and a count.
+
+From these it computes the form's derived lines (ending balance, 1C, 1H, 1M, 1P) and the
+compliance rate, debt referred ÷ debt required to be referred, which is the measure
+Fiscal Data publishes.
+
 Example prompt:
 
 ```
 I'm preparing the Small Business Administration's FY2026 Q4 TROR submission.
 Validate these draft figures with trorbot validate_tror_submission:
-beginning balance $9.0B, new receivables $800M, collections $650M,
-write-offs $40M, total delinquent $1.5B, eligible for referral $1.2B
-(48,000 accounts), referred to Treasury $1.02B (41,280 accounts).
+Part I-A: beginning FY balance $9.0B, new receivables $800M, accruals $40M,
+collections $650M, written off $40M. Total delinquent $1.5B (60,000 accounts).
+Part II-B: over 120 days $1.1B (44,000), CNC $150M (6,000), bankruptcy $30M (1,200),
+forbearance $20M (800), referred directly to TOP $700M (28,000),
+referred via Cross-Servicing $320M (13,280).
 ```
 
 The receipt (abridged; the draft figures are illustrative, the prior quarter is SBA's
@@ -154,19 +170,23 @@ published FY2026 Q3 rate):
 {
   "validation_status": "passed",
   "receipt_id": "TROR-DRAFT-2026-Q4-SMALL-BUSINESS-ADMIN-47796C",
-  "computed_fields": {
-    "ending_balance_usd": 9110000000.0,
+  "computed_lines": {
+    "ending_balance_usd": 9150000000.0,
+    "total_over_120_and_cnc": {"usd": 1250000000.0, "count": 50000},
+    "eligible_for_offset": {"usd": 1200000000.0, "count": 48000},
+    "required_to_be_referred": {"usd": 1200000000.0, "count": 48000},
+    "referred_to_top": {"usd": 1020000000.0, "count": 41280},
+    "remaining_to_be_referred": {"usd": 180000000.0, "count": 6720},
     "compliance_rate_amt_pct": 85.0,
-    "compliance_rate_cnt_pct": 86.0,
-    "not_referred_usd": 180000000.0,
-    "not_referred_count": 6720
+    "compliance_rate_cnt_pct": 86.0
   },
   "checks": [
-    {"rule": "ending_balance_arithmetic", "result": "info"},
-    {"rule": "ddr_compliance_computation", "result": "pass"},
-    {"rule": "eligible_subset_of_delinquent", "result": "pass"},
-    {"rule": "exemptions_le_eligible", "result": "pass"},
-    {"rule": "quarter_plausibility", "result": "pass"}
+    {"rule": "ending_balance_not_negative", "result": "pass"},
+    {"rule": "over_120_within_total_delinquent", "result": "pass"},
+    {"rule": "ineligible_within_over_120_and_cnc", "result": "pass"},
+    {"rule": "exceptions_within_eligible", "result": "pass"},
+    {"rule": "referred_within_required", "result": "pass"},
+    {"rule": "quarter_has_closed", "result": "pass"}
   ],
   "prior_quarter": {
     "found": true,
@@ -178,8 +198,8 @@ published FY2026 Q3 rate):
 }
 ```
 
-Input errors such as referred debt exceeding eligible debt are rejected before any
-checks run. The receipt ID is deterministic and marks a draft, not a filing.
+Each check also carries a one-line explanation of the form rule behind it. The receipt
+ID is deterministic and marks a draft, not a filing.
 
 ---
 
