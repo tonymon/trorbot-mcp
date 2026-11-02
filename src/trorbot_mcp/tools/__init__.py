@@ -9,6 +9,7 @@ from trorbot_mcp.tools import (
     query_receivables,
     search_program_context,
     search_program_guidance,
+    validate_tror_submission,
 )
 
 
@@ -19,3 +20,4 @@ def register_tools(mcp: FastMCP) -> None:
     search_program_context.register(mcp)
     search_program_guidance.register(mcp)
     get_annual_report_insights.register(mcp)
+    validate_tror_submission.register(mcp)

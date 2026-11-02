@@ -26,6 +26,9 @@ mcp = FastMCP(
         "for direction and change analysis. "
         "Use search_program_context to understand the policy reasons behind data "
         "changes, and search_program_guidance for program rules and legal authorities. "
+        "Use validate_tror_submission for agency AI agents that want to pre-validate a "
+        "draft quarterly TROR Form 05 submission before filing — it checks balance "
+        "arithmetic, DDR compliance rates, and compares against prior-quarter published data. "
         "All monetary values are in USD. Fiscal years run Oct 1–Sep 30. "
         "Data coverage begins FY2016."
     ),

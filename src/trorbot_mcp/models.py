@@ -158,6 +158,115 @@ class DelinquencyTrendsInput(BaseModel):
         return v
 
 
+class TRORSubmissionInput(BaseModel):
+    """Inputs for validate_tror_submission.
+
+    Covers the key sections of TROR Form 05 that drive DDR compliance analysis.
+    Derived fields (ending balance, compliance rates) are computed and validated
+    by the tool — do not compute them before submitting.
+    """
+    agency_name: Annotated[
+        str,
+        Field(
+            min_length=2, max_length=200,
+            description=(
+                "Exact agency name as returned by list_agencies. "
+                "Use list_agencies first if unsure of the exact name."
+            ),
+        ),
+    ]
+    fiscal_year: Annotated[
+        int,
+        Field(ge=2016, le=2030, description="Fiscal year of the submission (e.g. 2026)."),
+    ]
+    fiscal_quarter: Annotated[
+        FiscalQuarter,
+        Field(description="Fiscal quarter: 1=Oct–Dec, 2=Jan–Mar, 3=Apr–Jun, 4=Jul–Sep."),
+    ]
+
+    # Part I-A: Status of Receivables
+    beginning_balance_usd: Annotated[
+        float,
+        Field(ge=0, description="Total receivables outstanding at the start of the quarter (USD)."),
+    ]
+    new_receivables_usd: Annotated[
+        float,
+        Field(ge=0, description="New receivables established during the quarter (USD)."),
+    ]
+    collections_usd: Annotated[
+        float,
+        Field(ge=0, description="Total collections received during the quarter (USD)."),
+    ]
+    write_offs_usd: Annotated[
+        float,
+        Field(ge=0, description="Amounts written off during the quarter (USD)."),
+    ]
+    adjustments_usd: Annotated[
+        float,
+        Field(description="Net adjustments during the quarter (USD). May be negative."),
+    ] = 0.0
+
+    # Part I-C: Delinquency snapshot
+    total_delinquent_usd: Annotated[
+        float,
+        Field(ge=0, description="Total delinquent receivables at end of quarter (USD)."),
+    ]
+
+    # Part II-B: 120-Day DDR Compliance (the mandatory DCIA referral section)
+    total_eligible_debt_usd: Annotated[
+        float,
+        Field(ge=0, description="Total debt eligible for 120-day referral to Cross-Servicing/TOP (USD)."),
+    ]
+    total_eligible_debt_count: Annotated[
+        int,
+        Field(ge=0, description="Number of eligible debt accounts."),
+    ]
+    referred_to_treasury_usd: Annotated[
+        float,
+        Field(ge=0, description="Eligible debt actually referred to Treasury Cross-Servicing or TOP (USD)."),
+    ]
+    referred_to_treasury_count: Annotated[
+        int,
+        Field(ge=0, description="Number of accounts referred to Treasury."),
+    ]
+
+    # Common exemptions (optional — include only what applies)
+    exempt_bankruptcy_usd: Annotated[
+        float,
+        Field(ge=0, description="Debt exempt from referral because the debtor is in bankruptcy (USD)."),
+    ] = 0.0
+    exempt_litigation_usd: Annotated[
+        float,
+        Field(ge=0, description="Debt exempt from referral due to active litigation or enforcement action (USD)."),
+    ] = 0.0
+    exempt_other_usd: Annotated[
+        float,
+        Field(ge=0, description="Debt exempt for other approved reasons (USD)."),
+    ] = 0.0
+
+    @field_validator("referred_to_treasury_usd")
+    @classmethod
+    def referred_le_eligible(cls, v: float, info) -> float:
+        eligible = info.data.get("total_eligible_debt_usd")
+        if eligible is not None and v > eligible * 1.001:  # allow 0.1% rounding tolerance
+            raise ValueError(
+                f"referred_to_treasury_usd ({v:,.0f}) cannot exceed "
+                f"total_eligible_debt_usd ({eligible:,.0f})"
+            )
+        return v
+
+    @field_validator("referred_to_treasury_count")
+    @classmethod
+    def referred_count_le_eligible(cls, v: int, info) -> int:
+        eligible = info.data.get("total_eligible_debt_count")
+        if eligible is not None and v > eligible:
+            raise ValueError(
+                f"referred_to_treasury_count ({v}) cannot exceed "
+                f"total_eligible_debt_count ({eligible})"
+            )
+        return v
+
+
 class KBSearchInput(BaseModel):
     """Inputs for the Bedrock KB search tools.
 

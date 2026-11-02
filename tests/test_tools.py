@@ -5,8 +5,10 @@ import pytest
 from trorbot_mcp.app import mcp
 from trorbot_mcp.models import (
     DelinquencyTrendsInput,
+    FiscalQuarter,
     ListAgenciesInput,
     QueryReceivablesInput,
+    TRORSubmissionInput,
 )
 
 
@@ -19,6 +21,7 @@ async def test_all_tools_registered():
         "search_program_context",
         "search_program_guidance",
         "get_annual_report_insights",
+        "validate_tror_submission",
     }
     assert expected == tool_names
 
@@ -92,6 +95,67 @@ def test_kb_search_input_valid():
     from trorbot_mcp.models import KBSearchInput
     p = KBSearchInput(query="What is the 120-day referral rule?")
     assert p.max_results == 5
+
+
+# ── TRORSubmissionInput validation ──────────────────────────────────────
+
+_VALID_SUBMISSION = dict(
+    agency_name="Department of Justice",
+    fiscal_year=2025,
+    fiscal_quarter=FiscalQuarter.Q4,
+    beginning_balance_usd=1_000_000.0,
+    new_receivables_usd=200_000.0,
+    collections_usd=150_000.0,
+    write_offs_usd=50_000.0,
+    adjustments_usd=0.0,
+    total_delinquent_usd=300_000.0,
+    total_eligible_debt_usd=250_000.0,
+    total_eligible_debt_count=100,
+    referred_to_treasury_usd=200_000.0,
+    referred_to_treasury_count=80,
+)
+
+
+def test_tror_submission_valid():
+    p = TRORSubmissionInput(**_VALID_SUBMISSION)
+    assert p.agency_name == "Department of Justice"
+    assert p.fiscal_quarter == FiscalQuarter.Q4
+
+
+def test_tror_submission_referred_exceeds_eligible_usd():
+    bad = {**_VALID_SUBMISSION, "referred_to_treasury_usd": 300_000.0}
+    with pytest.raises(Exception, match="cannot exceed"):
+        TRORSubmissionInput(**bad)
+
+
+def test_tror_submission_referred_count_exceeds_eligible():
+    bad = {**_VALID_SUBMISSION, "referred_to_treasury_count": 101}
+    with pytest.raises(Exception, match="cannot exceed"):
+        TRORSubmissionInput(**bad)
+
+
+def test_tror_submission_fy_below_2016():
+    bad = {**_VALID_SUBMISSION, "fiscal_year": 2015}
+    with pytest.raises(Exception):
+        TRORSubmissionInput(**bad)
+
+
+def test_tror_submission_exemptions_default_zero():
+    p = TRORSubmissionInput(**_VALID_SUBMISSION)
+    assert p.exempt_bankruptcy_usd == 0.0
+    assert p.exempt_litigation_usd == 0.0
+    assert p.exempt_other_usd == 0.0
+
+
+def test_tror_submission_adjustments_default_zero():
+    p = TRORSubmissionInput(**_VALID_SUBMISSION)
+    assert p.adjustments_usd == 0.0
+
+
+def test_tror_submission_agency_name_too_short():
+    bad = {**_VALID_SUBMISSION, "agency_name": "A"}
+    with pytest.raises(Exception):
+        TRORSubmissionInput(**bad)
 
 
 def test_latest_complete_fy_allows_for_publication_lag(monkeypatch):
