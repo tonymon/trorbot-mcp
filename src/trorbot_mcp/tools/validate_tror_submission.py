@@ -9,7 +9,7 @@ No data is persisted — this tool validates only. It is the first step an agenc
 AI agent would take before a formal TROR submission.
 
 Data rules derived from:
-- TROR Form 05 (docs/businessrules/TROR-Form-yr2016-with-formulas.xlsx)
+- TROR Form 05 (FY2016 form with formulas)
 - FY2016/FY2018 TROR Instructional Workbooks
 - DCIA §3716 (120-day mandatory referral requirement)
 """
@@ -22,7 +22,8 @@ from typing import Annotated
 
 from fastmcp import FastMCP
 
-from trorbot_mcp.models import FiscalQuarter, TRORSubmissionInput
+from trorbot_mcp.models import TRORSubmissionInput
+from trorbot_mcp.resources.fiscal_year_metadata import _fiscal_year
 from trorbot_mcp.utils import fetch_fiscal
 
 _TROR_PATH = "/v2/debt/tror/data_act_compliance"
@@ -57,6 +58,11 @@ async def _fetch_prior_quarter(agency_name: str, fy: int, q: int) -> dict | None
     raw = await fetch_fiscal(_TROR_PATH, params)
     data = raw.get("data", [])
     return data[0] if data else None
+
+
+def _current_period(today: datetime.date) -> tuple[int, int]:
+    """(fiscal_year, quarter) containing today. FY2027 Q1 = Oct–Dec 2026."""
+    return _fiscal_year(today), (today.month - 10) % 12 // 3 + 1
 
 
 def _receipt_id(agency_name: str, fy: int, q: int) -> str:
@@ -182,14 +188,9 @@ def register(mcp: FastMCP) -> None:
             checks.append({"rule": "exemptions_le_eligible", "result": "pass"})
 
         # ── 5. Fiscal year/quarter plausibility ──────────────────────────────
-        today = datetime.date.today()
-        current_fy = today.year if today.month >= 10 else today.year - 1
-        current_q = {10: 1, 11: 1, 12: 1, 1: 2, 2: 2, 3: 2,
-                     4: 3, 5: 3, 6: 3, 7: 4, 8: 4, 9: 4}[today.month]
-
         sub_fy, sub_q = params.fiscal_year, params.fiscal_quarter.value
-        future = (sub_fy > current_fy) or (sub_fy == current_fy and sub_q > current_q)
-        if future:
+        current_fy, current_q = _current_period(datetime.date.today())
+        if (sub_fy, sub_q) > (current_fy, current_q):
             warnings.append(
                 f"FY{sub_fy} Q{sub_q} is in the future (current period: FY{current_fy} Q{current_q}). "
                 "Submissions are typically filed after the quarter closes."

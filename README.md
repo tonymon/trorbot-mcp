@@ -13,13 +13,14 @@ Built on top of [TRORBOT](https://github.com/tonymon/bedrock-agent-ui), the Bure
 
 The TROR dataset tracks whether federal agencies comply with the **Debt Collection Improvement Act (DCIA)** requirement to refer eligible delinquent debts to the Treasury for cross-servicing or offset within 120 days. This MCP server surfaces that data — 12,800+ quarterly agency compliance records from FY2016 to present — directly to LLMs.
 
-### Tools (6)
+### Tools (7)
 
 | Tool | Credentials | What it does |
 |---|---|---|
 | `list_agencies` | None | List federal agencies reporting TROR data, with fiscal year coverage |
 | `query_receivables` | None | Query DDR compliance records by agency, fiscal year, and quarter |
 | `get_delinquency_trends` | None | Rank agencies by change in compliance rate or debt amounts over a FY window, with a government-wide aggregate. Filter to the 24 CFO Act agencies (`cfo_agencies_only`) or by size (`min_eligible_debt_usd`) |
+| `validate_tror_submission` | None | Validate an agency's draft quarterly TROR Form 05 figures: computes ending balance and DDR compliance rates, runs consistency checks, and compares against the agency's last published quarter. Validates only; nothing is stored or filed |
 | `search_program_context` | TRORBOT API | Search analyst-curated policy events explaining data changes |
 | `search_program_guidance` | TRORBOT API | Search program rules, legal authorities, TFM chapters |
 | `get_annual_report_insights` | TRORBOT API | Search Annual TROR Reports to Congress |
@@ -121,6 +122,67 @@ rate for "Social Security Administration" from FY2016 to FY2025.
 
 ---
 
+## Agency Submission Demo
+
+Today agencies compile TROR Form 05 figures by hand from several financial systems
+and key them into a web portal. Errors surface after filing. An agency's AI agent
+connected to TRORBOT MCP can check its draft first:
+
+1. **Confirm the agency name.** `list_agencies` returns the exact name Fiscal Data uses.
+2. **Pull the prior quarter.** `query_receivables` returns the agency's last published
+   compliance figures for comparison.
+3. **Assemble the draft.** The agent gathers the quarter's figures from the agency's
+   systems of record.
+4. **Validate before filing.** `validate_tror_submission` returns a receipt with
+   computed rates, check results and the change from the last published quarter,
+   before anyone touches the form.
+
+Example prompt:
+
+```
+I'm preparing the Small Business Administration's FY2026 Q4 TROR submission.
+Validate these draft figures with trorbot validate_tror_submission:
+beginning balance $9.0B, new receivables $800M, collections $650M,
+write-offs $40M, total delinquent $1.5B, eligible for referral $1.2B
+(48,000 accounts), referred to Treasury $1.02B (41,280 accounts).
+```
+
+The receipt (abridged; the draft figures are illustrative, the prior quarter is SBA's
+published FY2026 Q3 rate):
+
+```json
+{
+  "validation_status": "passed",
+  "receipt_id": "TROR-DRAFT-2026-Q4-SMALL-BUSINESS-ADMIN-47796C",
+  "computed_fields": {
+    "ending_balance_usd": 9110000000.0,
+    "compliance_rate_amt_pct": 85.0,
+    "compliance_rate_cnt_pct": 86.0,
+    "not_referred_usd": 180000000.0,
+    "not_referred_count": 6720
+  },
+  "checks": [
+    {"rule": "ending_balance_arithmetic", "result": "info"},
+    {"rule": "ddr_compliance_computation", "result": "pass"},
+    {"rule": "eligible_subset_of_delinquent", "result": "pass"},
+    {"rule": "exemptions_le_eligible", "result": "pass"},
+    {"rule": "quarter_plausibility", "result": "pass"}
+  ],
+  "prior_quarter": {
+    "found": true,
+    "period": "FY2026 Q3",
+    "published_compliance_rate_amt_pct": 75.877,
+    "draft_vs_prior_change_pp": 9.12,
+    "direction": "improvement"
+  }
+}
+```
+
+Input errors such as referred debt exceeding eligible debt are rejected before any
+checks run. The receipt ID is deterministic and marks a draft, not a filing.
+
+---
+
 ## Environment Variables
 
 | Variable | Required | Default | Description |
@@ -175,6 +237,7 @@ Claude Desktop / Cursor / any MCP client
 │  ├ list_agencies                    │
 │  ├ query_receivables    fiscal-year │
 │  ├ get_delinquency_trends  metadata │
+│  ├ validate_tror_submission         │
 │  ├ search_program_context           │
 │  ├ search_program_guidance          │
 │  └ get_annual_report_insights       │
@@ -228,7 +291,7 @@ trorbot-mcp/
 │   ├── config.py       # pydantic-settings configuration
 │   ├── models.py       # Pydantic input models
 │   ├── utils.py        # Shared HTTP helpers
-│   ├── tools/          # 6 MCP tools
+│   ├── tools/          # 7 MCP tools
 │   ├── prompts/        # 2 MCP prompts
 │   └── resources/      # 1 MCP resource
 ├── eval/                     # ground-truth eval: cases, runner, fixtures, results
@@ -254,7 +317,7 @@ trorbot-mcp/
 | Criteria | How |
 |---|---|
 | Real government dataset | TROR DDR compliance — public Fiscal Data API, 12,800+ records |
-| No credentials to demo | 3 of 6 tools are fully public |
+| No credentials to demo | 4 of 7 tools are fully public |
 | MCP primitives | All three used: tools, prompts, resources |
 | Useful to analysts | Compliance trends, agency benchmarking, policy context |
 | Extensible | KB tools light up with TRORBOT credentials for narrative context |

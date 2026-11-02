@@ -175,3 +175,22 @@ def test_latest_complete_fy_allows_for_publication_lag(monkeypatch):
     assert meta._latest_complete_fiscal_year() == 2025  # FY2026 Q4 not yet published
     FakeDate.today_value = date(2026, 12, 15)
     assert meta._latest_complete_fiscal_year() == 2026
+
+
+@pytest.mark.parametrize(
+    ("today", "expected"),
+    [
+        ((2026, 10, 1), (2027, 1)),
+        ((2026, 11, 2), (2027, 1)),
+        ((2026, 12, 31), (2027, 1)),
+        ((2027, 1, 1), (2027, 2)),
+        ((2027, 4, 15), (2027, 3)),
+        ((2027, 9, 30), (2027, 4)),
+    ],
+)
+def test_validate_submission_current_period(today, expected):
+    from datetime import date
+
+    from trorbot_mcp.tools.validate_tror_submission import _current_period
+
+    assert _current_period(date(*today)) == expected
