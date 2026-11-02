@@ -235,3 +235,25 @@ def test_validate_submission_current_period(today, expected):
     from trorbot_mcp.tools.validate_tror_submission import _current_period
 
     assert _current_period(date(*today)) == expected
+
+
+@pytest.mark.parametrize(
+    ("bureau", "level_filter"),
+    [
+        (None, "agency_bureau_indicator:eq:Agency"),
+        ("Bureau of the Fiscal Service", "agency_bureau_indicator:eq:Bureau,bureau_nm:eq:Bureau of the Fiscal Service"),
+    ],
+)
+async def test_prior_quarter_compares_at_the_drafts_level(monkeypatch, bureau, level_filter):
+    from trorbot_mcp.tools import validate_tror_submission as tool
+
+    seen = {}
+
+    async def fake_fetch(path, params):
+        seen.update(params)
+        return {"data": []}
+
+    monkeypatch.setattr(tool, "fetch_fiscal", fake_fetch)
+    assert await tool._fetch_prior_quarter("Department of the Treasury", bureau, 2026, 4) is None
+    assert seen["filter"].endswith(level_filter)
+    assert "record_fiscal_year:eq:2026,record_fiscal_quarter:eq:3" in seen["filter"]

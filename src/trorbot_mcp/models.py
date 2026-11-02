@@ -182,6 +182,17 @@ class TRORSubmissionInput(BaseModel):
             ),
         ),
     ]
+    bureau_name: Annotated[
+        str | None,
+        Field(
+            min_length=2, max_length=200,
+            description=(
+                "Exact bureau name when the draft is for one bureau, as returned by query_receivables "
+                "with include_bureaus=true. Omit for an agency-wide draft. Sets which published "
+                "row the draft is compared against."
+            ),
+        ),
+    ] = None
     fiscal_year: Annotated[
         int,
         Field(ge=2016, le=2030, description="Fiscal year of the submission (e.g. 2026)."),

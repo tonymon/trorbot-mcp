@@ -43,9 +43,11 @@ def _prior_quarter(fy: int, q: int) -> tuple[int, int]:
     return fy, q - 1
 
 
-async def _fetch_prior_quarter(agency_name: str, fy: int, q: int) -> dict | None:
-    """Fetch the most recent published DDR record for comparison."""
+async def _fetch_prior_quarter(agency_name: str, bureau_name: str | None, fy: int, q: int) -> dict | None:
+    """Fetch the prior quarter's published record at the draft's level: the bureau row, or the agency row."""
     prior_fy, prior_q = _prior_quarter(fy, q)
+    level = f"agency_bureau_indicator:eq:Bureau,bureau_nm:eq:{bureau_name}" if bureau_name \
+        else "agency_bureau_indicator:eq:Agency"
     params = {
         "page[size]": 1,
         "fields": (
@@ -57,7 +59,7 @@ async def _fetch_prior_quarter(agency_name: str, fy: int, q: int) -> dict | None
             f"agency_nm:eq:{agency_name},"
             f"record_fiscal_year:eq:{prior_fy},"
             f"record_fiscal_quarter:eq:{prior_q},"
-            "agency_bureau_indicator:eq:Agency"
+            f"{level}"
         ),
     }
     raw = await fetch_fiscal(_TROR_PATH, params)
@@ -70,10 +72,11 @@ def _current_period(today: datetime.date) -> tuple[int, int]:
     return _fiscal_year(today), (today.month - 10) % 12 // 3 + 1
 
 
-def _receipt_id(agency_name: str, fy: int, q: int) -> str:
+def _receipt_id(agency_name: str, bureau_name: str | None, fy: int, q: int) -> str:
     """Deterministic draft receipt ID — not a real submission ID."""
     slug = agency_name.upper().replace(" ", "-")[:20]
-    h = hashlib.sha1(f"{agency_name}{fy}{q}".encode()).hexdigest()[:6].upper()
+    key = f"{agency_name}{fy}{q}" + (f"|{bureau_name}" if bureau_name else "")
+    h = hashlib.sha1(key.encode()).hexdigest()[:6].upper()
     return f"TROR-DRAFT-{fy}-Q{q}-{slug}-{h}"
 
 
@@ -173,7 +176,8 @@ def register(mcp: FastMCP) -> None:
         2. Computes the compliance rate, referred ÷ required, on a dollar and an
            account basis: the same measure Treasury publishes on Fiscal Data.
         3. Checks the lines for consistency and that the quarter has closed.
-        4. Compares the draft rate with the agency's last published quarter (live API).
+        4. Compares the draft rate with the last published quarter (live API) at the
+           draft's level: the bureau's row when bureau_name is given, else the agency's.
 
         No data is persisted. The output is a receipt the agency can review and
         correct before formal filing.
@@ -184,8 +188,10 @@ def register(mcp: FastMCP) -> None:
         checks = run_checks(params, lines, datetime.date.today())
 
         sub_fy, sub_q = params.fiscal_year, params.fiscal_quarter.value
-        prior = await _fetch_prior_quarter(params.agency_name, sub_fy, sub_q)
+        bureau = params.bureau_name
+        prior = await _fetch_prior_quarter(params.agency_name, bureau, sub_fy, sub_q)
         prior_fy, prior_q = _prior_quarter(sub_fy, sub_q)
+        compared_against = f"bureau: {bureau}" if bureau else f"agency-wide: {params.agency_name}"
         if prior:
             prior_rate = float(prior.get("compliance_rate_amt") or 0)
             change_pp = round(lines["compliance_rate_amt_pct"] - prior_rate, 2)
@@ -193,15 +199,25 @@ def register(mcp: FastMCP) -> None:
             prior_quarter_summary = {
                 "found": True,
                 "period": f"FY{prior_fy} Q{prior_q}",
+                "compared_against": compared_against,
                 "published_compliance_rate_amt_pct": round(prior_rate, 4),
                 "draft_vs_prior_change_pp": change_pp,
                 "direction": direction,
+                "note": (
+                    "Published figures combine all receivable types (direct loans, defaulted "
+                    "guaranteed loans, administrative). Compare like with like."
+                ),
             }
         else:
             prior_quarter_summary = {
                 "found": False,
                 "period": f"FY{prior_fy} Q{prior_q}",
+                "compared_against": compared_against,
                 "note": (
+                    "No published row found for the prior quarter at this level. Check the exact "
+                    "bureau name with query_receivables (include_bureaus=true), or this may be a "
+                    "new reporting entity or data not yet published."
+                    if bureau else
                     "No published data found for the prior quarter. "
                     "This may be a new reporting agency or data not yet published."
                 ),
@@ -212,9 +228,10 @@ def register(mcp: FastMCP) -> None:
 
         return {
             "validation_status": status,
-            "receipt_id": _receipt_id(params.agency_name, sub_fy, sub_q),
+            "receipt_id": _receipt_id(params.agency_name, bureau, sub_fy, sub_q),
             "submission": {
                 "agency": params.agency_name,
+                "bureau": bureau,
                 "period": f"FY{sub_fy} {_QUARTER_LABEL[sub_q]}",
             },
             "computed_lines": lines,

@@ -191,6 +191,7 @@ published FY2026 Q3 rate):
   "prior_quarter": {
     "found": true,
     "period": "FY2026 Q3",
+    "compared_against": "agency-wide: Small Business Administration",
     "published_compliance_rate_amt_pct": 75.877,
     "draft_vs_prior_change_pp": 9.12,
     "direction": "improvement"
@@ -200,6 +201,13 @@ published FY2026 Q3 rate):
 
 Each check also carries a one-line explanation of the form rule behind it. The receipt
 ID is deterministic and marks a draft, not a filing.
+
+TROR is filed by reporting entity, so a draft can be for a single bureau. Pass
+`bureau_name` (the exact name from `query_receivables` with `include_bureaus=true`) and the
+draft is compared against that bureau's published row instead of the agency-wide row; the
+receipt's `compared_against` field says which. Published figures combine all receivable
+types (direct loans, defaulted guaranteed loans, administrative), so compare a draft that
+covers the same scope.
 
 ---
 
