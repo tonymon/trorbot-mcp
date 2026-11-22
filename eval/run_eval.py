@@ -17,6 +17,7 @@ import argparse
 import asyncio
 import json
 import math
+import statistics
 import sys
 import time
 from datetime import datetime, timezone
@@ -195,7 +196,7 @@ async def main(mode: str) -> int:
             "passed": passed,
             "total": len(results),
             "accuracy": round(passed / len(results), 4),
-            "median_latency_ms": sorted(r["latency_ms"] for r in results)[len(results) // 2],
+            "median_latency_ms": round(statistics.median(r["latency_ms"] for r in results), 1),
         },
         "cases": results,
     }

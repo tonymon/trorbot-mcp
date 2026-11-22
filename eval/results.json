@@ -1,8 +1,8 @@
 {
-  "run_at": "2026-10-28T21:48:52+00:00",
+  "run_at": "2026-11-22T18:55:54+00:00",
   "mode": "live",
   "data_snapshot": {
-    "fetched_at": "2026-10-28T21:48:47+00:00",
+    "fetched_at": "2026-11-22T18:55:49+00:00",
     "latest_record_date": "2026-06-30"
   },
   "tolerance": "numbers within 0.01% relative; names exact",
@@ -10,7 +10,7 @@
     "passed": 8,
     "total": 8,
     "accuracy": 1.0,
-    "median_latency_ms": 748.8
+    "median_latency_ms": 563.8
   },
   "cases": [
     {
@@ -24,7 +24,7 @@
       "actual": 71,
       "pass": true,
       "error": null,
-      "latency_ms": 977.7,
+      "latency_ms": 1314.8,
       "http_requests": null
     },
     {
@@ -40,7 +40,7 @@
       "actual": 97.94648223475004,
       "pass": true,
       "error": null,
-      "latency_ms": 375.0,
+      "latency_ms": 260.2,
       "http_requests": null
     },
     {
@@ -63,7 +63,7 @@
       },
       "pass": true,
       "error": null,
-      "latency_ms": 750.0,
+      "latency_ms": 924.8,
       "http_requests": null
     },
     {
@@ -86,7 +86,7 @@
       },
       "pass": true,
       "error": null,
-      "latency_ms": 748.8,
+      "latency_ms": 818.1,
       "http_requests": null
     },
     {
@@ -144,7 +144,7 @@
       ],
       "pass": true,
       "error": null,
-      "latency_ms": 490.7,
+      "latency_ms": 309.5,
       "http_requests": null
     },
     {
@@ -160,7 +160,7 @@
       "actual": 2458092153.0,
       "pass": true,
       "error": null,
-      "latency_ms": 424.9,
+      "latency_ms": 272.9,
       "http_requests": null
     },
     {
@@ -176,7 +176,7 @@
       "actual": 22,
       "pass": true,
       "error": null,
-      "latency_ms": 461.5,
+      "latency_ms": 297.1,
       "http_requests": null
     },
     {
@@ -241,7 +241,7 @@
       },
       "pass": true,
       "error": null,
-      "latency_ms": 758.7,
+      "latency_ms": 837.8,
       "http_requests": null
     }
   ]
