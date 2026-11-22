@@ -45,7 +45,7 @@ replay mode keeps CI deterministic and offline.
 
 ## Baseline
 
-[baseline_aa3f228.json](baseline_aa3f228.json) is a `--live` run against the
+[baseline_66124de.json](baseline_66124de.json) is a `--live` run against the
 initial commit, before the pagination and quarter fixes. It scored **3/8**:
 
 - `agency_count` returned **10** agencies instead of 71 (only the first page was read).
