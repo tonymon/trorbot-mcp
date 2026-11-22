@@ -1,7 +1,7 @@
 """Tool: search_program_guidance
 
-Searches the TRORBOT Program Documentation knowledge base.
-This KB contains Fiscal Service FAQ pages, program guides, legislation PDFs,
+Searches the optional Program Documentation knowledge base.
+This KB contains publicly available Fiscal Service FAQ pages, program guides, legislation PDFs,
 and legal authority documents for Cross-Servicing, TOP, AWG, CRS, DCIA, and TROR.
 
 Requires TRORBOT_KB_BUCKET (an Amazon S3 Vectors bucket) and AWS credentials.
@@ -33,7 +33,7 @@ def register(mcp: FastMCP) -> None:
     async def search_program_guidance(
         params: Annotated[KBSearchInput, "Query and result-count options."]
     ) -> dict:
-        """Search TRORBOT's Program Documentation knowledge base for rules, procedures,
+        """Search the optional Program Documentation knowledge base (public documents) for rules, procedures,
         and legal authorities governing federal debt collection and receivables reporting.
 
         This KB covers:

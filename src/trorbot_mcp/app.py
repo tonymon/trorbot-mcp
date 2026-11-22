@@ -20,7 +20,9 @@ from trorbot_mcp.tools import register_tools
 mcp = FastMCP(
     name="TRORBOT MCP",
     instructions=(
-        "You are connected to TRORBOT, a Treasury receivables data server. "
+        "You are connected to TRORBOT MCP, which answers questions from Treasury's publicly "
+        "available 120 Day Delinquent Debt Referral Compliance data on Fiscal Data "
+        "(fiscaldata.treasury.gov). "
         "Use list_agencies first when agency names or codes are unknown. "
         "Use query_receivables for point-in-time data and get_delinquency_trends "
         "for direction and change analysis. "

@@ -1,31 +1,30 @@
 # TRORBOT MCP Server
 
-> **GSA MCP Server Government Hackathon — Dataset Access Server**
-> Submission deadline: November 20, 2026
+> **GSA MCP Server and SI Agent Government Hackathon 2026 — Dataset Access Server**
 
-An MCP (Model Context Protocol) server that gives any Claude Desktop, Cursor, or MCP-compatible LLM client direct access to the **Treasury Report on Receivables (TROR)** dataset — federal agency delinquent debt referral compliance data spanning FY2016 to present.
+An MCP (Model Context Protocol) server that makes Treasury's **publicly available** federal agency delinquent debt referral compliance data, spanning FY2016 to present, easier to use from Claude Desktop, Claude Code, Cursor, or any other MCP-compatible AI client.
 
-Built on top of [TRORBOT](https://github.com/tonymon/bedrock-agent-ui), the Bureau of the Fiscal Service's AI assistant for receivables analysis.
+The data is the [120 Day Delinquent Debt Referral Compliance Report](https://fiscaldata.treasury.gov/datasets/delinquent-debt-referral-compliance/), which the Bureau of the Fiscal Service publishes quarterly on [Fiscal Data](https://fiscaldata.treasury.gov/) from agencies' Treasury Report on Receivables (TROR) filings. It is public domain: anyone can browse it, download it, or call its API without registering. This server adds no data of its own and has no access to non-public Treasury data or systems. It turns plain-English questions into the right public API calls and calculations.
 
 ---
 
 ## What This Server Exposes
 
-The TROR dataset tracks whether federal agencies comply with the **Debt Collection Improvement Act (DCIA)** requirement to refer eligible delinquent debts to the Treasury for cross-servicing or offset within 120 days. This MCP server surfaces that data — 12,800+ quarterly agency compliance records from FY2016 to present — directly to LLMs.
+The public compliance report tracks whether federal agencies meet the requirement, set by the DATA Act of 2014, to refer legally enforceable non-tax debts more than 120 days delinquent to the Treasury Offset Program. This MCP server queries that public dataset on demand: 12,800+ quarterly agency and bureau records from FY2016 to present.
 
 ### Tools (7)
 
 | Tool | Credentials | What it does |
 |---|---|---|
-| `list_agencies` | None | List federal agencies reporting TROR data, with fiscal year coverage |
-| `query_receivables` | None | Query DDR compliance records by agency, fiscal year, and quarter |
+| `list_agencies` | None | List federal agencies in the public compliance report, with fiscal year coverage |
+| `query_receivables` | None | Query published DDR compliance records by agency, fiscal year, and quarter |
 | `get_delinquency_trends` | None | Rank agencies by change in compliance rate or debt amounts over a FY window, with a government-wide aggregate. Filter to the 24 CFO Act agencies (`cfo_agencies_only`) or by size (`min_eligible_debt_usd`) |
 | `validate_tror_submission` | None | Validate an agency's draft quarterly TROR Form 05 lines: computes the form's derived lines and the Treasury Offset Program compliance rate, runs consistency checks, and compares against the agency's last published quarter. Validates only; nothing is stored or filed |
-| `search_program_context` | AWS (S3 Vectors) | Search analyst-curated policy events explaining data changes |
-| `search_program_guidance` | AWS (S3 Vectors) | Search program rules, legal authorities, TFM chapters |
-| `get_annual_report_insights` | AWS (S3 Vectors) | Search Annual TROR Reports to Congress |
+| `search_program_context` | AWS (S3 Vectors) | Optional: search summaries of publicly reported policy events behind data changes |
+| `search_program_guidance` | AWS (S3 Vectors) | Optional: search public program rules, legal authorities, TFM chapters |
+| `get_annual_report_insights` | AWS (S3 Vectors) | Optional: search the public Annual TROR Reports to Congress |
 
-The first three tools hit the **public Fiscal Data API** (`api.fiscaldata.treasury.gov`) with no credentials required. Any judge or user can test them immediately.
+The four tools that need no credentials call only the **public Fiscal Data API** (`api.fiscaldata.treasury.gov`), the same API anyone can call directly. Any judge or user can test them immediately. `validate_tror_submission` works only on the draft figures you give it and the public published rates; it stores nothing and files nothing.
 
 ### Prompts (2)
 
@@ -225,19 +224,22 @@ covers the same scope.
 | `PORT` | No | `8080` | Port for HTTP mode |
 | `HTTP_TIMEOUT` | No | `30` | Request timeout (seconds) |
 
-Copy `.env.example` to `.env` and fill in values. The first three tools (`list_agencies`, `query_receivables`, `get_delinquency_trends`) work without any credentials.
+Copy `.env.example` to `.env` and fill in values. The four public-data tools (`list_agencies`, `query_receivables`, `get_delinquency_trends`, `validate_tror_submission`) work without any credentials.
 
 ---
 
 ## Data Source
 
-**[Fiscal Data API — 120 Day Delinquent Debt Referral Compliance Report](https://fiscaldata.treasury.gov/)**
+**[120 Day Delinquent Debt Referral Compliance Report](https://fiscaldata.treasury.gov/datasets/delinquent-debt-referral-compliance/)** on Treasury's public [Fiscal Data](https://fiscaldata.treasury.gov/) site
 
-- Endpoint: `GET /services/api/fiscal_service/v2/debt/tror/data_act_compliance`
-- Coverage: FY2016 Q1 — present (~12,800 agency-quarter records)
-- Published by: Bureau of the Fiscal Service
+- Public dataset page, with CSV/JSON/XML downloads and a data dictionary: https://fiscaldata.treasury.gov/datasets/delinquent-debt-referral-compliance/
+- API endpoint: `GET https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v2/debt/tror/data_act_compliance`
+- Coverage: FY2016 Q1 — present (~12,800 agency and bureau quarterly records)
+- Published by: Bureau of the Fiscal Service, from agencies' Treasury Report on Receivables (TROR) filings
 - Update cadence: Quarterly (~45–60 days after quarter close)
-- License: Public domain, no auth required
+- License: Public domain; no registration, API key, or credentials required
+
+Every figure the public-data tools return can be checked against this page.
 
 ### Key Fields
 
@@ -288,13 +290,13 @@ Fiscal Data API    Amazon S3 Vectors
 
 ## Knowledge Bases
 
-The three KB tools search Amazon S3 Vectors — one index per knowledge base:
+The three knowledge-base tools are **optional and off by default**. They search an Amazon S3 Vectors bucket that you configure, one index per knowledge base. **No knowledge-base content is included in this repository**, and without a configured bucket these tools send no requests. The indexes are meant to hold publicly available documents only:
 
-| Index | Tool | Contents | Chunks |
-|---|---|---|---|
-| `context-events` | `search_program_context` | Analyst write-ups of events behind data changes (e.g. SBA's 2026 referral of 562k fraudulent loans) | 53 |
-| `program-documentation` | `search_program_guidance` | DCIA and DATA Act text, GAO-02-313, Fiscal Service FAQs (AWG, Cross-Servicing, CRS, TOP), FY16/FY18 TROR workbooks | 464 |
-| `annual-tror-reports` | `get_annual_report_insights` | Annual TROR Reports to Congress, tagged by `fiscal_year` | 2,261 |
+| Index | Tool | Contents (all publicly available) |
+|---|---|---|
+| `context-events` | `search_program_context` | Summaries of publicly reported news and agency announcements that explain changes in the data |
+| `program-documentation` | `search_program_guidance` | DCIA and DATA Act text, GAO-02-313, Fiscal Service public FAQs (AWG, Cross-Servicing, CRS, TOP), TROR instructional workbooks |
+| `annual-tror-reports` | `get_annual_report_insights` | Annual TROR Reports to Congress, tagged by `fiscal_year` |
 
 A search embeds the question with Amazon Titan Text Embeddings V2 (1,024 dims, the
 model the chunks were embedded with) and returns the closest chunks with their source
@@ -368,11 +370,11 @@ trorbot-mcp/
 
 | Criteria | How |
 |---|---|
-| Real government dataset | TROR DDR compliance — public Fiscal Data API, 12,800+ records |
+| Real government dataset | Public 120 Day Delinquent Debt Referral Compliance Report on Fiscal Data, 12,800+ records |
 | No credentials to demo | 4 of 7 tools are fully public |
 | MCP primitives | All three used: tools, prompts, resources |
 | Useful to analysts | Compliance trends, agency benchmarking, policy context |
-| Extensible | KB tools light up with an S3 Vectors bucket for narrative context |
+| Extensible | Optional KB tools add narrative context from public documents when an S3 Vectors bucket is configured |
 
 ---
 

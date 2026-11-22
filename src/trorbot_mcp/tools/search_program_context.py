@@ -1,8 +1,8 @@
 """Tool: search_program_context
 
-Searches the TRORBOT Context Events knowledge base.
-This KB contains analyst-curated policy events, regulatory changes, legislation,
-and program context relevant to federal receivables management.
+Searches the optional Context Events knowledge base: summaries of publicly reported
+policy events, regulatory changes, legislation, and program context relevant to
+federal receivables management. No knowledge-base content ships with this repository.
 
 Requires TRORBOT_KB_BUCKET (an Amazon S3 Vectors bucket) and AWS credentials.
 """
@@ -33,10 +33,10 @@ def register(mcp: FastMCP) -> None:
     async def search_program_context(
         params: Annotated[KBSearchInput, "Query and result-count options."]
     ) -> dict:
-        """Search the TRORBOT Context Events knowledge base for policy events,
+        """Search the optional Context Events knowledge base for policy events,
         regulatory changes, and program context affecting federal receivables.
 
-        This KB contains analyst-curated content about legislation (DCIA, DATA Act,
+        This KB holds summaries of publicly available sources about legislation (DCIA, DATA Act,
         Debt Collection Improvement Act), Treasury Financial Manual updates, program
         changes to Cross-Servicing, TOP (Treasury Offset Program), AWG, and CRS, and
         significant events that explain trends or anomalies in the receivables data.

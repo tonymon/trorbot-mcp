@@ -9,3 +9,4 @@ dist/
 *.egg-info/
 deploy/
 .DS_Store
+docs/

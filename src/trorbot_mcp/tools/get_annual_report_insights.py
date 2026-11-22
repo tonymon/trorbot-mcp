@@ -1,7 +1,7 @@
 """Tool: get_annual_report_insights
 
-Searches the TRORBOT Annual TROR Reports knowledge base.
-This KB contains PDF Annual TROR Reports to Congress, which provide government-wide
+Searches the optional Annual TROR Reports knowledge base.
+This KB contains the public Annual TROR Reports to Congress, which provide government-wide
 receivables summaries, trend analysis, and program highlights for each fiscal year.
 
 Requires TRORBOT_KB_BUCKET (an Amazon S3 Vectors bucket) and AWS credentials.
@@ -33,7 +33,7 @@ def register(mcp: FastMCP) -> None:
     async def get_annual_report_insights(
         params: Annotated[KBSearchInput, "Query and result-count options."]
     ) -> dict:
-        """Search the Annual TROR Reports to Congress knowledge base for government-wide
+        """Search the optional knowledge base of public Annual TROR Reports to Congress for government-wide
         receivables summaries, year-over-year trend analysis, and program highlights.
 
         Each annual report (FY2016–present) contains:

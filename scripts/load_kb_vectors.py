@@ -1,12 +1,12 @@
-"""Load the exported TRORBOT knowledge bases into Amazon S3 Vectors.
+"""Load exported knowledge-base chunks (public documents only) into Amazon S3 Vectors.
 
-Input is the export of the original Bedrock knowledge bases: one JSONL file per KB
+Input is an export of existing Bedrock knowledge bases: one JSONL file per KB
 (context-events, program-documentation, annual-tror-reports), each line holding a
 chunk's text, source URI, and its Titan Text Embeddings V2 vector (1,024 dims,
 normalized). The vectors are reused as-is — the server embeds queries with the same
 model, so no re-embedding is needed.
 
-    uv run python scripts/load_kb_vectors.py <export-dir> --bucket trorbot-kb --profile personal
+    uv run python scripts/load_kb_vectors.py <export-dir> --bucket trorbot-kb --profile <aws-profile>
 
 Creates the vector bucket and one index per KB if they don't exist, then upserts every
 chunk (keyed by its original chunk id, so re-running is safe).

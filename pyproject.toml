@@ -1,7 +1,7 @@
 [project]
 name = "trorbot-mcp"
 version = "0.1.0"
-description = "MCP server exposing Treasury receivables data, program context, and annual report insights"
+description = "MCP server for Treasury's publicly available delinquent debt referral compliance data on Fiscal Data"
 requires-python = ">=3.11"
 dependencies = [
     "boto3>=1.44.9",
