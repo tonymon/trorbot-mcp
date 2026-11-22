@@ -14,6 +14,8 @@ class Settings(BaseSettings):
 
     # Server
     mcp_transport: str = "stdio"
+    # HTTP mode has no authentication, so it listens on this machine only unless HOST is set
+    host: str = "127.0.0.1"
     port: int = 8080
     http_timeout: int = 30
 

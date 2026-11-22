@@ -43,7 +43,7 @@ def main() -> None:
     transport = os.environ.get("MCP_TRANSPORT", settings.mcp_transport)
     if transport == "http":
         port = int(os.environ.get("PORT", settings.port))
-        mcp.run(transport="streamable-http", host="0.0.0.0", port=port, path="/mcp")
+        mcp.run(transport="streamable-http", host=settings.host, port=port, path="/mcp")
     else:
         mcp.run(transport="stdio")
 

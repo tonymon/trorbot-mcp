@@ -17,7 +17,8 @@ non-public data in a report.
 - **Transport:** the supported deployment is **stdio** — the server runs as a
   local subprocess of the MCP client (Claude Desktop, Claude Code, or an internal
   AI Lab host). No network listener is opened in this mode.
-- **HTTP mode** (`MCP_TRANSPORT=http`) exposes `/mcp` **without authentication**.
+- **HTTP mode** (`MCP_TRANSPORT=http`) exposes `/mcp` **without authentication**. It listens
+  on `127.0.0.1` unless `HOST` is set, so it isn't reachable from the network by default.
   It exists for local testing only. Before any networked use, front it with
   authentication and complete your agency's ATO review.
 - **Data:** the Fiscal Data tools read only public, published Treasury data. The

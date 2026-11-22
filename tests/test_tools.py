@@ -257,3 +257,12 @@ async def test_prior_quarter_compares_at_the_drafts_level(monkeypatch, bureau, l
     assert await tool._fetch_prior_quarter("Department of the Treasury", bureau, 2026, 4) is None
     assert seen["filter"].endswith(level_filter)
     assert "record_fiscal_year:eq:2026,record_fiscal_quarter:eq:3" in seen["filter"]
+
+
+def test_http_mode_listens_on_localhost_unless_host_is_set(monkeypatch):
+    from trorbot_mcp.config import Settings
+
+    monkeypatch.delenv("HOST", raising=False)
+    assert Settings(_env_file=None).host == "127.0.0.1"
+    monkeypatch.setenv("HOST", "0.0.0.0")
+    assert Settings(_env_file=None).host == "0.0.0.0"

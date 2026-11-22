@@ -47,7 +47,7 @@ The first three tools hit the **public Fiscal Data API** (`api.fiscaldata.treasu
 ### Prerequisites
 
 - [uv](https://docs.astral.sh/uv/getting-started/installation/) — Python package manager
-- Python 3.10+
+- Python 3.11+
 
 ### Install
 
@@ -221,6 +221,7 @@ covers the same scope.
 | `TRORBOT_KB_AWS_PROFILE` | No | AWS default chain | AWS profile used for KB search |
 | `TRORBOT_KB_REGION` | No | `us-east-1` | Region of the vector bucket and Bedrock embeddings |
 | `MCP_TRANSPORT` | No | `stdio` | `stdio` or `http` |
+| `HOST` | No | `127.0.0.1` | Interface for HTTP mode; `0.0.0.0` only inside a container behind authentication |
 | `PORT` | No | `8080` | Port for HTTP mode |
 | `HTTP_TIMEOUT` | No | `30` | Request timeout (seconds) |
 
