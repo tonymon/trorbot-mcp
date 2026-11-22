@@ -7,9 +7,10 @@ class Settings(BaseSettings):
     # Fiscal Data API
     fiscal_data_base_url: str = "https://api.fiscaldata.treasury.gov/services/api/fiscal_service"
 
-    # TRORBOT API Gateway — optional; KB tools gracefully degrade when unset
-    trorbot_api_url: str = ""
-    trorbot_api_key: str = ""
+    # Knowledge bases (Amazon S3 Vectors) — optional; KB tools gracefully degrade when unset
+    trorbot_kb_bucket: str = ""
+    trorbot_kb_aws_profile: str = ""
+    trorbot_kb_region: str = "us-east-1"
 
     # Server
     mcp_transport: str = "stdio"
@@ -18,7 +19,7 @@ class Settings(BaseSettings):
 
     @property
     def kb_enabled(self) -> bool:
-        return bool(self.trorbot_api_url and self.trorbot_api_key)
+        return bool(self.trorbot_kb_bucket)
 
 
 settings = Settings()

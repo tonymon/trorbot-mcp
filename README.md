@@ -21,9 +21,9 @@ The TROR dataset tracks whether federal agencies comply with the **Debt Collecti
 | `query_receivables` | None | Query DDR compliance records by agency, fiscal year, and quarter |
 | `get_delinquency_trends` | None | Rank agencies by change in compliance rate or debt amounts over a FY window, with a government-wide aggregate. Filter to the 24 CFO Act agencies (`cfo_agencies_only`) or by size (`min_eligible_debt_usd`) |
 | `validate_tror_submission` | None | Validate an agency's draft quarterly TROR Form 05 lines: computes the form's derived lines and the Treasury Offset Program compliance rate, runs consistency checks, and compares against the agency's last published quarter. Validates only; nothing is stored or filed |
-| `search_program_context` | TRORBOT API | Search analyst-curated policy events explaining data changes |
-| `search_program_guidance` | TRORBOT API | Search program rules, legal authorities, TFM chapters |
-| `get_annual_report_insights` | TRORBOT API | Search Annual TROR Reports to Congress |
+| `search_program_context` | AWS (S3 Vectors) | Search analyst-curated policy events explaining data changes |
+| `search_program_guidance` | AWS (S3 Vectors) | Search program rules, legal authorities, TFM chapters |
+| `get_annual_report_insights` | AWS (S3 Vectors) | Search Annual TROR Reports to Congress |
 
 The first three tools hit the **public Fiscal Data API** (`api.fiscaldata.treasury.gov`) with no credentials required. Any judge or user can test them immediately.
 
@@ -216,8 +216,9 @@ covers the same scope.
 | Variable | Required | Default | Description |
 |---|---|---|---|
 | `FISCAL_DATA_BASE_URL` | No | `https://api.fiscaldata.treasury.gov/services/api/fiscal_service` | Fiscal Data API base URL |
-| `TRORBOT_API_URL` | For KB tools | — | TRORBOT API Gateway URL |
-| `TRORBOT_API_KEY` | For KB tools | — | TRORBOT API key |
+| `TRORBOT_KB_BUCKET` | For KB tools | — | S3 Vectors bucket holding the knowledge-base indexes |
+| `TRORBOT_KB_AWS_PROFILE` | No | AWS default chain | AWS profile used for KB search |
+| `TRORBOT_KB_REGION` | No | `us-east-1` | Region of the vector bucket and Bedrock embeddings |
 | `MCP_TRANSPORT` | No | `stdio` | `stdio` or `http` |
 | `PORT` | No | `8080` | Port for HTTP mode |
 | `HTTP_TIMEOUT` | No | `30` | Request timeout (seconds) |
@@ -273,13 +274,31 @@ Claude Desktop / Cursor / any MCP client
                │
        ┌───────┴───────┐
        ▼               ▼
-Fiscal Data API    TRORBOT API
+Fiscal Data API    Amazon S3 Vectors
 (public, no auth)  (optional KB tools)
        │               │
-  TROR DDR         Bedrock KBs
-  compliance       (OpenSearch
-  FY2016–present    Serverless)
+  TROR DDR         3 indexes, queries
+  compliance       embedded with Titan
+  FY2016–present   Text Embeddings V2
 ```
+
+---
+
+## Knowledge Bases
+
+The three KB tools search Amazon S3 Vectors — one index per knowledge base:
+
+| Index | Tool | Contents | Chunks |
+|---|---|---|---|
+| `context-events` | `search_program_context` | Analyst write-ups of events behind data changes (e.g. SBA's 2026 referral of 562k fraudulent loans) | 53 |
+| `program-documentation` | `search_program_guidance` | DCIA and DATA Act text, GAO-02-313, Fiscal Service FAQs (AWG, Cross-Servicing, CRS, TOP), FY16/FY18 TROR workbooks | 464 |
+| `annual-tror-reports` | `get_annual_report_insights` | Annual TROR Reports to Congress, tagged by `fiscal_year` | 2,261 |
+
+A search embeds the question with Amazon Titan Text Embeddings V2 (1,024 dims, the
+model the chunks were embedded with) and returns the closest chunks with their source
+and a cosine similarity score. [scripts/load_kb_vectors.py](scripts/load_kb_vectors.py)
+creates the bucket and indexes and loads them from an export of the chunks and vectors.
+At this size the cost is well under $1/month (storage plus ~$2.50 per million queries).
 
 ---
 
@@ -318,17 +337,20 @@ trorbot-mcp/
 │   ├── app.py          # FastMCP server entry point
 │   ├── config.py       # pydantic-settings configuration
 │   ├── models.py       # Pydantic input models
-│   ├── utils.py        # Shared HTTP helpers
+│   ├── utils.py        # Shared HTTP helpers (Fiscal Data)
+│   ├── kb.py           # Knowledge-base search (S3 Vectors + Titan embeddings)
 │   ├── tools/          # 7 MCP tools
 │   ├── prompts/        # 2 MCP prompts
 │   └── resources/      # 1 MCP resource
 ├── eval/                     # ground-truth eval: cases, runner, fixtures, results
+├── scripts/load_kb_vectors.py  # builds the S3 Vectors knowledge-base indexes
 ├── tests/
 │   ├── test_tools.py         # registration and input-validation tests
 │   ├── test_fiscal_tools.py  # tool behavior, replayed from recorded API responses
 │   ├── conftest.py           # respx replay fixtures
 │   ├── record_cassettes.py   # re-records cassettes from the live API
 │   ├── test_eval.py          # runs the eval offline in CI
+│   ├── test_kb.py            # KB search with stubbed AWS clients
 │   └── cassettes/            # recorded Fiscal Data API responses
 ├── pyproject.toml
 └── .env.example
@@ -348,7 +370,7 @@ trorbot-mcp/
 | No credentials to demo | 4 of 7 tools are fully public |
 | MCP primitives | All three used: tools, prompts, resources |
 | Useful to analysts | Compliance trends, agency benchmarking, policy context |
-| Extensible | KB tools light up with TRORBOT credentials for narrative context |
+| Extensible | KB tools light up with an S3 Vectors bucket for narrative context |
 
 ---
 

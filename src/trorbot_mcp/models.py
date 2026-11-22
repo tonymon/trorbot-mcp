@@ -273,7 +273,7 @@ class TRORSubmissionInput(BaseModel):
 
 
 class KBSearchInput(BaseModel):
-    """Inputs for the Bedrock KB search tools.
+    """Inputs for the knowledge-base search tools.
 
     Used by search_program_context, search_program_guidance, and get_annual_report_insights.
     """

@@ -27,10 +27,8 @@ TROR_URL = settings.fiscal_data_base_url.rstrip("/") + "/v2/debt/tror/data_act_c
 def fresh_http_clients():
     """Each test gets new pooled clients bound to its own event loop."""
     utils._fiscal_client = None
-    utils._trorbot_client = None
     yield
     utils._fiscal_client = None
-    utils._trorbot_client = None
 
 
 @pytest.fixture

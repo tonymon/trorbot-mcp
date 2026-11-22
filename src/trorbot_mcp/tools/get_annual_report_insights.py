@@ -1,10 +1,10 @@
 """Tool: get_annual_report_insights
 
-Searches the TRORBOT Annual TROR Reports Knowledge Base (KB ID: AFWQTVQQQ7).
+Searches the TRORBOT Annual TROR Reports knowledge base.
 This KB contains PDF Annual TROR Reports to Congress, which provide government-wide
 receivables summaries, trend analysis, and program highlights for each fiscal year.
 
-Requires TRORBOT_API_URL and TRORBOT_API_KEY environment variables.
+Requires TRORBOT_KB_BUCKET (an Amazon S3 Vectors bucket) and AWS credentials.
 """
 
 from __future__ import annotations
@@ -13,11 +13,10 @@ from typing import Annotated
 
 from fastmcp import FastMCP
 
+from trorbot_mcp.kb import search_kb
 from trorbot_mcp.models import KBSearchInput
-from trorbot_mcp.utils import fetch_trorbot_kb
 
-_KB_PATH = "/kb/query"
-_KB_ID = "AFWQTVQQQ7"   # Annual TROR Reports KB
+_KB = "annual-tror-reports"
 
 
 def register(mcp: FastMCP) -> None:
@@ -48,20 +47,16 @@ def register(mcp: FastMCP) -> None:
         Complement with query_receivables for precise current numbers and
         search_program_context for recent policy events not yet in an annual report.
 
-        Requires: TRORBOT_API_URL and TRORBOT_API_KEY environment variables.
-        Returns: { passages: [{text, source, relevance_score}], query, kb }
+        Requires: TRORBOT_KB_BUCKET and AWS credentials.
+        Returns: { passages: [{text, source, source_uri, relevance_score}], query, kb }
         """
-        result = await fetch_trorbot_kb(_KB_PATH, {
-            "query": params.query,
-            "kb_id": _KB_ID,
-            "max_results": params.max_results,
-        })
+        result = await search_kb(_KB, params.query, params.max_results)
 
         if "error" in result:
             return result
 
         return {
-            "passages": result.get("passages") or result.get("results") or [],
+            "passages": result["passages"],
             "query": params.query,
             "kb": "Annual TROR Reports to Congress — government-wide summaries and narratives",
         }

@@ -1,8 +1,8 @@
 """Shared HTTP helpers.
 
-All outbound requests go through fetch_fiscal, fetch_fiscal_all, or
-fetch_trorbot_kb — never accept a full URL from tool callers; only validated
-relative paths reach here.
+All outbound Fiscal Data requests go through fetch_fiscal or fetch_fiscal_all —
+never accept a full URL from tool callers; only validated relative paths reach here.
+Knowledge-base search lives in trorbot_mcp.kb.
 """
 
 from __future__ import annotations
@@ -17,7 +17,6 @@ logger = logging.getLogger(__name__)
 
 # Module-level clients reused across requests (connection pooling).
 _fiscal_client: httpx.AsyncClient | None = None
-_trorbot_client: httpx.AsyncClient | None = None
 
 
 def _check_path(path: str) -> None:
@@ -37,20 +36,6 @@ def _get_fiscal_client() -> httpx.AsyncClient:
         )
     return _fiscal_client
 
-
-def _get_trorbot_client() -> httpx.AsyncClient:
-    global _trorbot_client
-    if _trorbot_client is None or _trorbot_client.is_closed:
-        _trorbot_client = httpx.AsyncClient(
-            timeout=settings.http_timeout,
-            follow_redirects=False,
-            trust_env=False,
-            headers={
-                "Accept": "application/json",
-                "x-api-key": settings.trorbot_api_key,
-            },
-        )
-    return _trorbot_client
 
 
 async def fetch_fiscal(path: str, params: dict | None = None) -> dict:
@@ -101,28 +86,3 @@ async def fetch_fiscal_all(
             return rows, None
         page += 1
 
-
-async def fetch_trorbot_kb(path: str, payload: dict) -> dict:
-    """POST to a path on the TRORBOT API Gateway.
-
-    Only called when settings.kb_enabled is True.
-    """
-    if not settings.kb_enabled:
-        return {
-            "error": "KB tools unavailable",
-            "hint": "Set TRORBOT_API_URL and TRORBOT_API_KEY in .env to enable knowledge base tools.",
-        }
-    _check_path(path)
-    client = _get_trorbot_client()
-    url = settings.trorbot_api_url.rstrip("/") + path
-    try:
-        resp = await client.post(url, json=payload)
-        resp.raise_for_status()
-        return resp.json()
-    except httpx.HTTPStatusError as e:
-        return {"error": f"TRORBOT API returned {e.response.status_code}"}
-    except httpx.TimeoutException:
-        return {"error": "KB request timed out", "hint": "Try a more specific query."}
-    except Exception as e:
-        logger.warning("TRORBOT KB request failed: %s", type(e).__name__)
-        return {"error": "KB request failed", "hint": "Try again shortly."}

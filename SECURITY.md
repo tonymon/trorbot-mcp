@@ -25,10 +25,13 @@ non-public data in a report.
 
 ## Secrets
 
-- `TRORBOT_API_URL` and `TRORBOT_API_KEY` (optional knowledge-base tools) are read
-  from environment variables or a git-ignored `.env` file. Never commit them.
-- Without these values the KB tools return a structured "unavailable" error; no
-  request is sent.
+- The optional knowledge-base tools use AWS credentials from the profile named in
+  `TRORBOT_KB_AWS_PROFILE` (or the standard AWS credential chain). No keys are stored
+  in this repository or in `.env`; never commit AWS credentials.
+- The KB tools need only `bedrock:InvokeModel` on Titan Text Embeddings V2 and
+  `s3vectors:QueryVectors` / `s3vectors:GetVectors` on the knowledge-base bucket.
+- Without `TRORBOT_KB_BUCKET` the KB tools return a structured "unavailable" error;
+  no request is sent. AWS errors are reported by error code only.
 
 ## Outbound request controls
 

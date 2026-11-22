@@ -1,10 +1,10 @@
 """Tool: search_program_context
 
-Searches the TRORBOT Context Events Knowledge Base (KB ID: 3VB0O6OVXE).
+Searches the TRORBOT Context Events knowledge base.
 This KB contains analyst-curated policy events, regulatory changes, legislation,
 and program context relevant to federal receivables management.
 
-Requires TRORBOT_API_URL and TRORBOT_API_KEY environment variables.
+Requires TRORBOT_KB_BUCKET (an Amazon S3 Vectors bucket) and AWS credentials.
 """
 
 from __future__ import annotations
@@ -13,11 +13,10 @@ from typing import Annotated
 
 from fastmcp import FastMCP
 
+from trorbot_mcp.kb import search_kb
 from trorbot_mcp.models import KBSearchInput
-from trorbot_mcp.utils import fetch_trorbot_kb
 
-_KB_PATH = "/kb/query"
-_KB_ID = "3VB0O6OVXE"   # Context Events KB
+_KB = "context-events"
 
 
 def register(mcp: FastMCP) -> None:
@@ -46,20 +45,16 @@ def register(mcp: FastMCP) -> None:
         after finding a compliance-rate drop with query_receivables, call this tool to
         find policy or operational context that explains the change.
 
-        Requires: TRORBOT_API_URL and TRORBOT_API_KEY environment variables.
-        Returns: { passages: [{text, source, relevance_score}], query, kb }
+        Requires: TRORBOT_KB_BUCKET and AWS credentials.
+        Returns: { passages: [{text, source, source_uri, relevance_score}], query, kb }
         """
-        result = await fetch_trorbot_kb(_KB_PATH, {
-            "query": params.query,
-            "kb_id": _KB_ID,
-            "max_results": params.max_results,
-        })
+        result = await search_kb(_KB, params.query, params.max_results)
 
         if "error" in result:
             return result
 
         return {
-            "passages": result.get("passages") or result.get("results") or [],
+            "passages": result["passages"],
             "query": params.query,
             "kb": "Context Events — policy, legislation, program changes",
         }
