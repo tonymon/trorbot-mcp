@@ -56,50 +56,72 @@ cd trorbot-mcp
 uv sync
 ```
 
-### Run in stdio mode (Claude Desktop)
+### Run the server
 
 ```bash
-cp .env.example .env
 uv run trorbot-mcp
 ```
 
-### Run as HTTP server
+In stdio mode (the default) the server talks to an MCP client over standard input and
+output, so you normally let the client start it (see below) rather than running it
+yourself. To change defaults or enable the optional knowledge-base tools, copy
+`.env.example` to `.env` and edit it.
+
+### Run as HTTP server (local testing)
 
 ```bash
 MCP_TRANSPORT=http PORT=8080 uv run trorbot-mcp
 ```
 
+The endpoint is `http://127.0.0.1:8080/mcp`. It has no authentication and listens on
+this machine only; see [SECURITY.md](SECURITY.md) before exposing it.
+
 ---
 
-## Claude Desktop Configuration
+## Connect an MCP client
 
-Add this to `~/Library/Application Support/Claude/claude_desktop_config.json`:
+The server works with any MCP client that can launch a local stdio server. Every client
+needs the same command:
+
+```
+uv run --directory /path/to/trorbot-mcp trorbot-mcp
+```
+
+Replace `/path/to/trorbot-mcp` with the absolute path to your clone. The public-data
+tools need no credentials or environment variables.
+
+Most clients accept this JSON shape:
 
 ```json
 {
   "mcpServers": {
     "trorbot": {
-      "command": "/opt/homebrew/bin/uv",
-      "args": [
-        "run",
-        "--directory",
-        "/path/to/trorbot-mcp",
-        "trorbot-mcp"
-      ],
-      "env": {
-        "MCP_TRANSPORT": "stdio"
-      }
+      "command": "uv",
+      "args": ["run", "--directory", "/path/to/trorbot-mcp", "trorbot-mcp"]
     }
   }
 }
 ```
 
-Set `command` to the full path that `which uv` prints, and `/path/to/trorbot-mcp` to your
-clone. Restart Claude Desktop. You'll see a 🔨 icon confirming the server is connected.
+**If the client can't find `uv`:** desktop apps often don't load your shell's `PATH`.
+Set `command` to uv's full path instead. Find it with `which uv` (macOS and Linux) or
+`where uv` (Windows); the location depends on how uv was installed, for example
+`~/.local/bin/uv` with the official installer or `/opt/homebrew/bin/uv` with Homebrew.
+
+| Client | Where the configuration goes |
+|---|---|
+| Claude Desktop | Settings → Developer → Edit Config (`claude_desktop_config.json`), then restart the app |
+| Claude Code | `claude mcp add trorbot -- uv run --directory /path/to/trorbot-mcp trorbot-mcp` |
+| VS Code (agent mode) | `.vscode/mcp.json`, using `"servers"` instead of `"mcpServers"` and adding `"type": "stdio"` |
+| Cursor | `~/.cursor/mcp.json`, or `.cursor/mcp.json` in a project |
+| MCP Inspector (testing) | `npx @modelcontextprotocol/inspector uv run --directory /path/to/trorbot-mcp trorbot-mcp` |
+
+Client settings change over time; check your client's documentation if a location
+above has moved.
 
 ---
 
-## Example Prompts (Claude Desktop)
+## Example Prompts
 
 ```
 Use trorbot list_agencies to find agencies with "Defense" in the name.
