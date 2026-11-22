@@ -38,13 +38,18 @@ def _title_from_uri(uri: str) -> str:
 
 
 def _annual_report_metadata(export_dir: Path) -> dict[str, dict]:
-    """fiscal_year and title for each annual report, from the original S3 metadata files."""
+    """fiscal_year and title for each annual report, from the original S3 metadata files.
+
+    The export keeps each source bucket's files under s3-originals/<bucket>/, so the
+    original s3://<bucket>/<doc> URI is rebuilt from the folder name.
+    """
     out = {}
-    src = export_dir / "s3-originals" / "daab-lab-tror-bedrock-knowledgedb2"
-    for meta_file in src.glob("*.metadata.json"):
+    for meta_file in (export_dir / "s3-originals").glob("*/*.metadata.json"):
         attrs = json.loads(meta_file.read_text())["metadataAttributes"]
+        if "fiscal_year" not in attrs:
+            continue
         doc = meta_file.name.removesuffix(".metadata.json")
-        out[f"s3://daab-lab-tror-bedrock-knowledgedb2/{doc}"] = {
+        out[f"s3://{meta_file.parent.name}/{doc}"] = {
             "fiscal_year": int(attrs["fiscal_year"]),
             "title": attrs["document_title"],
         }
