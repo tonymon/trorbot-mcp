@@ -47,7 +47,7 @@ The first three tools hit the **public Fiscal Data API** (`api.fiscaldata.treasu
 ### Prerequisites
 
 - [uv](https://docs.astral.sh/uv/getting-started/installation/) — Python package manager
-- Python 3.11+
+- Python 3.10+
 
 ### Install
 
@@ -95,7 +95,8 @@ Add this to `~/Library/Application Support/Claude/claude_desktop_config.json`:
 }
 ```
 
-Restart Claude Desktop. You'll see a 🔨 icon confirming the server is connected.
+Set `command` to the full path that `which uv` prints, and `/path/to/trorbot-mcp` to your
+clone. Restart Claude Desktop. You'll see a 🔨 icon confirming the server is connected.
 
 ---
 
